@@ -111,6 +111,7 @@ export function AppShell({
   subtitle?: string;
   children: React.ReactNode;
 }) {
+  const { alertas, mercado, loadingMercado, refetchAll } = useEtr();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
