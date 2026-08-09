@@ -1,22 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
-import { Search } from "lucide-react";
+import { Plus, Trash2 } from "lucide-react";
 import { AppShell } from "@/components/etr/app-shell";
 import { Panel, Stat, Delta, Pill } from "@/components/etr/primitives";
-import { clientes, fmtARS, fmtNum, totalAUM, type Client } from "@/lib/etr-data";
+import { Editable, commitNumber } from "@/components/etr/editable";
+import { useEtr } from "@/lib/etr-store";
+import { fmtARS, fmtNum, type Perfil } from "@/lib/etr-data";
+
+const PERFILES: Perfil[] = ["Conservador", "Moderado", "Agresivo"];
 
 export const Route = createFileRoute("/clientes")({
   head: () => ({
     meta: [
-      { title: "Clientes asesorados — ETR Terminal" },
+      { title: "Cartera de clientes y patrimonio — ETR Terminal" },
       {
         name: "description",
-        content: "Listado de clientes con patrimonio, perfil de riesgo, variación diaria y desvío frente al modelo ETR.",
+        content:
+          "Listado de clientes asesorados con patrimonio, perfil de riesgo, rendimiento y desvío frente al modelo ETR.",
       },
       { property: "og:title", content: "Clientes — ETR Terminal" },
       {
         property: "og:description",
-        content: "Patrimonio, perfil y desvío de cada cliente asesorado.",
+        content: "Patrimonio por cliente, perfil, variación diaria, YTD y desvío del modelo.",
       },
     ],
   }),
@@ -24,107 +28,133 @@ export const Route = createFileRoute("/clientes")({
 });
 
 function Clientes() {
-  const [q, setQ] = useState("");
-  const [sel, setSel] = useState<Client>(clientes[0]!);
-
-  const rows = useMemo(
-    () =>
-      clientes
-        .filter((c) => `${c.nombre} ${c.id} ${c.perfil}`.toLowerCase().includes(q.toLowerCase()))
-        .sort((a, b) => b.patrimonio - a.patrimonio),
-    [q],
-  );
-
+  const { state, totalAUM, updateCliente, addCliente, removeCliente } = useEtr();
+  const clientes = [...state.clientes].sort((a, b) => b.patrimonio - a.patrimonio);
   const aum = clientes.reduce((a, c) => a + c.patrimonio, 0);
-  const varDia = clientes.reduce((a, c) => a + c.patrimonio * c.varDia, 0) / aum;
+  const ytdProm = aum ? clientes.reduce((a, c) => a + c.patrimonio * c.ytd, 0) / aum : 0;
+  const diaProm = aum ? clientes.reduce((a, c) => a + c.patrimonio * c.varDia, 0) / aum : 0;
 
   return (
-    <AppShell title="Clientes" subtitle="Carteras asesoradas · datos consolidados por cliente">
-      <div className="grid gap-4 sm:grid-cols-3">
-        <Stat label="Patrimonio de clientes" value={fmtARS(aum)} delta={varDia} hint="variación diaria ponderada" emphasis />
-        <Stat label="Clientes activos" value={String(clientes.length)} hint={`${fmtNum((aum / totalAUM) * 100, 0)}% del total asesorado`} />
-        <Stat
-          label="Desvío promedio"
-          value={`${fmtNum(clientes.reduce((a, c) => a + c.drift, 0) / clientes.length, 1)} p.p.`}
-          hint="frente al modelo ETR"
-        />
+    <AppShell title="Clientes" subtitle="Doble clic en cualquier celda para editar · Enter para guardar">
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <Stat label="AUM de clientes" value={fmtARS(aum)} delta={diaProm} emphasis />
+        <Stat label="Patrimonio total asesorado" value={fmtARS(totalAUM)} hint="clientes + cartera propia" />
+        <Stat label="Clientes activos" value={String(clientes.length)} />
+        <Stat label="YTD ponderado" value={`${fmtNum(ytdProm, 1)}%`} delta={ytdProm} />
       </div>
 
-      <div className="mt-4 grid gap-4 xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-        <Panel
-          eyebrow="Cartera de clientes"
-          title="Listado"
-          bodyClassName="p-0"
-          action={
-            <div className="flex items-center gap-2 rounded-md border border-border bg-surface-2 px-2 py-1">
-              <Search className="h-3.5 w-3.5 text-muted-foreground" />
-              <input
-                value={q}
-                onChange={(e) => setQ(e.target.value)}
-                placeholder="Buscar cliente"
-                aria-label="Buscar cliente"
-                className="w-32 bg-transparent text-xs outline-none placeholder:text-muted-foreground sm:w-44"
-              />
-            </div>
-          }
-        >
-          <ul className="divide-y divide-border">
-            {rows.map((c) => (
-              <li key={c.id}>
-                <button
-                  type="button"
-                  onClick={() => setSel(c)}
-                  className={
-                    "grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 text-left transition-colors " +
-                    (sel.id === c.id ? "bg-surface-2" : "hover:bg-surface-2/60")
-                  }
-                >
-                  <div className="min-w-0">
-                    <div className="flex min-w-0 items-center gap-2">
-                      <span className="truncate text-sm font-medium">{c.nombre}</span>
-                      <Pill tone={c.perfil === "Agresivo" ? "loss" : c.perfil === "Moderado" ? "warn" : "gain"}>
-                        {c.perfil}
-                      </Pill>
-                    </div>
-                    <p className="num truncate text-xs text-muted-foreground">
-                      {c.id} · última operación {c.ultimaOperacion}
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <p className="num text-sm">{fmtARS(c.patrimonio)}</p>
-                    <Delta value={c.varDia} />
-                  </div>
-                </button>
-              </li>
-            ))}
-            {rows.length === 0 && (
-              <li className="px-4 py-8 text-center text-sm text-muted-foreground">Sin coincidencias.</li>
-            )}
-          </ul>
-        </Panel>
-
-        <Panel eyebrow="Detalle" title={sel.nombre}>
-          <dl className="space-y-3 text-sm">
-            {[
-              ["Identificador", sel.id],
-              ["Perfil de riesgo", sel.perfil],
-              ["Patrimonio", fmtARS(sel.patrimonio)],
-              ["Variación diaria", `${fmtNum(sel.varDia, 2)}%`],
-              ["Rendimiento YTD", `${fmtNum(sel.ytd, 1)}%`],
-              ["Desvío del modelo", `${fmtNum(sel.drift, 1)} p.p.`],
-              ["Última operación", sel.ultimaOperacion],
-            ].map(([k, v]) => (
-              <div key={k} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 border-b border-border/60 pb-2">
-                <dt className="truncate text-xs text-muted-foreground">{k}</dt>
-                <dd className="num text-sm">{v}</dd>
-              </div>
-            ))}
-          </dl>
-          <p className="mt-4 text-xs text-muted-foreground">
-            Para ver órdenes sugeridas de rebalanceo, seleccioná este cliente en Modelo & Convergencia.
+      <Panel
+        className="mt-4"
+        eyebrow="Asesoría"
+        title="Cartera de clientes"
+        bodyClassName="p-0"
+        action={
+          <button
+            type="button"
+            onClick={addCliente}
+            className="flex items-center gap-1 rounded-md border border-primary/50 px-2 py-1 text-xs text-primary hover:bg-primary/10"
+          >
+            <Plus className="h-3 w-3" /> Agregar cliente
+          </button>
+        }
+      >
+        {clientes.length === 0 ? (
+          <p className="px-4 py-10 text-center text-sm text-muted-foreground">
+            Todavía no cargaste clientes. Usá «Agregar cliente» para empezar.
           </p>
-        </Panel>
-      </div>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-200 text-sm">
+              <thead>
+                <tr className="border-b border-border text-left text-xs text-muted-foreground">
+                  <th className="px-4 py-2 font-medium">Cliente</th>
+                  <th className="px-2 py-2 font-medium">Perfil</th>
+                  <th className="px-2 py-2 text-right font-medium">Patrimonio</th>
+                  <th className="px-2 py-2 text-right font-medium">Día</th>
+                  <th className="px-2 py-2 text-right font-medium">YTD</th>
+                  <th className="px-2 py-2 text-right font-medium">Desvío</th>
+                  <th className="px-2 py-2 font-medium">Última operación</th>
+                  <th className="px-4 py-2" />
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                {clientes.map((c) => (
+                  <tr key={c.id} className="hover:bg-surface-2/60">
+                    <td className="px-4 py-2">
+                      <Editable
+                        className="font-medium"
+                        value={c.nombre}
+                        onCommit={(raw) => updateCliente(c.id, { nombre: raw })}
+                      />
+                      <div className="num text-xs text-muted-foreground">{c.id}</div>
+                    </td>
+                    <td className="px-2 py-2 text-xs">
+                      <Editable
+                        value={c.perfil}
+                        options={PERFILES}
+                        display={<Pill>{c.perfil}</Pill>}
+                        onCommit={(raw) => updateCliente(c.id, { perfil: raw as Perfil })}
+                      />
+                    </td>
+                    <td className="num px-2 py-2 text-right">
+                      <Editable
+                        align="right"
+                        type="number"
+                        value={c.patrimonio}
+                        display={fmtARS(c.patrimonio)}
+                        onCommit={(raw) => commitNumber(raw, (n) => updateCliente(c.id, { patrimonio: n }))}
+                      />
+                    </td>
+                    <td className="px-2 py-2 text-right">
+                      <Editable
+                        align="right"
+                        type="number"
+                        value={c.varDia}
+                        display={<Delta value={c.varDia} />}
+                        onCommit={(raw) => commitNumber(raw, (n) => updateCliente(c.id, { varDia: n }))}
+                      />
+                    </td>
+                    <td className="px-2 py-2 text-right">
+                      <Editable
+                        align="right"
+                        type="number"
+                        value={c.ytd}
+                        display={<Delta value={c.ytd} />}
+                        onCommit={(raw) => commitNumber(raw, (n) => updateCliente(c.id, { ytd: n }))}
+                      />
+                    </td>
+                    <td className="num px-2 py-2 text-right">
+                      <Editable
+                        align="right"
+                        type="number"
+                        value={c.drift}
+                        display={<span className={c.drift >= 4 ? "text-loss" : "text-muted-foreground"}>{fmtNum(c.drift, 1)} p.p.</span>}
+                        onCommit={(raw) => commitNumber(raw, (n) => updateCliente(c.id, { drift: n }))}
+                      />
+                    </td>
+                    <td className="num px-2 py-2 text-xs text-muted-foreground">
+                      <Editable
+                        value={c.ultimaOperacion}
+                        onCommit={(raw) => updateCliente(c.id, { ultimaOperacion: raw })}
+                      />
+                    </td>
+                    <td className="px-4 py-2 text-right">
+                      <button
+                        type="button"
+                        title="Eliminar cliente"
+                        onClick={() => removeCliente(c.id)}
+                        className="rounded border border-border p-1 text-muted-foreground hover:text-loss"
+                      >
+                        <Trash2 className="h-3 w-3" />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </Panel>
     </AppShell>
   );
 }
