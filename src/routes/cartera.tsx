@@ -1,181 +1,249 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
-import { ArrowUpDown } from "lucide-react";
+import { Plus, Trash2, RefreshCw } from "lucide-react";
 import { AppShell } from "@/components/etr/app-shell";
-import { Panel, Delta, Stat, Pill } from "@/components/etr/primitives";
+import { Panel, Stat, Delta, Pill } from "@/components/etr/primitives";
+import { Editable, commitNumber } from "@/components/etr/editable";
+import { useEtr } from "@/lib/etr-store";
 import {
-  holdings,
-  valuado,
-  resultado,
-  totalCartera,
-  totalResultado,
-  varDiaCartera,
-  ytdCartera,
+  CLASES,
   fmtARS,
   fmtNum,
-  type Holding,
+  pesoDe,
+  resultado,
+  valuado,
+  type Clase,
+  type Mercado,
 } from "@/lib/etr-data";
+
+const MERCADOS: Mercado[] = ["BCBA", "NYSE", "NASDAQ"];
 
 export const Route = createFileRoute("/cartera")({
   head: () => ({
     meta: [
-      { title: "Tenencias de la cartera propia — ETR Terminal" },
+      { title: "Tenencias de cartera en vivo — ETR Terminal" },
       {
         name: "description",
-        content: "Detalle de tenencias, precio promedio de compra, resultado y peso de cada posición de la cartera propia.",
+        content:
+          "Posiciones con precios reales de Yahoo Finance, valuación, resultado y peso por activo. Editables con doble clic.",
       },
       { property: "og:title", content: "Tenencias — ETR Terminal" },
       {
         property: "og:description",
-        content: "Posiciones, resultado no realizado y peso por clase de activo.",
+        content: "Cartera con cotizaciones en vivo, resultado no realizado y edición manual de cada dato.",
       },
     ],
   }),
   component: Cartera,
 });
 
-type SortKey = "valuado" | "varDia" | "ytd" | "resultado";
-const CLASES = ["Todas", "Renta variable", "Renta fija", "CEDEAR", "Liquidez"] as const;
-
 function Cartera() {
-  const [clase, setClase] = useState<(typeof CLASES)[number]>("Todas");
-  const [sort, setSort] = useState<SortKey>("valuado");
+  const {
+    holdings,
+    totalCartera,
+    totalResultado,
+    varDiaCartera,
+    ytdCartera,
+    updatePosition,
+    updateOverride,
+    clearOverride,
+    addPosition,
+    removePosition,
+    loadingQuotes,
+    refetchAll,
+  } = useEtr();
 
-  const rows = useMemo(() => {
-    const metric = (h: Holding) =>
-      sort === "valuado" ? valuado(h) : sort === "resultado" ? resultado(h) : sort === "ytd" ? h.ytd : h.varDia;
-    return holdings
-      .filter((h) => clase === "Todas" || h.clase === clase)
-      .sort((a, b) => metric(b) - metric(a));
-  }, [clase, sort]);
-
-  const porClase = Object.entries(
-    holdings.reduce<Record<string, number>>((acc, h) => {
-      acc[h.clase] = (acc[h.clase] ?? 0) + valuado(h);
-      return acc;
-    }, {}),
-  ).sort((a, b) => b[1] - a[1]);
+  const rows = [...holdings].sort((a, b) => valuado(b) - valuado(a));
 
   return (
-    <AppShell title="Tenencias" subtitle="Cartera propia del asesor · valuación a precios de cierre">
+    <AppShell title="Tenencias" subtitle="Precios en vivo · doble clic en cualquier dato para editarlo y Enter para guardar">
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        <Stat label="Valuación total" value={fmtARS(totalCartera)} delta={varDiaCartera} hint="variación diaria" emphasis />
-        <Stat label="Resultado no realizado" value={fmtARS(totalResultado)} hint="vs. precio promedio de compra" />
-        <Stat label="Rendimiento YTD" value={`${fmtNum(ytdCartera, 1)}%`} hint="ponderado por posición" />
-        <Stat label="Posiciones" value={String(holdings.length)} hint={`${porClase.length} clases de activo`} />
+        <Stat label="Valuación total" value={fmtARS(totalCartera)} delta={varDiaCartera} emphasis />
+        <Stat label="Resultado no realizado" value={fmtARS(totalResultado)} delta={ytdCartera} hint="YTD ponderado" />
+        <Stat label="Posiciones" value={String(holdings.length)} hint={`${rows.filter((r) => r.fuente === "real").length} con cotización en línea`} />
+        <Stat
+          label="Sobreescritas a mano"
+          value={String(rows.filter((r) => r.fuente === "manual").length)}
+          hint="tienen valores cargados por el asesor"
+        />
       </div>
 
-      <div className="mt-4 grid gap-4 xl:grid-cols-[minmax(0,2.4fr)_minmax(0,1fr)]">
-        <Panel
-          eyebrow="Detalle"
-          title="Posiciones"
-          bodyClassName="p-0"
-          action={
-            <div className="flex items-center gap-2">
-              <label className="sr-only" htmlFor="sort">
-                Ordenar por
-              </label>
-              <div className="flex items-center gap-1 rounded-md border border-border bg-surface-2 px-2 py-1">
-                <ArrowUpDown className="h-3 w-3 text-muted-foreground" />
-                <select
-                  id="sort"
-                  value={sort}
-                  onChange={(e) => setSort(e.target.value as SortKey)}
-                  className="bg-transparent text-xs outline-none"
-                >
-                  <option value="valuado">Valuación</option>
-                  <option value="varDia">Var. día</option>
-                  <option value="ytd">YTD</option>
-                  <option value="resultado">Resultado</option>
-                </select>
-              </div>
-            </div>
-          }
-        >
-          <div className="flex flex-wrap gap-1.5 border-b border-border px-4 py-3">
-            {CLASES.map((c) => (
-              <button
-                key={c}
-                type="button"
-                onClick={() => setClase(c)}
-                className={
-                  "rounded-full border px-3 py-1 text-xs transition-colors " +
-                  (clase === c
-                    ? "border-primary/50 bg-primary/15 text-primary"
-                    : "border-border text-muted-foreground hover:text-foreground")
-                }
-              >
-                {c}
-              </button>
-            ))}
+      <Panel
+        className="mt-4"
+        eyebrow="Cartera propia"
+        title="Detalle de posiciones"
+        bodyClassName="p-0"
+        action={
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={refetchAll}
+              className="flex items-center gap-1 rounded-md border border-border px-2 py-1 text-xs hover:bg-surface-2"
+            >
+              <RefreshCw className={`h-3 w-3 ${loadingQuotes ? "animate-spin" : ""}`} /> Actualizar
+            </button>
+            <button
+              type="button"
+              onClick={addPosition}
+              className="flex items-center gap-1 rounded-md border border-primary/50 px-2 py-1 text-xs text-primary hover:bg-primary/10"
+            >
+              <Plus className="h-3 w-3" /> Agregar
+            </button>
           </div>
-
+        }
+      >
+        {rows.length === 0 ? (
+          <p className="px-4 py-10 text-center text-sm text-muted-foreground">
+            No hay posiciones cargadas. Usá «Agregar» y completá el símbolo de Yahoo Finance (por ej. <span className="num">GGAL.BA</span>) para traer el precio real.
+          </p>
+        ) : (
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[720px] text-sm">
+            <table className="w-full min-w-225 text-sm">
               <thead>
-                <tr className="border-b border-border text-left">
-                  {["Activo", "Cantidad", "Precio", "PPC", "Valuado", "Resultado", "Día", "YTD", "Peso"].map((h) => (
-                    <th key={h} className="eyebrow px-4 py-2 font-normal last:text-right">
-                      {h}
-                    </th>
-                  ))}
+                <tr className="border-b border-border text-left text-xs text-muted-foreground">
+                  <th className="px-4 py-2 font-medium">Ticker</th>
+                  <th className="px-2 py-2 font-medium">Clase</th>
+                  <th className="px-2 py-2 font-medium">Símbolo</th>
+                  <th className="px-2 py-2 text-right font-medium">Cant.</th>
+                  <th className="px-2 py-2 text-right font-medium">PPC</th>
+                  <th className="px-2 py-2 text-right font-medium">Precio</th>
+                  <th className="px-2 py-2 text-right font-medium">Día</th>
+                  <th className="px-2 py-2 text-right font-medium">YTD</th>
+                  <th className="px-2 py-2 text-right font-medium">Valuado</th>
+                  <th className="px-2 py-2 text-right font-medium">Resultado</th>
+                  <th className="px-2 py-2 text-right font-medium">Peso</th>
+                  <th className="px-4 py-2" />
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="divide-y divide-border">
                 {rows.map((h) => (
-                  <tr key={h.ticker} className="border-b border-border/60 transition-colors hover:bg-surface-2">
-                    <td className="px-4 py-2.5">
+                  <tr key={h.ticker} className="hover:bg-surface-2/60">
+                    <td className="px-4 py-2">
                       <div className="flex items-center gap-2">
-                        <span className="num font-semibold">{h.ticker}</span>
-                        <Pill>{h.mercado}</Pill>
+                        <Editable
+                          className="num font-semibold"
+                          value={h.ticker}
+                          onCommit={(raw) => raw.trim() && updatePosition(h.ticker, { ticker: raw.trim().toUpperCase() })}
+                        />
+                        <Pill tone={h.fuente === "real" ? "gain" : h.fuente === "manual" ? "gold" : "warn"}>
+                          {h.fuente}
+                        </Pill>
                       </div>
-                      <p className="truncate text-xs text-muted-foreground">{h.name}</p>
+                      <Editable
+                        className="text-xs text-muted-foreground"
+                        value={h.name}
+                        onCommit={(raw) => updatePosition(h.ticker, { name: raw })}
+                      />
                     </td>
-                    <td className="num px-4 py-2.5">{fmtNum(h.cantidad, 0)}</td>
-                    <td className="num px-4 py-2.5">{fmtNum(h.precio, 2)}</td>
-                    <td className="num px-4 py-2.5 text-muted-foreground">{fmtNum(h.ppc, 2)}</td>
-                    <td className="num px-4 py-2.5">{fmtARS(valuado(h))}</td>
-                    <td className={"num px-4 py-2.5 " + (resultado(h) >= 0 ? "text-gain" : "text-loss")}>
+                    <td className="px-2 py-2 text-xs">
+                      <Editable
+                        value={h.clase}
+                        options={CLASES}
+                        onCommit={(raw) => updatePosition(h.ticker, { clase: raw as Clase })}
+                      />
+                      <div className="text-[11px] text-muted-foreground">
+                        <Editable
+                          value={h.mercado}
+                          options={MERCADOS}
+                          onCommit={(raw) => updatePosition(h.ticker, { mercado: raw as Mercado })}
+                        />
+                      </div>
+                    </td>
+                    <td className="num px-2 py-2 text-xs">
+                      <Editable
+                        value={h.symbol}
+                        display={h.symbol || "—"}
+                        onCommit={(raw) => updatePosition(h.ticker, { symbol: raw.trim() })}
+                        title="Símbolo de Yahoo Finance. Doble clic para editar"
+                      />
+                    </td>
+                    <td className="num px-2 py-2 text-right">
+                      <Editable
+                        align="right"
+                        type="number"
+                        value={h.cantidad}
+                        display={fmtNum(h.cantidad, 0)}
+                        onCommit={(raw) => commitNumber(raw, (n) => updatePosition(h.ticker, { cantidad: n }))}
+                      />
+                    </td>
+                    <td className="num px-2 py-2 text-right">
+                      <Editable
+                        align="right"
+                        type="number"
+                        value={h.ppc}
+                        display={fmtNum(h.ppc)}
+                        onCommit={(raw) => commitNumber(raw, (n) => updatePosition(h.ticker, { ppc: n }))}
+                      />
+                    </td>
+                    <td className="num px-2 py-2 text-right">
+                      <Editable
+                        align="right"
+                        type="number"
+                        value={h.precio}
+                        display={fmtNum(h.precio)}
+                        onCommit={(raw) => commitNumber(raw, (n) => updateOverride(h.ticker, { precio: n }))}
+                        title="Doble clic para fijar un precio manual · Enter para guardar"
+                      />
+                    </td>
+                    <td className="px-2 py-2 text-right">
+                      <Editable
+                        align="right"
+                        type="number"
+                        value={h.varDia}
+                        display={<Delta value={h.varDia} />}
+                        onCommit={(raw) => commitNumber(raw, (n) => updateOverride(h.ticker, { varDia: n }))}
+                      />
+                    </td>
+                    <td className="px-2 py-2 text-right">
+                      <Editable
+                        align="right"
+                        type="number"
+                        value={h.ytd}
+                        display={<Delta value={h.ytd} />}
+                        onCommit={(raw) => commitNumber(raw, (n) => updateOverride(h.ticker, { ytd: n }))}
+                      />
+                    </td>
+                    <td className="num px-2 py-2 text-right">{fmtARS(valuado(h))}</td>
+                    <td
+                      className={`num px-2 py-2 text-right ${resultado(h) >= 0 ? "text-gain" : "text-loss"}`}
+                    >
                       {fmtARS(resultado(h))}
                     </td>
-                    <td className="px-4 py-2.5">
-                      <Delta value={h.varDia} />
+                    <td className="num px-2 py-2 text-right text-muted-foreground">
+                      {fmtNum(pesoDe(h, totalCartera), 1)}%
                     </td>
-                    <td className="px-4 py-2.5">
-                      <Delta value={h.ytd} />
-                    </td>
-                    <td className="num px-4 py-2.5 text-right">
-                      {fmtNum((valuado(h) / totalCartera) * 100, 1)}%
+                    <td className="px-4 py-2 text-right">
+                      <div className="flex justify-end gap-1">
+                        {h.fuente === "manual" && (
+                          <button
+                            type="button"
+                            title="Volver al dato real"
+                            onClick={() => {
+                              clearOverride(h.ticker, "precio");
+                              clearOverride(h.ticker, "varDia");
+                              clearOverride(h.ticker, "ytd");
+                            }}
+                            className="rounded border border-border p-1 text-muted-foreground hover:text-foreground"
+                          >
+                            <RefreshCw className="h-3 w-3" />
+                          </button>
+                        )}
+                        <button
+                          type="button"
+                          title="Eliminar posición"
+                          onClick={() => removePosition(h.ticker)}
+                          className="rounded border border-border p-1 text-muted-foreground hover:text-loss"
+                        >
+                          <Trash2 className="h-3 w-3" />
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-        </Panel>
-
-        <Panel eyebrow="Composición" title="Peso por clase de activo">
-          <ul className="space-y-4">
-            {porClase.map(([nombre, monto]) => (
-              <li key={nombre}>
-                <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
-                  <span className="truncate text-sm">{nombre}</span>
-                  <span className="num text-xs text-muted-foreground">
-                    {fmtNum((monto / totalCartera) * 100, 1)}%
-                  </span>
-                </div>
-                <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-muted">
-                  <div
-                    className="h-full rounded-full bg-primary"
-                    style={{ width: `${(monto / totalCartera) * 100}%` }}
-                  />
-                </div>
-                <p className="num mt-1 text-xs text-muted-foreground">{fmtARS(monto)}</p>
-              </li>
-            ))}
-          </ul>
-        </Panel>
-      </div>
+        )}
+      </Panel>
     </AppShell>
   );
 }
