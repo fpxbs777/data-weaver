@@ -255,7 +255,14 @@ export function AppShell({
           <main className="min-w-0 flex-1 px-4 py-6 lg:px-6">{children}</main>
 
           <footer className="border-t border-border px-4 py-4 text-xs text-muted-foreground lg:px-6">
-            ETR Terminal · datos de demostración · última sincronización 17:03
+            <button type="button" onClick={refetchAll} className="hover:text-foreground">
+              ETR Terminal · datos en vivo (Yahoo Finance · BCRA · INDEC){" "}
+              {loadingMercado
+                ? "· sincronizando…"
+                : mercado
+                  ? `· actualizado ${new Date(mercado.updatedAt).toLocaleTimeString("es-AR", { hour: "2-digit", minute: "2-digit" })}`
+                  : ""}
+            </button>
           </footer>
         </div>
       </div>
