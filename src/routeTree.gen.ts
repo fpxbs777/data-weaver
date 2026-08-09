@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CarteraRouteImport } from './routes/cartera'
+import { Route as ClientesRouteImport } from './routes/clientes'
+import { Route as ConfiguracionRouteImport } from './routes/configuracion'
+import { Route as HistoricoRouteImport } from './routes/historico'
+import { Route as MercadoRouteImport } from './routes/mercado'
+import { Route as ModeloRouteImport } from './routes/modelo'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CarteraRoute = CarteraRouteImport.update({
+  id: '/cartera',
+  path: '/cartera',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClientesRoute = ClientesRouteImport.update({
+  id: '/clientes',
+  path: '/clientes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfiguracionRoute = ConfiguracionRouteImport.update({
+  id: '/configuracion',
+  path: '/configuracion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoricoRoute = HistoricoRouteImport.update({
+  id: '/historico',
+  path: '/historico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MercadoRoute = MercadoRouteImport.update({
+  id: '/mercado',
+  path: '/mercado',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ModeloRoute = ModeloRouteImport.update({
+  id: '/modelo',
+  path: '/modelo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cartera': typeof CarteraRoute
+  '/clientes': typeof ClientesRoute
+  '/configuracion': typeof ConfiguracionRoute
+  '/historico': typeof HistoricoRoute
+  '/mercado': typeof MercadoRoute
+  '/modelo': typeof ModeloRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cartera': typeof CarteraRoute
+  '/clientes': typeof ClientesRoute
+  '/configuracion': typeof ConfiguracionRoute
+  '/historico': typeof HistoricoRoute
+  '/mercado': typeof MercadoRoute
+  '/modelo': typeof ModeloRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cartera': typeof CarteraRoute
+  '/clientes': typeof ClientesRoute
+  '/configuracion': typeof ConfiguracionRoute
+  '/historico': typeof HistoricoRoute
+  '/mercado': typeof MercadoRoute
+  '/modelo': typeof ModeloRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/cartera'
+    | '/clientes'
+    | '/configuracion'
+    | '/historico'
+    | '/mercado'
+    | '/modelo'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/cartera'
+    | '/clientes'
+    | '/configuracion'
+    | '/historico'
+    | '/mercado'
+    | '/modelo'
+  id:
+    | '__root__'
+    | '/'
+    | '/cartera'
+    | '/clientes'
+    | '/configuracion'
+    | '/historico'
+    | '/mercado'
+    | '/modelo'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CarteraRoute: typeof CarteraRoute
+  ClientesRoute: typeof ClientesRoute
+  ConfiguracionRoute: typeof ConfiguracionRoute
+  HistoricoRoute: typeof HistoricoRoute
+  MercadoRoute: typeof MercadoRoute
+  ModeloRoute: typeof ModeloRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +130,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cartera': {
+      id: '/cartera'
+      path: '/cartera'
+      fullPath: '/cartera'
+      preLoaderRoute: typeof CarteraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/clientes': {
+      id: '/clientes'
+      path: '/clientes'
+      fullPath: '/clientes'
+      preLoaderRoute: typeof ClientesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/configuracion': {
+      id: '/configuracion'
+      path: '/configuracion'
+      fullPath: '/configuracion'
+      preLoaderRoute: typeof ConfiguracionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/historico': {
+      id: '/historico'
+      path: '/historico'
+      fullPath: '/historico'
+      preLoaderRoute: typeof HistoricoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mercado': {
+      id: '/mercado'
+      path: '/mercado'
+      fullPath: '/mercado'
+      preLoaderRoute: typeof MercadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/modelo': {
+      id: '/modelo'
+      path: '/modelo'
+      fullPath: '/modelo'
+      preLoaderRoute: typeof ModeloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CarteraRoute: CarteraRoute,
+  ClientesRoute: ClientesRoute,
+  ConfiguracionRoute: ConfiguracionRoute,
+  HistoricoRoute: HistoricoRoute,
+  MercadoRoute: MercadoRoute,
+  ModeloRoute: ModeloRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
