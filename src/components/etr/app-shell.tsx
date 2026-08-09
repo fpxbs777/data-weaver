@@ -63,7 +63,11 @@ export const NAV: { label: string; items: NavItem[] }[] = [
 ];
 
 function Ticker() {
-  const items = [...indices, ...divisas];
+  const { mercadoRows } = useEtr();
+  const items = [...mercadoRows.indices, ...mercadoRows.divisas];
+  if (items.length === 0) {
+    return <p className="text-xs text-muted-foreground">Sincronizando cotizaciones en vivo…</p>;
+  }
   const doubled = [...items, ...items];
   return (
     <div className="relative min-w-0 overflow-hidden">
