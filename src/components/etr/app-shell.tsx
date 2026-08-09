@@ -24,7 +24,8 @@ import {
 import { cn } from "@/lib/utils";
 import logo from "@/assets/etr-logo.png.asset.json";
 import bgImage from "@/assets/finance-bg.jpg";
-import { divisas, indices, alertas, fmtNum, fmtPct } from "@/lib/etr-data";
+import { fmtNum, fmtPct } from "@/lib/etr-data";
+import { useEtr } from "@/lib/etr-store";
 
 type NavItem = {
   to: string;
