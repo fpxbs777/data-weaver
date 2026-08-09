@@ -31,14 +31,13 @@ export const getQuotes = createServerFn({ method: "POST" })
   }))
   .handler(async ({ data }): Promise<Quote[]> => fetchQuotes(data.symbols));
 
-const INDICES: Array<{ symbol: string; label: string }> = [
-  { symbol: "^MERV", label: "Merval" },
-  { symbol: "^GSPC", label: "S&P 500" },
-  { symbol: "^IXIC", label: "Nasdaq" },
-];
-
 export const getMercado = createServerFn({ method: "GET" }).handler(
   async (): Promise<MercadoSnapshot> => {
+    const INDICES: Array<{ symbol: string; label: string }> = [
+      { symbol: "^MERV", label: "Merval" },
+      { symbol: "^GSPC", label: "S&P 500" },
+      { symbol: "^IXIC", label: "Nasdaq" },
+    ];
     const [quotes, dolares, macro] = await Promise.all([
       fetchQuotes(INDICES.map((i) => i.symbol)),
       fetchDolares(),
@@ -66,7 +65,7 @@ export const getMercado = createServerFn({ method: "GET" }).handler(
       });
     }
 
-    const CASAS = ["bolsa", "contadoconliqui", "oficial", "blue", "tarjeta", "cripto"];
+    const CASAS: string[] = ["bolsa", "contadoconliqui", "oficial", "blue", "tarjeta", "cripto"];
     const divisas: MarketRow[] = dolares
       .filter((d) => CASAS.includes(d.casa))
       .sort((a, b) => CASAS.indexOf(a.casa) - CASAS.indexOf(b.casa))
