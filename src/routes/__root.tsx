@@ -126,10 +126,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <EtrProvider>
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
-      </EtrProvider>
+      <IolGate>
+        <EtrProvider>
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </EtrProvider>
+      </IolGate>
     </QueryClientProvider>
   );
 }
