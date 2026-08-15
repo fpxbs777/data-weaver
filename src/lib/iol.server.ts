@@ -111,7 +111,7 @@ export async function iolFetch<T>(
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: init.body === undefined ? undefined : JSON.stringify(init.body),
+      body: init.body === undefined ? null : JSON.stringify(init.body),
     });
 
   let res = await call(session.access);
