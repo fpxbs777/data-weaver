@@ -133,18 +133,13 @@ export async function iolFetch<T>(
   }
 }
 
-export type IolCliente = {
-  id: number;
-  numeroCliente?: string;
-  nombre?: string;
-  apellido?: string;
-  totalCuentaValorizado?: number;
-  [k: string]: unknown;
-};
+export type Json = string | number | boolean | null | Json[] | { [k: string]: Json };
+
+export type IolCliente = { [k: string]: Json };
 
 export async function listClientes(): Promise<IolCliente[]> {
-  const raw = await iolFetch<unknown>("/api/v2/Asesores/Clientes");
+  const raw = await iolFetch<Json>("/api/v2/Asesores/Clientes");
   if (Array.isArray(raw)) return raw as IolCliente[];
-  const obj = raw as { clientes?: IolCliente[]; items?: IolCliente[] } | null;
-  return obj?.clientes ?? obj?.items ?? [];
+  const obj = (raw ?? {}) as { clientes?: IolCliente[]; items?: IolCliente[] };
+  return obj.clientes ?? obj.items ?? [];
 }

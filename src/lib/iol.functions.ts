@@ -6,6 +6,7 @@ import {
   readSession,
   writeSession,
   type IolCliente,
+  type Json,
 } from "./iol.server";
 
 export type IolSessionInfo = { user: string } | null;
@@ -37,14 +38,14 @@ export const iolClientes = createServerFn({ method: "GET" }).handler(
   async (): Promise<IolCliente[]> => listClientes(),
 );
 
-export const iolPerfil = createServerFn({ method: "GET" }).handler(async (): Promise<unknown> =>
-  iolFetch("/api/v2/datos-perfil"),
+export const iolPerfil = createServerFn({ method: "GET" }).handler(async (): Promise<Json> =>
+  iolFetch<Json>("/api/v2/datos-perfil"),
 );
 
 export const iolEstadoCuenta = createServerFn({ method: "POST" })
   .inputValidator((input: { id: number }) => ({ id: Number(input?.id) }))
-  .handler(async ({ data }): Promise<unknown> =>
-    iolFetch(`/api/v2/Asesores/EstadoDeCuenta/${data.id}`),
+  .handler(async ({ data }): Promise<Json> =>
+    iolFetch<Json>(`/api/v2/Asesores/EstadoDeCuenta/${data.id}`),
   );
 
 export const iolPortafolio = createServerFn({ method: "POST" })
@@ -52,8 +53,8 @@ export const iolPortafolio = createServerFn({ method: "POST" })
     id: Number(input?.id),
     pais: input?.pais === "Estados_Unidos" ? "Estados_Unidos" : "Argentina",
   }))
-  .handler(async ({ data }): Promise<unknown> =>
-    iolFetch(`/api/v2/Asesores/Portafolio/${data.id}/${data.pais}`),
+  .handler(async ({ data }): Promise<Json> =>
+    iolFetch<Json>(`/api/v2/Asesores/Portafolio/${data.id}/${data.pais}`),
   );
 
 export const iolOperaciones = createServerFn({ method: "POST" })
@@ -64,8 +65,8 @@ export const iolOperaciones = createServerFn({ method: "POST" })
     desde: input?.desde,
     hasta: input?.hasta,
   }))
-  .handler(async ({ data }): Promise<unknown[]> => {
-    const res = await iolFetch<unknown>("/api/v2/Asesores/Operaciones", {
+  .handler(async ({ data }): Promise<Json[]> => {
+    const res = await iolFetch<Json>("/api/v2/Asesores/Operaciones", {
       query: {
         IdClienteAsesorado: data.id,
         Estado: data.estado,
@@ -74,7 +75,7 @@ export const iolOperaciones = createServerFn({ method: "POST" })
         FechaHasta: data.hasta,
       },
     });
-    return Array.isArray(res) ? res : [];
+    return Array.isArray(res) ? (res as Json[]) : [];
   });
 
 export const iolDetalleOperacion = createServerFn({ method: "POST" })
@@ -82,8 +83,8 @@ export const iolDetalleOperacion = createServerFn({ method: "POST" })
     id: Number(input?.id),
     numero: Number(input?.numero),
   }))
-  .handler(async ({ data }): Promise<unknown> =>
-    iolFetch(`/api/v2/Asesores/Operaciones/Detalle/${data.id}/${data.numero}`),
+  .handler(async ({ data }): Promise<Json> =>
+    iolFetch<Json>(`/api/v2/Asesores/Operaciones/Detalle/${data.id}/${data.numero}`),
   );
 
 export const iolMovimientos = createServerFn({ method: "POST" })
@@ -92,10 +93,10 @@ export const iolMovimientos = createServerFn({ method: "POST" })
     desde: input?.desde,
     hasta: input?.hasta,
   }))
-  .handler(async ({ data }): Promise<unknown> => {
+  .handler(async ({ data }): Promise<Json> => {
     const to = data.hasta ? new Date(data.hasta) : new Date();
     const from = data.desde ? new Date(data.desde) : new Date(to.getTime() - 90 * 86400000);
-    return iolFetch("/api/v2/Asesor/Movimientos", {
+    return iolFetch<Json>("/api/v2/Asesor/Movimientos", {
       method: "POST",
       body: {
         clientes: [data.id],
