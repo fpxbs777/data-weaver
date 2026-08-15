@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { EtrProvider } from "@/lib/etr-store";
+import { IolGate } from "@/components/etr/iol-auth";
 
 function NotFoundComponent() {
   return (
@@ -126,10 +127,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <EtrProvider>
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
-      </EtrProvider>
+      <IolGate>
+        <EtrProvider>
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </EtrProvider>
+      </IolGate>
     </QueryClientProvider>
   );
 }
