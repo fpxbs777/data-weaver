@@ -5,9 +5,11 @@ import {
   fetchMacro,
   fetchMepSerie,
   fetchQuote,
+  fetchProfiles,
   type Quote,
   type MacroItem,
   type MonthlyPoint,
+  type AssetProfile,
 } from "./market.server";
 
 export type MarketRow = {
@@ -90,4 +92,10 @@ export const getBenchmarks = createServerFn({ method: "GET" }).handler(
   },
 );
 
-export type { Quote, MacroItem, MonthlyPoint };
+export type { Quote, MacroItem, MonthlyPoint, AssetProfile };
+
+export const getProfiles = createServerFn({ method: "POST" })
+  .inputValidator((input: { symbols: string[] }) => ({
+    symbols: (input?.symbols ?? []).filter((s) => typeof s === "string" && s.length > 0).slice(0, 40),
+  }))
+  .handler(async ({ data }): Promise<AssetProfile[]> => fetchProfiles(data.symbols));

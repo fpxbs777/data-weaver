@@ -221,3 +221,80 @@ export async function fetchMacro(): Promise<{ items: MacroItem[]; riesgoPais: Va
 
   return { items, riesgoPais: riesgo ?? null };
 }
+
+// ---------- Perfiles de activo (sector / industria) ----------
+
+export type AssetProfile = {
+  symbol: string;
+  sector: string;
+  industria: string;
+  tipo: string;
+  moneda: string;
+  mercado: string;
+};
+
+let creds: { cookie: string; crumb: string; exp: number } | null = null;
+
+async function yahooCreds(): Promise<{ cookie: string; crumb: string } | null> {
+  if (creds && Date.now() < creds.exp) return creds;
+  try {
+    const res = await fetch("https://fc.yahoo.com", { headers: { "User-Agent": UA } });
+    const cookie = (res.headers.get("set-cookie") ?? "").split(";")[0] ?? "";
+    if (!cookie) return null;
+    const crumbRes = await fetch("https://query1.finance.yahoo.com/v1/test/getcrumb", {
+      headers: { "User-Agent": UA, Cookie: cookie },
+    });
+    const crumb = (await crumbRes.text()).trim();
+    if (!crumb || crumb.includes("<")) return null;
+    creds = { cookie, crumb, exp: Date.now() + 30 * 60_000 };
+    return creds;
+  } catch {
+    return null;
+  }
+}
+
+const profileCache = new Map<string, AssetProfile>();
+
+type QuoteSummary = {
+  quoteSummary?: {
+    result?: Array<{
+      assetProfile?: { sector?: string; industry?: string };
+      price?: { quoteType?: string; currency?: string; exchangeName?: string };
+    }>;
+  };
+};
+
+export async function fetchProfiles(symbols: string[]): Promise<AssetProfile[]> {
+  const unicos = [...new Set(symbols.filter(Boolean))].slice(0, 40);
+  const cred = await yahooCreds();
+  const out: AssetProfile[] = [];
+
+  await Promise.all(
+    unicos.map(async (symbol) => {
+      const hit = profileCache.get(symbol);
+      if (hit) {
+        out.push(hit);
+        return;
+      }
+      if (!cred) return;
+      const url = `https://query2.finance.yahoo.com/v10/finance/quoteSummary/${encodeURIComponent(
+        symbol,
+      )}?modules=assetProfile,price&crumb=${encodeURIComponent(cred.crumb)}`;
+      const data = await getJson<QuoteSummary>(url, { Cookie: cred.cookie });
+      const r = data?.quoteSummary?.result?.[0];
+      if (!r) return;
+      const profile: AssetProfile = {
+        symbol,
+        sector: r.assetProfile?.sector ?? "",
+        industria: r.assetProfile?.industry ?? "",
+        tipo: r.price?.quoteType ?? "",
+        moneda: r.price?.currency ?? "",
+        mercado: r.price?.exchangeName ?? "",
+      };
+      profileCache.set(symbol, profile);
+      out.push(profile);
+    }),
+  );
+
+  return out;
+}
