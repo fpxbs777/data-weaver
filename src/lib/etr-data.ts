@@ -8,7 +8,7 @@
 export type Clase = "Renta variable" | "Renta fija" | "CEDEAR" | "Liquidez";
 export const CLASES: Clase[] = ["Renta variable", "Renta fija", "CEDEAR", "Liquidez"];
 
-export type Mercado = "BCBA" | "NYSE" | "NASDAQ";
+export type Mercado = "BCBA" | "NYSE" | "NASDAQ" | "ROFEX";
 
 /** Posición cargada por el asesor. `symbol` es el ticker de Yahoo Finance. */
 export type Position = {
@@ -19,6 +19,23 @@ export type Position = {
   symbol: string;
   cantidad: number;
   ppc: number;
+  simbolo?: string;
+  mercadosDisponibles?: Mercado[];
+  sector?: string;
+  industria?: string;
+  tipoInstrumento?: "accion" | "cedear" | "on" | "titulo_publico" | "caucion" | "etf";
+  moneda?: "ARS" | "USD";
+  categoria?: string;
+  subcategoria?: string;
+  fuenteClasificacion?: "iol" | "diccionario" | "manual";
+  overrideClasificacion?: boolean;
+};
+
+/** Columna custom del asesor (persistida) */
+export type CustomColumn = {
+  id: string;
+  label: string;
+  key: string;
 };
 
 /** Valores de mercado sobreescritos manualmente por el asesor. */

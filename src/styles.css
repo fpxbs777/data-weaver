@@ -73,7 +73,7 @@
   --popover: oklch(0.19 0.009 65);
   --popover-foreground: oklch(0.94 0.008 85);
 
-  --primary: oklch(0.79 0.13 85);
+  --primary: oklch(0.82 0.15 85);
   --primary-foreground: oklch(0.18 0.02 70);
 
   --secondary: oklch(0.28 0.012 70);
@@ -141,7 +141,14 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+  /* Gold accent for active nav and highlights */
+  .text-gold {
+    background-image: var(--gradient-gold);
+    background-clip: text;
+    color: transparent;
   }
 }
 

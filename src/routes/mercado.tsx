@@ -73,6 +73,34 @@ function Tabla({ rows, titulo, eyebrow }: { rows: MercadoRow[]; titulo: string; 
   );
 }
 
+function MercadoApertura() {
+  const now = new Date();
+  const horaAr = new Date(now.toLocaleString("en-US", { timeZone: "America/Argentina/Buenos_Aires" }));
+  const h = horaAr.getHours() + horaAr.getMinutes() / 60;
+  const bcbaOpen = h >= 11 && h < 17 && horaAr.getDay() >= 1 && horaAr.getDay() <= 5;
+  const nyH = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
+  const ny = nyH.getHours() + nyH.getMinutes() / 60;
+  const nyOpen = ny >= 9.5 && ny < 16 && nyH.getDay() >= 1 && nyH.getDay() <= 5;
+  return (
+    <Panel className="mb-4" eyebrow="Horario" title="Apertura y cierre de mercados" bodyClassName="grid gap-3 sm:grid-cols-3">
+      <div className={`rounded-md border p-3 ${bcbaOpen ? "bg-gain/10 border-gain/30" : "bg-surface-2/40"}`}>
+        <p className="text-xs font-semibold">BCBA · Buenos Aires</p>
+        <p className="text-sm">{bcbaOpen ? "● Abierto" : "○ Cerrado"} · 11:00–17:00 AR</p>
+        <p className="text-xs text-muted-foreground">{horaAr.toLocaleTimeString("es-AR")}</p>
+      </div>
+      <div className={`rounded-md border p-3 ${nyOpen ? "bg-gain/10 border-gain/30" : "bg-surface-2/40"}`}>
+        <p className="text-xs font-semibold">NYSE / NASDAQ · Nueva York</p>
+        <p className="text-sm">{nyOpen ? "● Abierto" : "○ Cerrado"} · 09:30–16:00 ET</p>
+        <p className="text-xs text-muted-foreground">{nyH.toLocaleTimeString("es-AR")}</p>
+      </div>
+      <div className="rounded-md border border-border bg-surface-2/40 p-3">
+        <p className="text-xs font-semibold">Desempeño hoy</p>
+        <p className="text-xs text-muted-foreground">Variación diaria ponderada de índices y dólares. Ver Histórico para base 100.</p>
+      </div>
+    </Panel>
+  );
+}
+
 function MercadoView() {
   const { mercadoRows, updateMacroRow, loadingMercado, refetchAll, mercado } = useEtr();
 
@@ -81,6 +109,7 @@ function MercadoView() {
       title="Mercado"
       subtitle="Yahoo Finance · DolarApi · BCRA · ArgentinaDatos — doble clic para corregir un valor y Enter para guardar"
     >
+      <MercadoApertura />
       <div className="mb-4 flex items-center justify-between text-xs text-muted-foreground">
         <span>
           {mercado

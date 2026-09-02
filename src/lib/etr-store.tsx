@@ -9,7 +9,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { getQuotes, getMercado, type MercadoSnapshot, type Quote } from "@/lib/market.functions";
+import { getQuotes, getMercado, getProfiles, type MercadoSnapshot, type Quote } from "@/lib/market.functions";
 import {
   ponderado,
   sumResultado,
@@ -17,32 +17,47 @@ import {
   valuado,
   type Alerta,
   type Client,
+  type CustomColumn,
   type Holding,
   type MarketOverride,
   type ModelRow,
   type Position,
 } from "@/lib/etr-data";
+import { iolCartera } from "@/lib/iol.functions";
+import type { IolPos } from "@/lib/iol-model";
 
 const STORAGE_KEY = "etr-terminal-state-v1";
 
 export type EtrState = {
   positions: Position[];
   overrides: Record<string, MarketOverride>;
+  /** Overrides para posiciones que vienen de IOL (editadas con doble clic) */
+  iolOverrides: Record<string, Partial<Position>>;
   modelo: ModelRow[];
   clientes: Client[];
-  /** Overrides del asesor sobre filas de mercado (índices, dólares) y macro. */
   mercadoOverrides: Record<string, { label?: string; value?: number; changePct?: number }>;
   macroOverrides: Record<string, { label?: string; value?: string; detail?: string }>;
+  /** Columnas custom propias del asesor */
+  customColumns: CustomColumn[];
+  hiddenColumns: string[];
+  columnOrder: string[];
+  /** Si la cartera IOL se mezcla automáticamente con la manual */
+  iolAuto: boolean;
   umbral: number;
 };
 
 const emptyState: EtrState = {
   positions: [],
   overrides: {},
+  iolOverrides: {},
   modelo: [],
   clientes: [],
   mercadoOverrides: {},
   macroOverrides: {},
+  customColumns: [],
+  hiddenColumns: [],
+  columnOrder: [],
+  iolAuto: true,
   umbral: 1.5,
 };
 
@@ -50,6 +65,8 @@ type Ctx = {
   state: EtrState;
   hydrated: boolean;
   holdings: Holding[];
+  holdingsManual: Holding[];
+  holdingsIol: Holding[];
   totalCartera: number;
   totalResultado: number;
   varDiaCartera: number;
@@ -60,8 +77,11 @@ type Ctx = {
   mercadoRows: { indices: MercadoRow[]; divisas: MercadoRow[]; macro: MacroRow[] };
   alertas: Alerta[];
   quotes: Quote[];
+  profiles: Record<string, { sector: string; industria: string; tipo: string; moneda: string; mercado: string }>;
   loadingQuotes: boolean;
   loadingMercado: boolean;
+  loadingIol: boolean;
+  iolCartera: IolPos[] | undefined;
   refetchAll: () => void;
   pesoReal: (ticker: string) => number;
   updatePosition: (ticker: string, patch: Partial<Position>) => void;
@@ -69,6 +89,11 @@ type Ctx = {
   clearOverride: (ticker: string, field: keyof MarketOverride) => void;
   addPosition: () => void;
   removePosition: (ticker: string) => void;
+  addColumn: (col: CustomColumn) => void;
+  removeColumn: (id: string) => void;
+  toggleColumn: (id: string) => void;
+  moveColumn: (id: string, dir: 1 | -1) => void;
+  setIolAuto: (v: boolean) => void;
   updateModelo: (ticker: string, patch: Partial<ModelRow>) => void;
   addModelo: () => void;
   removeModelo: (ticker: string) => void;
@@ -100,10 +125,36 @@ function load(): EtrState {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     if (!raw) return emptyState;
     const parsed = JSON.parse(raw) as Partial<EtrState>;
-    return { ...emptyState, ...parsed };
+    return {
+      ...emptyState,
+      ...parsed,
+      customColumns: (parsed as any).customColumns ?? [],
+      hiddenColumns: (parsed as any).hiddenColumns ?? [],
+      columnOrder: (parsed as any).columnOrder ?? [],
+      iolOverrides: (parsed as any).iolOverrides ?? {},
+      iolAuto: (parsed as any).iolAuto ?? true,
+    };
   } catch {
     return emptyState;
   }
+}
+
+function iolPosToPosition(p: IolPos): Position {
+  const clase = p.tipo.toLowerCase().includes("fci") || p.tipo.toLowerCase().includes("caucion") ? "Liquidez" : p.tipo.toLowerCase().includes("bono") || p.tipo.toLowerCase().includes("letra") || p.tipo.toLowerCase().includes("oblig") ? "Renta fija" : p.tipo === "CEDEAR" ? "CEDEAR" : "Renta variable";
+  return {
+    ticker: p.simbolo,
+    name: p.descripcion || p.simbolo,
+    clase: clase as Position["clase"],
+    mercado: (p.mercado as Position["mercado"]) || "BCBA",
+    symbol: p.yahoo || p.simbolo,
+    simbolo: p.simbolo,
+    cantidad: p.cantidad,
+    ppc: p.ppc,
+    moneda: p.moneda,
+    categoria: p.tipo,
+    tipoInstrumento: undefined,
+    fuenteClasificacion: "iol",
+  };
 }
 
 export function EtrProvider({ children }: { children: ReactNode }) {
@@ -126,13 +177,23 @@ export function EtrProvider({ children }: { children: ReactNode }) {
     }
   }, [state]);
 
+  // IOL cartera propia (automatica)
+  const iolQuery = useQuery({
+    queryKey: ["iol-cartera-auto"],
+    queryFn: () => iolCartera(),
+    enabled: hydrated && state.iolAuto,
+    refetchInterval: 60_000,
+    staleTime: 30_000,
+    retry: false,
+  });
+
   const symbols = useMemo(
-    () => [...new Set(state.positions.map((p) => p.symbol).filter(Boolean))],
-    [state.positions],
+    () => [...new Set([...state.positions.map((p) => p.symbol).filter(Boolean), ...(iolQuery.data?.posiciones.map((p) => p.yahoo).filter(Boolean) ?? [])])],
+    [state.positions, iolQuery.data],
   );
 
   const quotesQuery = useQuery({
-    queryKey: ["quotes", symbols],
+    queryKey: ["quotes", symbols.sort().join("|")],
     queryFn: () => getQuotes({ data: { symbols } }),
     enabled: hydrated && symbols.length > 0,
     refetchInterval: 60_000,
@@ -147,9 +208,23 @@ export function EtrProvider({ children }: { children: ReactNode }) {
     staleTime: 30_000,
   });
 
+  const profilesQuery = useQuery({
+    queryKey: ["profiles", symbols.sort().join("|")],
+    queryFn: () => getProfiles({ data: { symbols } }),
+    enabled: hydrated && symbols.length > 0,
+    staleTime: 300_000,
+  });
+
+  const profilesMap = useMemo(() => {
+    const m: Record<string, { sector: string; industria: string; tipo: string; moneda: string; mercado: string }> = {};
+    for (const p of profilesQuery.data ?? []) m[p.symbol] = { sector: p.sector, industria: p.industria, tipo: p.tipo, moneda: p.moneda, mercado: p.mercado };
+    return m;
+  }, [profilesQuery.data]);
+
   const quotes = quotesQuery.data ?? [];
 
-  const holdings: Holding[] = useMemo(() => {
+  // Holdings manuales (como antes)
+  const holdingsManual: Holding[] = useMemo(() => {
     const bySymbol = new Map(quotes.map((q) => [q.symbol, q]));
     return state.positions.map((p) => {
       const q = bySymbol.get(p.symbol);
@@ -158,15 +233,58 @@ export function EtrProvider({ children }: { children: ReactNode }) {
       const varDia = ov.varDia ?? (q?.ok ? q.varDia : undefined);
       const ytd = ov.ytd ?? (q?.ok ? q.ytd : undefined);
       const manual = ov.precio !== undefined || ov.varDia !== undefined || ov.ytd !== undefined;
+      const prof = profilesMap[p.symbol];
       return {
         ...p,
+        sector: p.sector || prof?.sector,
+        industria: p.industria || prof?.industria,
         precio: precio ?? 0,
         varDia: varDia ?? 0,
         ytd: ytd ?? 0,
         fuente: manual ? "manual" : q?.ok ? "real" : "sin dato",
       };
     });
-  }, [state.positions, state.overrides, quotes]);
+  }, [state.positions, state.overrides, quotes, profilesMap]);
+
+  // Holdings IOL convertidos
+  const holdingsIol: Holding[] = useMemo(() => {
+    if (!state.iolAuto || !iolQuery.data) return [];
+    const bySymbol = new Map(quotes.map((q) => [q.symbol, q]));
+    return iolQuery.data.posiciones.map((pos) => {
+      const base = iolPosToPosition(pos);
+      const ovPos = state.iolOverrides[pos.id] ?? {};
+      const merged: Position = { ...base, ...ovPos, ticker: ovPos.ticker ?? base.ticker };
+      const q = bySymbol.get(merged.symbol);
+      const ov = state.overrides[merged.ticker] ?? {};
+      // IOL ya trae ultimoPrecio/variacion, usar como fallback si no hay quote
+      const precio = ov.precio ?? (q?.ok ? q.price : pos.ultimoPrecio);
+      const varDia = ov.varDia ?? (q?.ok ? q.varDia : pos.variacionDiaria);
+      const prof = profilesMap[merged.symbol];
+      return {
+        ...merged,
+        sector: merged.sector || prof?.sector,
+        industria: merged.industria || prof?.industria,
+        cantidad: merged.cantidad,
+        ppc: merged.ppc,
+        precio: precio ?? 0,
+        varDia: varDia ?? 0,
+        ytd: ov.ytd ?? (q?.ok ? q.ytd : 0),
+        fuente: ov.precio !== undefined ? "manual" : q?.ok || pos.ultimoPrecio ? "real" : "sin dato",
+      } as Holding;
+    });
+  }, [iolQuery.data, state.iolAuto, state.iolOverrides, state.overrides, quotes, profilesMap]);
+
+  // Holdings unificados: IOL + manuales, dedupe por ticker
+  const holdings: Holding[] = useMemo(() => {
+    if (!state.iolAuto) return holdingsManual;
+    const map = new Map<string, Holding>();
+    for (const h of holdingsIol) map.set(h.ticker, h);
+    for (const h of holdingsManual) {
+      // si el manual coincide con uno de IOL, el manual gana (edición del asesor)
+      map.set(h.ticker, h);
+    }
+    return [...map.values()];
+  }, [holdingsIol, holdingsManual, state.iolAuto]);
 
   const totalCartera = sumValuado(holdings);
   const totalResultado = sumResultado(holdings);
@@ -258,6 +376,8 @@ export function EtrProvider({ children }: { children: ReactNode }) {
       state,
       hydrated,
       holdings,
+      holdingsManual,
+      holdingsIol,
       totalCartera,
       totalResultado,
       varDiaCartera,
@@ -268,18 +388,32 @@ export function EtrProvider({ children }: { children: ReactNode }) {
       mercadoRows,
       alertas,
       quotes,
+      profiles: profilesMap,
       loadingQuotes: quotesQuery.isFetching,
       loadingMercado: mercadoQuery.isFetching,
+      loadingIol: iolQuery.isFetching,
+      iolCartera: iolQuery.data?.posiciones,
       refetchAll: () => {
         void quotesQuery.refetch();
         void mercadoQuery.refetch();
+        void iolQuery.refetch();
+        void profilesQuery.refetch();
       },
       pesoReal,
       updatePosition: (ticker, patch) =>
-        patchState((s) => ({
-          ...s,
-          positions: s.positions.map((p) => (p.ticker === ticker ? { ...p, ...patch } : p)),
-        })),
+        patchState((s) => {
+          const isManual = s.positions.some((p) => p.ticker === ticker);
+          if (isManual) {
+            return { ...s, positions: s.positions.map((p) => (p.ticker === ticker ? { ...p, ...patch } : p)) };
+          }
+          // Si no es manual, es una posición IOL: guardar en iolOverrides por ticker
+          const iolPos = holdingsIol.find((h) => h.ticker === ticker);
+          if (iolPos) {
+            const id = iolQuery.data?.posiciones.find((p) => p.simbolo === ticker)?.id ?? ticker;
+            return { ...s, iolOverrides: { ...s.iolOverrides, [id]: { ...s.iolOverrides[id], ...patch } } };
+          }
+          return { ...s, positions: s.positions.map((p) => (p.ticker === ticker ? { ...p, ...patch } : p)) };
+        }),
       updateOverride: (ticker, patch) =>
         patchState((s) => ({
           ...s,
@@ -312,7 +446,44 @@ export function EtrProvider({ children }: { children: ReactNode }) {
           };
         }),
       removePosition: (ticker) =>
-        patchState((s) => ({ ...s, positions: s.positions.filter((p) => p.ticker !== ticker) })),
+        patchState((s) => {
+          // si es IOL, borrar override en lugar de la posicion base
+          const iolEntry = Object.entries(s.iolOverrides).find(([, v]) => (v as any).ticker === ticker);
+          if (iolEntry) {
+            const next = { ...s.iolOverrides };
+            delete next[iolEntry[0]];
+            return { ...s, iolOverrides: next };
+          }
+          return { ...s, positions: s.positions.filter((p) => p.ticker !== ticker) };
+        }),
+      addColumn: (col) =>
+        patchState((s) => ({
+          ...s,
+          customColumns: s.customColumns.some((c) => c.id === col.id) ? s.customColumns : [...s.customColumns, col],
+          columnOrder: s.columnOrder.includes(col.id) ? s.columnOrder : [...s.columnOrder, col.id],
+        })),
+      removeColumn: (id) =>
+        patchState((s) => ({
+          ...s,
+          hiddenColumns: s.hiddenColumns.includes(id) ? s.hiddenColumns : [...s.hiddenColumns, id],
+        })),
+      toggleColumn: (id) =>
+        patchState((s) => ({
+          ...s,
+          hiddenColumns: s.hiddenColumns.includes(id) ? s.hiddenColumns.filter((x) => x !== id) : [...s.hiddenColumns, id],
+        })),
+      moveColumn: (id, dir) =>
+        patchState((s) => {
+          const order = s.columnOrder.length ? [...s.columnOrder] : s.customColumns.map((c) => c.id);
+          const i = order.indexOf(id);
+          const j = i + dir;
+          if (i === -1 || j < 0 || j >= order.length) return s;
+          const tmp = order[i]!;
+          order[i] = order[j]!;
+          order[j] = tmp;
+          return { ...s, columnOrder: order };
+        }),
+      setIolAuto: (v) => patchState((s) => ({ ...s, iolAuto: v })),
       updateModelo: (ticker, patch) =>
         patchState((s) => ({
           ...s,
@@ -368,6 +539,8 @@ export function EtrProvider({ children }: { children: ReactNode }) {
     state,
     hydrated,
     holdings,
+    holdingsManual,
+    holdingsIol,
     totalCartera,
     totalResultado,
     varDiaCartera,
@@ -377,9 +550,12 @@ export function EtrProvider({ children }: { children: ReactNode }) {
     mercadoRows,
     alertas,
     quotes,
-    pesoReal,
+    profilesMap,
     mercadoQuery,
     quotesQuery,
+    iolQuery,
+    profilesQuery,
+    pesoReal,
   ]);
 
   return <EtrContext.Provider value={api}>{children}</EtrContext.Provider>;
