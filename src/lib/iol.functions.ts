@@ -111,3 +111,65 @@ export const iolMovimientos = createServerFn({ method: "POST" })
       },
     });
   });
+
+// ---------- Automatización: datos normalizados ----------
+
+import {
+  clienteEstado,
+  clientePortafolio,
+  clientesNormalizados,
+  ownEstado,
+  ownPortafolio,
+} from "./iol.server";
+import type { ClienteIol, IolEstado, IolPos } from "./iol-model";
+
+export type CarteraIol = { posiciones: IolPos[]; estado: IolEstado; updatedAt: string };
+
+/** Cartera propia del asesor (siempre el primer "cliente" de la lista). */
+export const iolCartera = createServerFn({ method: "GET" }).handler(async (): Promise<CarteraIol> => {
+  const [posiciones, estado] = await Promise.all([ownPortafolio(), ownEstado()]);
+  return { posiciones, estado, updatedAt: new Date().toISOString() };
+});
+
+export type ClienteResumen = ClienteIol & {
+  totalEnPesos: number;
+  disponibleARS: number;
+  disponibleUSD: number;
+  titulos: number;
+};
+
+/** Lista de clientes con su estado de cuenta resuelto en paralelo. */
+export const iolClientesResumen = createServerFn({ method: "GET" }).handler(
+  async (): Promise<ClienteResumen[]> => {
+    const clientes = await clientesNormalizados();
+    const acotados = clientes.slice(0, 60);
+    const estados = await Promise.all(
+      acotados.map((c) => clienteEstado(c.id).catch(() => ({ cuentas: [], totalEnPesos: 0 }) as IolEstado)),
+    );
+    return acotados.map((c, i) => {
+      const e = estados[i]!;
+      const suma = (m: "ARS" | "USD") =>
+        e.cuentas.filter((x) => x.moneda === m).reduce((a, x) => a + x.disponible, 0);
+      return {
+        ...c,
+        totalEnPesos: e.totalEnPesos,
+        disponibleARS: suma("ARS"),
+        disponibleUSD: suma("USD"),
+        titulos: e.cuentas.reduce((a, x) => a + x.titulosValorizados, 0),
+      };
+    });
+  },
+);
+
+export const iolClienteDetalle = createServerFn({ method: "POST" })
+  .inputValidator((input: { id: number; nombre?: string }) => ({
+    id: Number(input?.id),
+    nombre: String(input?.nombre ?? ""),
+  }))
+  .handler(async ({ data }): Promise<{ posiciones: IolPos[]; estado: IolEstado }> => {
+    const [posiciones, estado] = await Promise.all([
+      clientePortafolio(data.id, data.nombre || `Cliente ${data.id}`),
+      clienteEstado(data.id),
+    ]);
+    return { posiciones, estado };
+  });
