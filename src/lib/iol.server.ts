@@ -1,4 +1,13 @@
 import { getCookies, setResponseHeader } from "@tanstack/react-start/server";
+import {
+  normalizeClientes,
+  normalizeEstado,
+  normalizePortafolio,
+  type ClienteIol,
+  type IolEstado,
+  type IolPos,
+  type Json,
+} from "./iol-model";
 
 const TOKEN_URL = "https://api.invertironline.com/token";
 const API = "https://api.invertironline.com";
@@ -133,7 +142,7 @@ export async function iolFetch<T>(
   }
 }
 
-export type Json = string | number | boolean | null | Json[] | { [k: string]: Json };
+export type { Json };
 
 export type IolCliente = { [k: string]: Json };
 
@@ -142,4 +151,44 @@ export async function listClientes(): Promise<IolCliente[]> {
   if (Array.isArray(raw)) return raw as IolCliente[];
   const obj = (raw ?? {}) as { clientes?: IolCliente[]; items?: IolCliente[] };
   return obj.clientes ?? obj.items ?? [];
+}
+
+// ---------- Capa normalizada (automatización) ----------
+
+/** Cartera propia del asesor: portafolio Argentina + Estados Unidos. */
+export async function ownPortafolio(): Promise<IolPos[]> {
+  const [ar, us] = await Promise.all([
+    iolFetch<Json>("/api/v2/portafolio/Argentina").catch(() => null),
+    iolFetch<Json>("/api/v2/portafolio/Estados_Unidos").catch(() => null),
+  ]);
+  return [
+    ...normalizePortafolio(ar as Json, { cuenta: "Cartera propia", clienteId: null }),
+    ...normalizePortafolio(us as Json, { cuenta: "Cartera propia", clienteId: null }),
+  ];
+}
+
+export async function clientePortafolio(id: number, cuenta: string): Promise<IolPos[]> {
+  const [ar, us] = await Promise.all([
+    iolFetch<Json>(`/api/v2/Asesores/Portafolio/${id}/Argentina`).catch(() => null),
+    iolFetch<Json>(`/api/v2/Asesores/Portafolio/${id}/Estados_Unidos`).catch(() => null),
+  ]);
+  return [
+    ...normalizePortafolio(ar as Json, { cuenta, clienteId: id }),
+    ...normalizePortafolio(us as Json, { cuenta, clienteId: id }),
+  ];
+}
+
+export async function ownEstado(): Promise<IolEstado> {
+  const raw = await iolFetch<Json>("/api/v2/estadocuenta").catch(() => null);
+  return normalizeEstado(raw as Json);
+}
+
+export async function clienteEstado(id: number): Promise<IolEstado> {
+  const raw = await iolFetch<Json>(`/api/v2/Asesores/EstadoDeCuenta/${id}`).catch(() => null);
+  return normalizeEstado(raw as Json);
+}
+
+export async function clientesNormalizados(): Promise<ClienteIol[]> {
+  const raw = await iolFetch<Json>("/api/v2/Asesores/Clientes").catch(() => null);
+  return normalizeClientes(raw as Json);
 }
