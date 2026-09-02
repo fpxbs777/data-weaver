@@ -29,49 +29,53 @@ export const Route = createFileRoute("/")({
 function DataframeVariacion({ varCarteraLocal }: { varCarteraLocal: number }) {
   const q = useQuery({ queryKey: ["dataframe-resumen"], queryFn: () => getDataframe(), refetchInterval: 60_000, staleTime: 30_000 });
   const rows = q.data?.rows ?? [];
-  const grupoLabel: Record<string, string> = { indices: "Índices", riesgo_reservas: "Riesgo país y Reservas", usd: "USD (BCRA Cambiarias + DolarApi)" };
   const porGrupo = (g: string) => rows.filter((r) => r.grupo === g);
+  const MiniWidget = ({ eyebrow, title, accent, children }: { eyebrow: string; title: string; accent: string; children: React.ReactNode }) => (
+    <Panel eyebrow={eyebrow} title={title} bodyClassName="p-0" className={`border-l-2 ${accent}`}>
+      {children}
+    </Panel>
+  );
+  const Row = ({ r }: { r: (typeof rows)[number] }) => (
+    <div className="flex items-center justify-between gap-2 px-3 py-2 hover:bg-surface-2/40">
+      <div className="min-w-0">
+        <p className="num text-xs font-medium truncate">{r.label} <span className="text-[10px] text-muted-foreground">{r.symbol}</span></p>
+        <p className="text-[11px] text-muted-foreground truncate">{r.fecha ? new Date(r.fecha).toLocaleDateString("es-AR") : r.unidad}</p>
+      </div>
+      <div className="text-right shrink-0">
+        <p className="num text-xs font-semibold">{r.unidad === "bps" ? fmtNum(r.valor, 0) + " bps" : r.unidad === "US$ M" ? `US$ ${fmtNum(r.valor, 0)} M` : fmtNum(r.valor, 2)}</p>
+        <Delta value={r.varDiaria} />
+      </div>
+    </div>
+  );
   return (
-    <Panel
-      eyebrow="Variación diaria · Var. cartera local"
-      title={`Dataframe — Variación diaria ${varCarteraLocal ? `· Cartera local ${fmtPct(varCarteraLocal)}` : ""}`}
-      bodyClassName="p-0"
-      action={<span className="flex items-center gap-2 text-xs text-muted-foreground">{q.isFetching && <RefreshCw className="h-3 w-3 animate-spin" />}<Delta value={varCarteraLocal} /></span>}
-    >
+    <div className="space-y-3">
+      <div className="grid gap-2 sm:grid-cols-2">
+        <div className="rounded-md border border-border bg-surface-2/40 px-3 py-2 flex items-center justify-between">
+          <div><p className="eyebrow">Variación diaria</p><p className="text-xs text-muted-foreground">Promedio índices + USD</p></div>
+          <div className="flex items-center gap-2">{q.isFetching && <RefreshCw className="h-3 w-3 animate-spin text-muted-foreground" />}<span className="num text-sm font-semibold">{q.data ? fmtPct(rows.filter((r) => r.grupo === "indices").reduce((a, r) => a + r.varDiaria, 0) / Math.max(1, porGrupo("indices").length)) : "—"}</span></div>
+        </div>
+        <div className="rounded-md border border-primary/30 bg-primary/10 px-3 py-2 flex items-center justify-between">
+          <div><p className="eyebrow">Var. cartera local</p><p className="text-xs text-muted-foreground">Ponderado holdings</p></div>
+          <Delta value={varCarteraLocal} />
+        </div>
+      </div>
       {q.isLoading ? (
-        <p className="px-4 py-8 text-center text-sm text-muted-foreground">Cargando Merval, SPY, Nasdaq, riesgo país, reservas y USD…</p>
-      ) : rows.length === 0 ? (
-        <p className="px-4 py-8 text-center text-sm text-muted-foreground">Sin datos de mercado para el dataframe.</p>
+        <p className="px-4 py-4 text-center text-xs text-muted-foreground">Cargando mini dataframes…</p>
       ) : (
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-180 text-sm">
-            <thead>
-              <tr className="border-b border-border bg-surface-2/40 text-left text-xs text-muted-foreground">
-                <th className="px-4 py-2 font-medium">Grupo</th>
-                <th className="px-2 py-2 font-medium">Instrumento</th>
-                <th className="px-2 py-2 text-right font-medium">Valor</th>
-                <th className="px-2 py-2 text-right font-medium">Variación diaria</th>
-                <th className="px-2 py-2 text-right font-medium">Var. cartera local</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border/60">
-              {(["indices", "riesgo_reservas", "usd"] as const).map((grupo) =>
-                porGrupo(grupo).map((r, idx) => (
-                  <tr key={r.symbol} className="hover:bg-surface-2/40">
-                    <td className="px-4 py-2 text-xs text-muted-foreground">{idx === 0 ? grupoLabel[grupo] : ""}</td>
-                    <td className="px-2 py-2"><span className="num font-medium">{r.label}</span><span className="ml-2 text-xs text-muted-foreground">{r.symbol}</span><span className="block text-xs text-muted-foreground">{r.fecha ?? ""}</span></td>
-                    <td className="num px-2 py-2 text-right">{r.unidad === "bps" ? fmtNum(r.valor, 0) + " bps" : r.unidad === "US$ M" ? `US$ ${fmtNum(r.valor, 0)} M` : fmtNum(r.valor, 2) + " " + r.unidad}</td>
-                    <td className="px-2 py-2 text-right"><Delta value={r.varDiaria} /></td>
-                    <td className="px-2 py-2 text-right"><Delta value={varCarteraLocal} /></td>
-                  </tr>
-                )),
-              )}
-            </tbody>
-          </table>
-          <p className="px-4 py-2 text-xs text-muted-foreground">Fuentes: Yahoo Finance (^MERV, SPY, ^IXIC) · BCRA Estadísticas Cambiarias v1.0 / Monetarias v4.0 (reservas) · DolarApi/ArgentinaDatos (riesgo país, USD) — actualizado {q.data?.updatedAt ? new Date(q.data.updatedAt).toLocaleTimeString("es-AR") : ""}</p>
+        <div className="grid gap-3 lg:grid-cols-3">
+          <MiniWidget eyebrow="Índices" title="Merval · SPY · Nasdaq" accent="border-l-chart-4">
+            <div className="divide-y divide-border/50">{porGrupo("indices").length ? porGrupo("indices").map((r) => <Row key={r.symbol} r={r} />) : <p className="px-3 py-4 text-xs text-muted-foreground text-center">Sin datos</p>}</div>
+          </MiniWidget>
+          <MiniWidget eyebrow="Riesgo & Reservas" title="Riesgo país · Reservas" accent="border-l-warn">
+            <div className="divide-y divide-border/50">{porGrupo("riesgo_reservas").length ? porGrupo("riesgo_reservas").map((r) => <Row key={r.symbol} r={r} />) : <p className="px-3 py-4 text-xs text-muted-foreground text-center">Sin datos</p>}</div>
+          </MiniWidget>
+          <MiniWidget eyebrow="USD" title="BCRA Cambiarias · DolarApi" accent="border-l-gain">
+            <div className="divide-y divide-border/50">{porGrupo("usd").length ? porGrupo("usd").slice(0, 5).map((r) => <Row key={r.symbol} r={r} />) : <p className="px-3 py-4 text-xs text-muted-foreground text-center">Sin datos</p>}</div>
+          </MiniWidget>
         </div>
       )}
-    </Panel>
+      <p className="text-[11px] text-muted-foreground px-1">Yahoo Finance (^MERV/SPY/^IXIC) · BCRA Cambiarias v1.0 / Monetarias v4.0 · DolarApi — {q.data?.updatedAt ? new Date(q.data.updatedAt).toLocaleTimeString("es-AR") : ""}</p>
+    </div>
   );
 }
 
