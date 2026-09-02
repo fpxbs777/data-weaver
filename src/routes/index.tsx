@@ -44,45 +44,41 @@ function Resumen() {
     .sort((a, b) => Math.abs(b.drift) - Math.abs(a.drift))
     .slice(0, 4);
 
+  const hasData = holdings.length > 0 || state.clientes.length > 0 || totalAUM > 0;
+
   return (
     <AppShell title="Resumen" subtitle="Estado consolidado del asesoramiento · cotizaciones en vivo">
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        <Stat
-          label="Patrimonio asesorado"
-          value={fmtARS(totalAUM)}
-          hint={`${state.clientes.length} clientes + cartera propia`}
-          emphasis
-        />
-        <Stat label="Cartera propia" value={fmtARS(totalCartera)} delta={varDiaCartera} hint="variación diaria" />
-        <Stat label="Resultado no realizado" value={fmtARS(totalResultado)} delta={ytdCartera} hint="YTD ponderado" />
-        <Stat
-          label="Liquidez disponible"
-          value={fmtARS(liquidez)}
-          hint={totalCartera ? `${fmtNum((liquidez / totalCartera) * 100, 1)}% de la cartera` : "sin posiciones"}
-        />
-      </div>
+      {hasData ? (
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <Stat
+            label="Patrimonio asesorado"
+            value={fmtARS(totalAUM)}
+            hint={`${state.clientes.length} clientes + cartera propia`}
+            emphasis
+          />
+          <Stat label="Cartera propia" value={fmtARS(totalCartera)} delta={varDiaCartera} hint="variación diaria" />
+          <Stat label="Resultado no realizado" value={fmtARS(totalResultado)} delta={ytdCartera} hint="YTD ponderado" />
+          <Stat
+            label="Liquidez disponible"
+            value={fmtARS(liquidez)}
+            hint={totalCartera ? `${fmtNum((liquidez / totalCartera) * 100, 1)}% de la cartera` : "sin posiciones"}
+          />
+        </div>
+      ) : null}
 
       <div className="mt-4 grid gap-4 xl:grid-cols-3">
-        <Panel
-          eyebrow="Cartera propia"
-          title="Mayores movimientos del día"
-          className="xl:col-span-2"
-          bodyClassName="p-0"
-          action={
-            <Link to="/cartera" className="flex items-center gap-1 text-xs text-primary hover:underline">
-              Ver tenencias <ArrowUpRight className="h-3 w-3" />
-            </Link>
-          }
-        >
-          {top.length === 0 ? (
-            <p className="px-4 py-8 text-center text-sm text-muted-foreground">
-              Todavía no cargaste posiciones.{" "}
-              <Link to="/cartera" className="text-primary hover:underline">
-                Agregalas en Tenencias
+        {top.length > 0 && (
+          <Panel
+            eyebrow="Cartera propia"
+            title="Mayores movimientos del día"
+            className="xl:col-span-2"
+            bodyClassName="p-0"
+            action={
+              <Link to="/cartera" className="flex items-center gap-1 text-xs text-primary hover:underline">
+                Ver tenencias <ArrowUpRight className="h-3 w-3" />
               </Link>
-              .
-            </p>
-          ) : (
+            }
+          >
             <ul className="divide-y divide-border">
               {top.map((h) => (
                 <li key={h.ticker} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3">
@@ -101,13 +97,11 @@ function Resumen() {
                 </li>
               ))}
             </ul>
-          )}
-        </Panel>
+          </Panel>
+        )}
 
-        <Panel eyebrow="Sistema" title="Alertas activas" bodyClassName="p-0">
-          {alertas.length === 0 ? (
-            <p className="px-4 py-8 text-center text-sm text-muted-foreground">Sin alertas.</p>
-          ) : (
+        {alertas.length > 0 && (
+          <Panel eyebrow="Sistema" title="Alertas activas" bodyClassName="p-0">
             <ul className="divide-y divide-border">
               {alertas.map((a) => (
                 <li key={a.id} className="px-4 py-3">
@@ -121,25 +115,21 @@ function Resumen() {
                 </li>
               ))}
             </ul>
-          )}
-        </Panel>
+          </Panel>
+        )}
       </div>
 
       <div className="mt-4 grid gap-4 xl:grid-cols-2">
-        <Panel
-          eyebrow="Asesoría"
-          title="Desvíos frente al modelo ETR"
-          action={
-            <Link to="/modelo" className="flex items-center gap-1 text-xs text-primary hover:underline">
-              Convergencia <ArrowUpRight className="h-3 w-3" />
-            </Link>
-          }
-        >
-          {desvios.length === 0 ? (
-            <p className="py-6 text-center text-sm text-muted-foreground">
-              Definí los pesos objetivo en Modelo & Convergencia.
-            </p>
-          ) : (
+        {desvios.length > 0 && (
+          <Panel
+            eyebrow="Asesoría"
+            title="Desvíos frente al modelo ETR"
+            action={
+              <Link to="/modelo" className="flex items-center gap-1 text-xs text-primary hover:underline">
+                Convergencia <ArrowUpRight className="h-3 w-3" />
+              </Link>
+            }
+          >
             <ul className="space-y-3">
               {desvios.map((d) => (
                 <li key={d.ticker}>
@@ -159,24 +149,20 @@ function Resumen() {
                 </li>
               ))}
             </ul>
-          )}
-        </Panel>
+          </Panel>
+        )}
 
-        <Panel
-          eyebrow="Asesoría"
-          title="Clientes con mayor desvío"
-          bodyClassName="p-0"
-          action={
-            <Link to="/clientes" className="flex items-center gap-1 text-xs text-primary hover:underline">
-              Ver cartera de clientes <ArrowUpRight className="h-3 w-3" />
-            </Link>
-          }
-        >
-          {state.clientes.length === 0 ? (
-            <p className="px-4 py-8 text-center text-sm text-muted-foreground">
-              Todavía no cargaste clientes.
-            </p>
-          ) : (
+        {state.clientes.length > 0 && (
+          <Panel
+            eyebrow="Asesoría"
+            title="Clientes con mayor desvío"
+            bodyClassName="p-0"
+            action={
+              <Link to="/clientes" className="flex items-center gap-1 text-xs text-primary hover:underline">
+                Ver cartera de clientes <ArrowUpRight className="h-3 w-3" />
+              </Link>
+            }
+          >
             <ul className="divide-y divide-border">
               {[...state.clientes]
                 .sort((a, b) => b.drift - a.drift)
@@ -196,9 +182,15 @@ function Resumen() {
                   </li>
                 ))}
             </ul>
-          )}
-        </Panel>
+          </Panel>
+        )}
       </div>
+      {!hasData && top.length === 0 && alertas.length === 0 && desvios.length === 0 && state.clientes.length === 0 && (
+        <div className="mt-8 rounded-lg border border-dashed border-border p-8 text-center">
+          <p className="text-sm text-muted-foreground">Cargá posiciones en Tenencias o conectá IOL para ver el resumen.</p>
+          <Link to="/cartera" className="mt-2 inline-flex text-sm text-primary hover:underline">Ir a Tenencias →</Link>
+        </div>
+      )}
     </AppShell>
   );
 }
