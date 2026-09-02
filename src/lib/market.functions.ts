@@ -6,10 +6,12 @@ import {
   fetchMepSerie,
   fetchQuote,
   fetchProfiles,
+  fetchDataframe,
   type Quote,
   type MacroItem,
   type MonthlyPoint,
   type AssetProfile,
+  type DataframeRow,
 } from "./market.server";
 
 export type MarketRow = {
@@ -92,7 +94,9 @@ export const getBenchmarks = createServerFn({ method: "GET" }).handler(
   },
 );
 
-export type { Quote, MacroItem, MonthlyPoint, AssetProfile };
+export type { Quote, MacroItem, MonthlyPoint, AssetProfile, DataframeRow };
+
+export const getDataframe = createServerFn({ method: "GET" }).handler(async (): Promise<{ rows: DataframeRow[]; updatedAt: string }> => fetchDataframe());
 
 export const getProfiles = createServerFn({ method: "POST" })
   .inputValidator((input: { symbols: string[] }) => ({

@@ -1,9 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { ArrowUpRight, RefreshCw } from "lucide-react";
 import { AppShell } from "@/components/etr/app-shell";
 import { Panel, Stat, Delta, Bar, Pill } from "@/components/etr/primitives";
 import { useEtr } from "@/lib/etr-store";
 import { valuado, fmtARS, fmtPct, fmtNum } from "@/lib/etr-data";
+import { getDataframe } from "@/lib/market.functions";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,6 +25,55 @@ export const Route = createFileRoute("/")({
   }),
   component: Resumen,
 });
+
+function DataframeVariacion({ varCarteraLocal }: { varCarteraLocal: number }) {
+  const q = useQuery({ queryKey: ["dataframe-resumen"], queryFn: () => getDataframe(), refetchInterval: 60_000, staleTime: 30_000 });
+  const rows = q.data?.rows ?? [];
+  const grupoLabel: Record<string, string> = { indices: "Índices", riesgo_reservas: "Riesgo país y Reservas", usd: "USD (BCRA Cambiarias + DolarApi)" };
+  const porGrupo = (g: string) => rows.filter((r) => r.grupo === g);
+  return (
+    <Panel
+      eyebrow="Variación diaria · Var. cartera local"
+      title={`Dataframe — Variación diaria ${varCarteraLocal ? `· Cartera local ${fmtPct(varCarteraLocal)}` : ""}`}
+      bodyClassName="p-0"
+      action={<span className="flex items-center gap-2 text-xs text-muted-foreground">{q.isFetching && <RefreshCw className="h-3 w-3 animate-spin" />}<Delta value={varCarteraLocal} /></span>}
+    >
+      {q.isLoading ? (
+        <p className="px-4 py-8 text-center text-sm text-muted-foreground">Cargando Merval, SPY, Nasdaq, riesgo país, reservas y USD…</p>
+      ) : rows.length === 0 ? (
+        <p className="px-4 py-8 text-center text-sm text-muted-foreground">Sin datos de mercado para el dataframe.</p>
+      ) : (
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-180 text-sm">
+            <thead>
+              <tr className="border-b border-border bg-surface-2/40 text-left text-xs text-muted-foreground">
+                <th className="px-4 py-2 font-medium">Grupo</th>
+                <th className="px-2 py-2 font-medium">Instrumento</th>
+                <th className="px-2 py-2 text-right font-medium">Valor</th>
+                <th className="px-2 py-2 text-right font-medium">Variación diaria</th>
+                <th className="px-2 py-2 text-right font-medium">Var. cartera local</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border/60">
+              {(["indices", "riesgo_reservas", "usd"] as const).map((grupo) =>
+                porGrupo(grupo).map((r, idx) => (
+                  <tr key={r.symbol} className="hover:bg-surface-2/40">
+                    <td className="px-4 py-2 text-xs text-muted-foreground">{idx === 0 ? grupoLabel[grupo] : ""}</td>
+                    <td className="px-2 py-2"><span className="num font-medium">{r.label}</span><span className="ml-2 text-xs text-muted-foreground">{r.symbol}</span><span className="block text-xs text-muted-foreground">{r.fecha ?? ""}</span></td>
+                    <td className="num px-2 py-2 text-right">{r.unidad === "bps" ? fmtNum(r.valor, 0) + " bps" : r.unidad === "US$ M" ? `US$ ${fmtNum(r.valor, 0)} M` : fmtNum(r.valor, 2) + " " + r.unidad}</td>
+                    <td className="px-2 py-2 text-right"><Delta value={r.varDiaria} /></td>
+                    <td className="px-2 py-2 text-right"><Delta value={varCarteraLocal} /></td>
+                  </tr>
+                )),
+              )}
+            </tbody>
+          </table>
+          <p className="px-4 py-2 text-xs text-muted-foreground">Fuentes: Yahoo Finance (^MERV, SPY, ^IXIC) · BCRA Estadísticas Cambiarias v1.0 / Monetarias v4.0 (reservas) · DolarApi/ArgentinaDatos (riesgo país, USD) — actualizado {q.data?.updatedAt ? new Date(q.data.updatedAt).toLocaleTimeString("es-AR") : ""}</p>
+        </div>
+      )}
+    </Panel>
+  );
+}
 
 function Resumen() {
   const {
@@ -48,8 +99,9 @@ function Resumen() {
 
   return (
     <AppShell title="Resumen" subtitle="Estado consolidado del asesoramiento · cotizaciones en vivo">
+      <DataframeVariacion varCarteraLocal={varDiaCartera} />
       {hasData ? (
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           <Stat
             label="Patrimonio asesorado"
             value={fmtARS(totalAUM)}

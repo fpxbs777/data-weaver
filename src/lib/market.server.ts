@@ -222,6 +222,68 @@ export async function fetchMacro(): Promise<{ items: MacroItem[]; riesgoPais: Va
   return { items, riesgoPais: riesgo ?? null };
 }
 
+// ---------- BCRA Cambiarias (USD oficial) ----------
+export type BcraCambiariasCotizacion = { fecha: string; tipoPase: number; tipoCotizacion: number };
+
+export async function fetchBcraCambiariasUsd(limit = 5): Promise<BcraCambiariasCotizacion[]> {
+  const data = await getJson<{ results?: Array<{ detalle?: Array<{ fecha: string; tipoPase: number; tipoCotizacion: number }> }> }>(
+    `https://api.bcra.gob.ar/estadisticascambiarias/v1.0/Cotizaciones/USD?limit=${limit}`,
+  );
+  const detalle = data?.results?.[0]?.detalle ?? [];
+  // fallback: si el endpoint agrupado falla, probar Cotizaciones con fecha
+  if (detalle.length === 0) {
+    const alt = await getJson<{ results?: { detalle?: Array<{ fecha: string; tipoPase: number; tipoCotizacion: number }> } }>(
+      `https://api.bcra.gob.ar/estadisticascambiarias/v1.0/Cotizaciones?fecha=${new Date().toISOString().slice(0,10)}`,
+    );
+    const d2 = (alt?.results as any)?.detalle ?? [];
+    if (Array.isArray(d2)) return d2.slice(0, limit).map((d: any) => ({ fecha: d.fecha, tipoPase: d.tipoPase, tipoCotizacion: d.tipoCotizacion }));
+  }
+  // La API devuelve agrupado por fecha, tomar último detalle por fecha
+  // Si es array de fechas, aplanar
+  if (Array.isArray((data as any)?.results)) {
+    const flat: BcraCambiariasCotizacion[] = [];
+    for (const r of (data as any).results ?? []) for (const d of r.detalle ?? []) flat.push({ fecha: r.fecha ?? d.fecha, tipoPase: d.tipoPase, tipoCotizacion: d.tipoCotizacion });
+    if (flat.length) return flat.slice(-limit);
+  }
+  return detalle.map((d) => ({ fecha: (d as any).fecha ?? "", tipoPase: d.tipoPase, tipoCotizacion: d.tipoCotizacion }));
+}
+
+// ---------- Dataframe Resumen (indices + riesgo/reservas + USD) ----------
+export type DataframeRow = { grupo: "indices" | "riesgo_reservas" | "usd"; label: string; symbol: string; valor: number; varDiaria: number; unidad: string; fecha?: string };
+
+export async function fetchDataframe(): Promise<{ rows: DataframeRow[]; updatedAt: string }> {
+  const [quotes, dolares, macro, bcraUsd] = await Promise.all([
+    fetchQuotes(["^MERV", "SPY", "^IXIC"]),
+    fetchDolares(),
+    fetchMacro(),
+    fetchBcraCambiariasUsd(2).catch(() => [] as BcraCambiariasCotizacion[]),
+  ]);
+  const bySymbol = new Map(quotes.map((q) => [q.symbol, q]));
+  const rows: DataframeRow[] = [];
+  // Indices: Merval ARS, SPY, Nasdaq
+  const merval = bySymbol.get("^MERV");
+  if (merval?.ok) rows.push({ grupo: "indices", label: "Merval", symbol: "^MERV", valor: merval.price, varDiaria: merval.varDia, unidad: "ARS" });
+  const spy = bySymbol.get("SPY");
+  if (spy?.ok) rows.push({ grupo: "indices", label: "SPY", symbol: "SPY", valor: spy.price, varDiaria: spy.varDia, unidad: "USD" });
+  const nasdaq = bySymbol.get("^IXIC");
+  if (nasdaq?.ok) rows.push({ grupo: "indices", label: "Nasdaq", symbol: "^IXIC", valor: nasdaq.price, varDiaria: nasdaq.varDia, unidad: "pts" });
+  // Riesgo país y Reservas
+  if (macro.riesgoPais) rows.push({ grupo: "riesgo_reservas", label: "Riesgo país", symbol: "EMBI-AR", valor: macro.riesgoPais.valor, varDiaria: 0, unidad: "bps", fecha: macro.riesgoPais.fecha });
+  const reservas = macro.items.find((i) => i.label.toLowerCase().includes("reservas"));
+  if (reservas) {
+    const val = Number(reservas.value.replace(/[^0-9.-]/g, "").replace(",", ".")) || 0;
+    rows.push({ grupo: "riesgo_reservas", label: "Reservas BCRA", symbol: "RESERVAS", valor: val, varDiaria: 0, unidad: "US$ M", fecha: reservas.detail.split("·").pop()?.trim() });
+  }
+  // USD: oficial (prefer BCRA cambiarias), MEP, CCL, Blue
+  const oficialBcra = bcraUsd[bcraUsd.length - 1];
+  if (oficialBcra) rows.push({ grupo: "usd", label: "Dólar oficial (BCRA Cambiarias)", symbol: "USD-BCRA", valor: oficialBcra.tipoCotizacion || oficialBcra.tipoPase, varDiaria: 0, unidad: "ARS", fecha: oficialBcra.fecha });
+  for (const casa of ["oficial", "bolsa", "contadoconliqui", "blue"] as const) {
+    const d = dolares.find((x) => x.casa === casa);
+    if (d) rows.push({ grupo: "usd", label: d.label, symbol: d.casa.toUpperCase(), valor: d.value, varDiaria: d.changePct, unidad: "ARS", fecha: d.fecha });
+  }
+  return { rows, updatedAt: new Date().toISOString() };
+}
+
 // ---------- Perfiles de activo (sector / industria) ----------
 
 export type AssetProfile = {
