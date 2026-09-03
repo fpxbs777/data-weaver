@@ -2,7 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { createContext, useContext, useState, type ReactNode } from "react";
 import { LogIn, Loader2, ShieldCheck } from "lucide-react";
 import { iolLogin, iolLogout, iolSession, type IolSessionInfo } from "@/lib/iol.functions";
-import logo from "@/assets/etr-logo.png.asset.json";
+const logo = { url: "/favicon.png" };
 
 type Ctx = { session: IolSessionInfo; loading: boolean; logout: () => void };
 const IolCtx = createContext<Ctx>({ session: null, loading: true, logout: () => {} });

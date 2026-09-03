@@ -1,0 +1,4672 @@
+[
+  {
+    "ticker": "BBAR.BA",
+    "mercado": "BCBA",
+    "nombre": "Banco BBVA Argentina S.A."
+  },
+  {
+    "ticker": "BHIP.BA",
+    "mercado": "BCBA",
+    "nombre": "Banco Hipotecario S.A."
+  },
+  {
+    "ticker": "BMA.BA",
+    "mercado": "BCBA",
+    "nombre": "Banco Macro S.A."
+  },
+  {
+    "ticker": "BPAT.BA",
+    "mercado": "BCBA",
+    "nombre": "Banco Patagonia S.A."
+  },
+  {
+    "ticker": "GGAL.BA",
+    "mercado": "BCBA",
+    "nombre": "Grupo Financiero Galicia S.A."
+  },
+  {
+    "ticker": "SUPV.BA",
+    "mercado": "BCBA",
+    "nombre": "Grupo Supervielle S.A."
+  },
+  {
+    "ticker": "BBD",
+    "mercado": "NYSE",
+    "nombre": "Banco Bradesco S.A."
+  },
+  {
+    "ticker": "ITUB",
+    "mercado": "NYSE",
+    "nombre": "Itaú Unibanco Holding S.A."
+  },
+  {
+    "ticker": "NU",
+    "mercado": "NYSE",
+    "nombre": "Nu Holdings Ltd."
+  },
+  {
+    "ticker": "VALO.BA",
+    "mercado": "BCBA",
+    "nombre": "Banco de Valores S.A."
+  },
+  {
+    "ticker": "C",
+    "mercado": "NYSE",
+    "nombre": "Citigroup Inc."
+  },
+  {
+    "ticker": "HSBC",
+    "mercado": "NYSE",
+    "nombre": "HSBC Holdings plc"
+  },
+  {
+    "ticker": "JPM",
+    "mercado": "NYSE",
+    "nombre": "JPMorgan Chase & Co."
+  },
+  {
+    "ticker": "WFC",
+    "mercado": "NYSE",
+    "nombre": "Wells Fargo & Company"
+  },
+  {
+    "ticker": "BYMA.BA",
+    "mercado": "BCBA",
+    "nombre": "Bolsas y Mercados Argentinos S.A."
+  },
+  {
+    "ticker": "GS",
+    "mercado": "NYSE",
+    "nombre": "The Goldman Sachs Group, Inc."
+  },
+  {
+    "ticker": "HOOD",
+    "mercado": "NASDAQ",
+    "nombre": "Robinhood Markets, Inc."
+  },
+  {
+    "ticker": "XP",
+    "mercado": "NASDAQ",
+    "nombre": "XP Inc."
+  },
+  {
+    "ticker": "A3.BA",
+    "mercado": "BCBA",
+    "nombre": "A3 Mercados S.A."
+  },
+  {
+    "ticker": "COIN",
+    "mercado": "NASDAQ",
+    "nombre": "Coinbase Global, Inc."
+  },
+  {
+    "ticker": "ICE",
+    "mercado": "NYSE",
+    "nombre": "Intercontinental Exchange, Inc."
+  },
+  {
+    "ticker": "MCO",
+    "mercado": "NYSE",
+    "nombre": "Moody's Corporation"
+  },
+  {
+    "ticker": "MSCI",
+    "mercado": "NYSE",
+    "nombre": "MSCI Inc."
+  },
+  {
+    "ticker": "SPGI",
+    "mercado": "NYSE",
+    "nombre": "S&P Global Inc."
+  },
+  {
+    "ticker": "AXP",
+    "mercado": "NYSE",
+    "nombre": "American Express Company"
+  },
+  {
+    "ticker": "MA",
+    "mercado": "NYSE",
+    "nombre": "Mastercard Incorporated"
+  },
+  {
+    "ticker": "PYPL",
+    "mercado": "NASDAQ",
+    "nombre": "PayPal Holdings, Inc."
+  },
+  {
+    "ticker": "V",
+    "mercado": "NYSE",
+    "nombre": "Visa Inc."
+  },
+  {
+    "ticker": "AFL",
+    "mercado": "NYSE",
+    "nombre": "Aflac Incorporated"
+  },
+  {
+    "ticker": "AIG",
+    "mercado": "NYSE",
+    "nombre": "American International Group, Inc."
+  },
+  {
+    "ticker": "MET",
+    "mercado": "NYSE",
+    "nombre": "MetLife, Inc."
+  },
+  {
+    "ticker": "PRU",
+    "mercado": "NYSE",
+    "nombre": "Prudential Financial, Inc."
+  },
+  {
+    "ticker": "AJG",
+    "mercado": "NYSE",
+    "nombre": "Arthur J. Gallagher & Co."
+  },
+  {
+    "ticker": "AON",
+    "mercado": "NYSE",
+    "nombre": "Aon plc"
+  },
+  {
+    "ticker": "MRSH",
+    "mercado": "NASDAQ",
+    "nombre": "Marsh & McLennan Companies, Inc."
+  },
+  {
+    "ticker": "WTW",
+    "mercado": "NASDAQ",
+    "nombre": "Willis Towers Watson PLC"
+  },
+  {
+    "ticker": "AGRO.BA",
+    "mercado": "BCBA",
+    "nombre": "Agrometal S.A.I."
+  },
+  {
+    "ticker": "CAT",
+    "mercado": "NYSE",
+    "nombre": "Caterpillar Inc."
+  },
+  {
+    "ticker": "DE",
+    "mercado": "NYSE",
+    "nombre": "Deere & Company"
+  },
+  {
+    "ticker": "PCAR",
+    "mercado": "NASDAQ",
+    "nombre": "PACCAR Inc"
+  },
+  {
+    "ticker": "AUSO.BA",
+    "mercado": "BCBA",
+    "nombre": "Autopistas Del Sol SA"
+  },
+  {
+    "ticker": "OEST.BA",
+    "mercado": "BCBA",
+    "nombre": "Grupo Concesionario del Oeste S.A."
+  },
+  {
+    "ticker": "CADO.BA",
+    "mercado": "BCBA",
+    "nombre": "Carlos Casado S.A."
+  },
+  {
+    "ticker": "COME.BA",
+    "mercado": "BCBA",
+    "nombre": "Sociedad Comercial del Plata S.A."
+  },
+  {
+    "ticker": "CRES.BA",
+    "mercado": "BCBA",
+    "nombre": "Cresud S.A."
+  },
+  {
+    "ticker": "LEDE.BA",
+    "mercado": "BCBA",
+    "nombre": "Ledesma S.A. Agrícola Industrial"
+  },
+  {
+    "ticker": "PAMP.BA",
+    "mercado": "BCBA",
+    "nombre": "Pampa Energía S.A."
+  },
+  {
+    "ticker": "HON",
+    "mercado": "NASDAQ",
+    "nombre": "Honeywell International Inc."
+  },
+  {
+    "ticker": "MMM",
+    "mercado": "NYSE",
+    "nombre": "3M Company"
+  },
+  {
+    "ticker": "BA",
+    "mercado": "NYSE",
+    "nombre": "The Boeing Company"
+  },
+  {
+    "ticker": "GD",
+    "mercado": "NYSE",
+    "nombre": "General Dynamics Corporation"
+  },
+  {
+    "ticker": "GE",
+    "mercado": "NYSE",
+    "nombre": "GE Aerospace"
+  },
+  {
+    "ticker": "LMT",
+    "mercado": "NYSE",
+    "nombre": "Lockheed Martin Corporation"
+  },
+  {
+    "ticker": "NOC",
+    "mercado": "NYSE",
+    "nombre": "Northrop Grumman Corporation"
+  },
+  {
+    "ticker": "RKLB",
+    "mercado": "NASDAQ",
+    "nombre": "Rocket Lab Corporation"
+  },
+  {
+    "ticker": "RTX",
+    "mercado": "NYSE",
+    "nombre": "RTX Corporation"
+  },
+  {
+    "ticker": "SATL",
+    "mercado": "NASDAQ",
+    "nombre": "Satellogic Inc."
+  },
+  {
+    "ticker": "TDG",
+    "mercado": "NYSE",
+    "nombre": "TransDigm Group Incorporated"
+  },
+  {
+    "ticker": "AAL",
+    "mercado": "NASDAQ",
+    "nombre": "American Airlines Group Inc."
+  },
+  {
+    "ticker": "DAL",
+    "mercado": "NYSE",
+    "nombre": "Delta Air Lines, Inc."
+  },
+  {
+    "ticker": "LUV",
+    "mercado": "NYSE",
+    "nombre": "Southwest Airlines Co."
+  },
+  {
+    "ticker": "UAL",
+    "mercado": "NASDAQ",
+    "nombre": "United Airlines Holdings, Inc."
+  },
+  {
+    "ticker": "FDX",
+    "mercado": "NYSE",
+    "nombre": "FedEx Corporation"
+  },
+  {
+    "ticker": "UPS",
+    "mercado": "NYSE",
+    "nombre": "United Parcel Service, Inc."
+  },
+  {
+    "ticker": "XPO",
+    "mercado": "NYSE",
+    "nombre": "XPO, Inc."
+  },
+  {
+    "ticker": "POLL.BA",
+    "mercado": "BCBA",
+    "nombre": "Polledo S.A."
+  },
+  {
+    "ticker": "FERR.BA",
+    "mercado": "BCBA",
+    "nombre": "Ferrum S.A."
+  },
+  {
+    "ticker": "ALUA.BA",
+    "mercado": "BCBA",
+    "nombre": "Aluar Aluminio Argentino S.A.I.C."
+  },
+  {
+    "ticker": "TXAR.BA",
+    "mercado": "BCBA",
+    "nombre": "Ternium Argentina S.A."
+  },
+  {
+    "ticker": "NUE",
+    "mercado": "NYSE",
+    "nombre": "Nucor Corporation"
+  },
+  {
+    "ticker": "STLD",
+    "mercado": "NASDAQ",
+    "nombre": "Steel Dynamics, Inc."
+  },
+  {
+    "ticker": "X",
+    "mercado": "NYSE",
+    "nombre": "United States Steel Corporation"
+  },
+  {
+    "ticker": "GGB",
+    "mercado": "NYSE",
+    "nombre": "Gerdau S.A."
+  },
+  {
+    "ticker": "CARC.BA",
+    "mercado": "BCBA",
+    "nombre": "Carboclor S.A."
+  },
+  {
+    "ticker": "DOW",
+    "mercado": "NYSE",
+    "nombre": "Dow Inc."
+  },
+  {
+    "ticker": "SHW",
+    "mercado": "NYSE",
+    "nombre": "The Sherwin-Williams Company"
+  },
+  {
+    "ticker": "LYB",
+    "mercado": "NYSE",
+    "nombre": "LyondellBasell Industries N.V."
+  },
+  {
+    "ticker": "HARG.BA",
+    "mercado": "BCBA",
+    "nombre": "Holcim (Argentina) S.A."
+  },
+  {
+    "ticker": "LOMA.BA",
+    "mercado": "BCBA",
+    "nombre": "Loma Negra C.I.A.S.A."
+  },
+  {
+    "ticker": "CRH",
+    "mercado": "NYSE",
+    "nombre": "CRH plc"
+  },
+  {
+    "ticker": "CX",
+    "mercado": "NYSE",
+    "nombre": "CEMEX S.A.B. de C.V."
+  },
+  {
+    "ticker": "VMC",
+    "mercado": "NYSE",
+    "nombre": "Vulcan Materials Company"
+  },
+  {
+    "ticker": "INAG.BA",
+    "mercado": "BCBA",
+    "nombre": "Insumos Agroquímicos S.A."
+  },
+  {
+    "ticker": "BIOX",
+    "mercado": "NASDAQ",
+    "nombre": "Bioceres Crop Solutions Corp."
+  },
+  {
+    "ticker": "CTVA",
+    "mercado": "NYSE",
+    "nombre": "Corteva, Inc."
+  },
+  {
+    "ticker": "NTR",
+    "mercado": "NYSE",
+    "nombre": "Nutrien Ltd."
+  },
+  {
+    "ticker": "CELU.BA",
+    "mercado": "BCBA",
+    "nombre": "Celulosa Argentina S.A."
+  },
+  {
+    "ticker": "AEM",
+    "mercado": "NYSE",
+    "nombre": "Agnico Eagle Mines Limited"
+  },
+  {
+    "ticker": "KGC",
+    "mercado": "NYSE",
+    "nombre": "Kinross Gold Corporation"
+  },
+  {
+    "ticker": "NEM",
+    "mercado": "NYSE",
+    "nombre": "Newmont Corporation"
+  },
+  {
+    "ticker": "PAAS",
+    "mercado": "NASDAQ",
+    "nombre": "Pan American Silver Corp."
+  },
+  {
+    "ticker": "FCX",
+    "mercado": "NYSE",
+    "nombre": "Freeport-McMoRan Inc."
+  },
+  {
+    "ticker": "SCCO",
+    "mercado": "NYSE",
+    "nombre": "Southern Copper Corporation"
+  },
+  {
+    "ticker": "BHP",
+    "mercado": "NYSE",
+    "nombre": "BHP Group Limited"
+  },
+  {
+    "ticker": "RIO",
+    "mercado": "NYSE",
+    "nombre": "Rio Tinto Group"
+  },
+  {
+    "ticker": "VALE",
+    "mercado": "NYSE",
+    "nombre": "Vale S.A."
+  },
+  {
+    "ticker": "LAC",
+    "mercado": "NYSE",
+    "nombre": "Lithium Americas Corp."
+  },
+  {
+    "ticker": "BOLT.BA",
+    "mercado": "BCBA",
+    "nombre": "Boldt S.A."
+  },
+  {
+    "ticker": "GAMI.BA",
+    "mercado": "BCBA",
+    "nombre": "B-Gaming S.A."
+  },
+  {
+    "ticker": "ACN",
+    "mercado": "NYSE",
+    "nombre": "Accenture plc"
+  },
+  {
+    "ticker": "GLOB",
+    "mercado": "NYSE",
+    "nombre": "Globant S.A."
+  },
+  {
+    "ticker": "IBM",
+    "mercado": "NYSE",
+    "nombre": "IBM Corporation"
+  },
+  {
+    "ticker": "INFY",
+    "mercado": "NYSE",
+    "nombre": "Infosys Limited"
+  },
+  {
+    "ticker": "ADBE",
+    "mercado": "NASDAQ",
+    "nombre": "Adobe Inc."
+  },
+  {
+    "ticker": "ADP",
+    "mercado": "NASDAQ",
+    "nombre": "Automatic Data Processing, Inc."
+  },
+  {
+    "ticker": "CRM",
+    "mercado": "NYSE",
+    "nombre": "Salesforce, Inc."
+  },
+  {
+    "ticker": "DOCU",
+    "mercado": "NASDAQ",
+    "nombre": "DocuSign, Inc."
+  },
+  {
+    "ticker": "MSTR",
+    "mercado": "NASDAQ",
+    "nombre": "Strategy Inc"
+  },
+  {
+    "ticker": "NOW",
+    "mercado": "NYSE",
+    "nombre": "ServiceNow"
+  },
+  {
+    "ticker": "SAP",
+    "mercado": "NYSE",
+    "nombre": "SAP SE"
+  },
+  {
+    "ticker": "SHOP",
+    "mercado": "NYSE",
+    "nombre": "Shopify Inc."
+  },
+  {
+    "ticker": "SNOW",
+    "mercado": "NYSE",
+    "nombre": "Snowflake Inc."
+  },
+  {
+    "ticker": "TEAM",
+    "mercado": "NASDAQ",
+    "nombre": "Atlassian Corporation"
+  },
+  {
+    "ticker": "UBER",
+    "mercado": "NYSE",
+    "nombre": "Uber Technologies, Inc."
+  },
+  {
+    "ticker": "ZM",
+    "mercado": "NASDAQ",
+    "nombre": "Zoom Communications, Inc."
+  },
+  {
+    "ticker": "MSFT",
+    "mercado": "NASDAQ",
+    "nombre": "Microsoft Corporation"
+  },
+  {
+    "ticker": "ORCL",
+    "mercado": "NYSE",
+    "nombre": "Oracle Corporation"
+  },
+  {
+    "ticker": "PANW",
+    "mercado": "NASDAQ",
+    "nombre": "Palo Alto Networks, Inc."
+  },
+  {
+    "ticker": "PLTR",
+    "mercado": "NYSE",
+    "nombre": "Palantir Technologies Inc."
+  },
+  {
+    "ticker": "CRWD",
+    "mercado": "NASDAQ",
+    "nombre": "CrowdStrike Holdings, Inc."
+  },
+  {
+    "ticker": "AI",
+    "mercado": "NYSE",
+    "nombre": "C3.ai, Inc."
+  },
+  {
+    "ticker": "CRWV",
+    "mercado": "NASDAQ",
+    "nombre": "CoreWeave, Inc."
+  },
+  {
+    "ticker": "PAGS",
+    "mercado": "NYSE",
+    "nombre": "PagSeguro Digital Ltd."
+  },
+  {
+    "ticker": "STNE",
+    "mercado": "NASDAQ",
+    "nombre": "StoneCo Ltd."
+  },
+  {
+    "ticker": "XYZ",
+    "mercado": "NYSE",
+    "nombre": "Block, Inc."
+  },
+  {
+    "ticker": "ADI",
+    "mercado": "NASDAQ",
+    "nombre": "Analog Devices, Inc."
+  },
+  {
+    "ticker": "AMD",
+    "mercado": "NASDAQ",
+    "nombre": "Advanced Micro Devices, Inc."
+  },
+  {
+    "ticker": "ARM",
+    "mercado": "NASDAQ",
+    "nombre": "Arm Holdings plc"
+  },
+  {
+    "ticker": "AVGO",
+    "mercado": "NASDAQ",
+    "nombre": "Broadcom Inc."
+  },
+  {
+    "ticker": "INTC",
+    "mercado": "NASDAQ",
+    "nombre": "Intel Corporation"
+  },
+  {
+    "ticker": "MRVL",
+    "mercado": "NASDAQ",
+    "nombre": "Marvell Technology, Inc."
+  },
+  {
+    "ticker": "MU",
+    "mercado": "NASDAQ",
+    "nombre": "Micron Technology, Inc."
+  },
+  {
+    "ticker": "NVDA",
+    "mercado": "NASDAQ",
+    "nombre": "NVIDIA Corporation"
+  },
+  {
+    "ticker": "QCOM",
+    "mercado": "NASDAQ",
+    "nombre": "QUALCOMM Incorporated"
+  },
+  {
+    "ticker": "TSM",
+    "mercado": "NYSE",
+    "nombre": "TSMC - Taiwan Semiconductor"
+  },
+  {
+    "ticker": "TXN",
+    "mercado": "NASDAQ",
+    "nombre": "Texas Instruments Incorporated"
+  },
+  {
+    "ticker": "AMAT",
+    "mercado": "NASDAQ",
+    "nombre": "Applied Materials, Inc."
+  },
+  {
+    "ticker": "ASML",
+    "mercado": "NASDAQ",
+    "nombre": "ASML Holding N.V."
+  },
+  {
+    "ticker": "KLAC",
+    "mercado": "NASDAQ",
+    "nombre": "KLA Corporation"
+  },
+  {
+    "ticker": "LRCX",
+    "mercado": "NASDAQ",
+    "nombre": "Lam Research Corporation"
+  },
+  {
+    "ticker": "DELL",
+    "mercado": "NYSE",
+    "nombre": "Dell Technologies Inc."
+  },
+  {
+    "ticker": "HPQ",
+    "mercado": "NYSE",
+    "nombre": "HP Inc."
+  },
+  {
+    "ticker": "SMCI",
+    "mercado": "NASDAQ",
+    "nombre": "Super Micro Computer, Inc."
+  },
+  {
+    "ticker": "SNDK",
+    "mercado": "NASDAQ",
+    "nombre": "SanDisk Corporation"
+  },
+  {
+    "ticker": "STX",
+    "mercado": "NASDAQ",
+    "nombre": "Seagate Technology Holdings plc"
+  },
+  {
+    "ticker": "ANET",
+    "mercado": "NYSE",
+    "nombre": "Arista Networks, Inc."
+  },
+  {
+    "ticker": "RGTI",
+    "mercado": "NASDAQ",
+    "nombre": "Rigetti Computing, Inc."
+  },
+  {
+    "ticker": "ASTS",
+    "mercado": "NASDAQ",
+    "nombre": "AST SpaceMobile, Inc."
+  },
+  {
+    "ticker": "CSCO",
+    "mercado": "NASDAQ",
+    "nombre": "Cisco Systems, Inc."
+  },
+  {
+    "ticker": "MSI",
+    "mercado": "NYSE",
+    "nombre": "Motorola Solutions, Inc."
+  },
+  {
+    "ticker": "MIRG.BA",
+    "mercado": "BCBA",
+    "nombre": "Mirgor S.A."
+  },
+  {
+    "ticker": "AAPL",
+    "mercado": "NASDAQ",
+    "nombre": "Apple Inc."
+  },
+  {
+    "ticker": "SONY",
+    "mercado": "NYSE",
+    "nombre": "Sony Group Corporation"
+  },
+  {
+    "ticker": "ENPH",
+    "mercado": "NASDAQ",
+    "nombre": "Enphase Energy, Inc."
+  },
+  {
+    "ticker": "FSLR",
+    "mercado": "NASDAQ",
+    "nombre": "First Solar, Inc."
+  },
+  {
+    "ticker": "CVH.BA",
+    "mercado": "BCBA",
+    "nombre": "Cablevisión Holding S.A."
+  },
+  {
+    "ticker": "TECO2.BA",
+    "mercado": "BCBA",
+    "nombre": "Telecom Argentina S.A."
+  },
+  {
+    "ticker": "T",
+    "mercado": "NYSE",
+    "nombre": "AT&T Inc."
+  },
+  {
+    "ticker": "TMUS",
+    "mercado": "NASDAQ",
+    "nombre": "T-Mobile US, Inc."
+  },
+  {
+    "ticker": "VZ",
+    "mercado": "NYSE",
+    "nombre": "Verizon Communications Inc."
+  },
+  {
+    "ticker": "CMCSA",
+    "mercado": "NASDAQ",
+    "nombre": "Comcast Corporation"
+  },
+  {
+    "ticker": "GOOGL",
+    "mercado": "NASDAQ",
+    "nombre": "Alphabet Inc."
+  },
+  {
+    "ticker": "META",
+    "mercado": "NASDAQ",
+    "nombre": "Meta Platforms, Inc."
+  },
+  {
+    "ticker": "BIDU",
+    "mercado": "NASDAQ",
+    "nombre": "Baidu, Inc."
+  },
+  {
+    "ticker": "SPOT",
+    "mercado": "NYSE",
+    "nombre": "Spotify Technology S.A."
+  },
+  {
+    "ticker": "NBIS",
+    "mercado": "NYSE",
+    "nombre": "Nubank"
+  },
+  {
+    "ticker": "GCLA.BA",
+    "mercado": "BCBA",
+    "nombre": "Grupo Clarín S.A."
+  },
+  {
+    "ticker": "DIS",
+    "mercado": "NYSE",
+    "nombre": "The Walt Disney Company"
+  },
+  {
+    "ticker": "NFLX",
+    "mercado": "NASDAQ",
+    "nombre": "Netflix, Inc."
+  },
+  {
+    "ticker": "WBD",
+    "mercado": "NASDAQ",
+    "nombre": "Warner Bros. Discovery, Inc."
+  },
+  {
+    "ticker": "EA",
+    "mercado": "NASDAQ",
+    "nombre": "Electronic Arts Inc."
+  },
+  {
+    "ticker": "RBLX",
+    "mercado": "NYSE",
+    "nombre": "Roblox Corporation"
+  },
+  {
+    "ticker": "CAPX.BA",
+    "mercado": "BCBA",
+    "nombre": "Capex S.A."
+  },
+  {
+    "ticker": "COP",
+    "mercado": "NYSE",
+    "nombre": "ConocoPhillips"
+  },
+  {
+    "ticker": "EOG",
+    "mercado": "NYSE",
+    "nombre": "EOG Resources, Inc."
+  },
+  {
+    "ticker": "OXY",
+    "mercado": "NYSE",
+    "nombre": "Occidental Petroleum Corporation"
+  },
+  {
+    "ticker": "VIST",
+    "mercado": "NYSE",
+    "nombre": "Vista Energy S.A.B. de C.V."
+  },
+  {
+    "ticker": "YPFD.BA",
+    "mercado": "BCBA",
+    "nombre": "YPF S.A."
+  },
+  {
+    "ticker": "BP",
+    "mercado": "NYSE",
+    "nombre": "BP p.l.c."
+  },
+  {
+    "ticker": "CVX",
+    "mercado": "NYSE",
+    "nombre": "Chevron Corporation"
+  },
+  {
+    "ticker": "PBR",
+    "mercado": "NYSE",
+    "nombre": "Petrobras"
+  },
+  {
+    "ticker": "SHEL",
+    "mercado": "NYSE",
+    "nombre": "Shell plc"
+  },
+  {
+    "ticker": "XOM",
+    "mercado": "NYSE",
+    "nombre": "Exxon Mobil Corporation"
+  },
+  {
+    "ticker": "TGNO4.BA",
+    "mercado": "BCBA",
+    "nombre": "Transportadora de Gas del Norte S.A."
+  },
+  {
+    "ticker": "TGSU2.BA",
+    "mercado": "BCBA",
+    "nombre": "Transportadora de Gas del Sur S.A."
+  },
+  {
+    "ticker": "KMI",
+    "mercado": "NYSE",
+    "nombre": "Kinder Morgan, Inc."
+  },
+  {
+    "ticker": "BKR",
+    "mercado": "NASDAQ",
+    "nombre": "Baker Hughes Company"
+  },
+  {
+    "ticker": "HAL",
+    "mercado": "NYSE",
+    "nombre": "Halliburton Company"
+  },
+  {
+    "ticker": "SLB",
+    "mercado": "NYSE",
+    "nombre": "SLB N.V."
+  },
+  {
+    "ticker": "CCJ",
+    "mercado": "NYSE",
+    "nombre": "Cameco Corporation"
+  },
+  {
+    "ticker": "UEC",
+    "mercado": "NYSE",
+    "nombre": "Uranium Energy Corp."
+  },
+  {
+    "ticker": "CECO2.BA",
+    "mercado": "BCBA",
+    "nombre": "Central Costanera S.A."
+  },
+  {
+    "ticker": "CEPU.BA",
+    "mercado": "BCBA",
+    "nombre": "Central Puerto S.A."
+  },
+  {
+    "ticker": "EDN.BA",
+    "mercado": "BCBA",
+    "nombre": "Edenor S.A."
+  },
+  {
+    "ticker": "TRAN.BA",
+    "mercado": "BCBA",
+    "nombre": "Transener S.A."
+  },
+  {
+    "ticker": "NEE",
+    "mercado": "NYSE",
+    "nombre": "NextEra Energy, Inc."
+  },
+  {
+    "ticker": "D",
+    "mercado": "NYSE",
+    "nombre": "Dominion Energy, Inc."
+  },
+  {
+    "ticker": "CGPA2.BA",
+    "mercado": "BCBA",
+    "nombre": "Camuzzi Gas Pampeana S.A."
+  },
+  {
+    "ticker": "DGCU2.BA",
+    "mercado": "BCBA",
+    "nombre": "Distribuidora de Gas Cuyana S.A."
+  },
+  {
+    "ticker": "GBAN.BA",
+    "mercado": "BCBA",
+    "nombre": "Naturgy BAN S.A."
+  },
+  {
+    "ticker": "METR.BA",
+    "mercado": "BCBA",
+    "nombre": "MetroGAS S.A."
+  },
+  {
+    "ticker": "CEG",
+    "mercado": "NASDAQ",
+    "nombre": "Constellation Energy Corporation"
+  },
+  {
+    "ticker": "DUK",
+    "mercado": "NYSE",
+    "nombre": "Duke Energy Corporation"
+  },
+  {
+    "ticker": "SO",
+    "mercado": "NYSE",
+    "nombre": "The Southern Company"
+  },
+  {
+    "ticker": "VST",
+    "mercado": "NYSE",
+    "nombre": "Vistra Corp."
+  },
+  {
+    "ticker": "OKLO",
+    "mercado": "NYSE",
+    "nombre": "Oklo Inc."
+  },
+  {
+    "ticker": "DOME.BA",
+    "mercado": "BCBA",
+    "nombre": "DOMEC Compañía de Artefactos Domésticos"
+  },
+  {
+    "ticker": "FIPL.BA",
+    "mercado": "BCBA",
+    "nombre": "Fiplasto S.A."
+  },
+  {
+    "ticker": "LONG.BA",
+    "mercado": "BCBA",
+    "nombre": "Longvie S.A."
+  },
+  {
+    "ticker": "GRIM.BA",
+    "mercado": "BCBA",
+    "nombre": "Grimoldi S.A."
+  },
+  {
+    "ticker": "NKE",
+    "mercado": "NYSE",
+    "nombre": "NIKE, Inc."
+  },
+  {
+    "ticker": "HAVA.BA",
+    "mercado": "BCBA",
+    "nombre": "Havanna Holding S.A."
+  },
+  {
+    "ticker": "ARCO",
+    "mercado": "NYSE",
+    "nombre": "Arcos Dorados Holdings Inc."
+  },
+  {
+    "ticker": "MCD",
+    "mercado": "NYSE",
+    "nombre": "McDonald's Corporation"
+  },
+  {
+    "ticker": "SBUX",
+    "mercado": "NASDAQ",
+    "nombre": "Starbucks Corporation"
+  },
+  {
+    "ticker": "CMG",
+    "mercado": "NYSE",
+    "nombre": "Chipotle Mexican Grill, Inc."
+  },
+  {
+    "ticker": "DPZ",
+    "mercado": "NYSE",
+    "nombre": "Domino's Pizza, Inc."
+  },
+  {
+    "ticker": "AMZN",
+    "mercado": "NASDAQ",
+    "nombre": "Amazon.com, Inc."
+  },
+  {
+    "ticker": "BABA",
+    "mercado": "NYSE",
+    "nombre": "Alibaba Group Holding Limited"
+  },
+  {
+    "ticker": "MELI",
+    "mercado": "NASDAQ",
+    "nombre": "MercadoLibre, Inc."
+  },
+  {
+    "ticker": "JD",
+    "mercado": "NASDAQ",
+    "nombre": "JD.com, Inc."
+  },
+  {
+    "ticker": "PDD",
+    "mercado": "NASDAQ",
+    "nombre": "PDD Holdings Inc."
+  },
+  {
+    "ticker": "SE",
+    "mercado": "NYSE",
+    "nombre": "Sea Limited"
+  },
+  {
+    "ticker": "F",
+    "mercado": "NYSE",
+    "nombre": "Ford Motor Company"
+  },
+  {
+    "ticker": "GM",
+    "mercado": "NYSE",
+    "nombre": "General Motors Company"
+  },
+  {
+    "ticker": "HMC",
+    "mercado": "NYSE",
+    "nombre": "Honda Motor Co., Ltd."
+  },
+  {
+    "ticker": "NIO",
+    "mercado": "NYSE",
+    "nombre": "NIO Inc."
+  },
+  {
+    "ticker": "RACE",
+    "mercado": "NYSE",
+    "nombre": "Ferrari N.V."
+  },
+  {
+    "ticker": "STLA",
+    "mercado": "NYSE",
+    "nombre": "Stellantis N.V."
+  },
+  {
+    "ticker": "TM",
+    "mercado": "NYSE",
+    "nombre": "Toyota Motor Corporation"
+  },
+  {
+    "ticker": "TSLA",
+    "mercado": "NASDAQ",
+    "nombre": "Tesla, Inc."
+  },
+  {
+    "ticker": "PATA.BA",
+    "mercado": "BCBA",
+    "nombre": "S.A. Importadora y Exportadora de la Patagonia"
+  },
+  {
+    "ticker": "ABNB",
+    "mercado": "NASDAQ",
+    "nombre": "Airbnb, Inc."
+  },
+  {
+    "ticker": "BKNG",
+    "mercado": "NASDAQ",
+    "nombre": "Booking Holdings Inc."
+  },
+  {
+    "ticker": "CCL",
+    "mercado": "NYSE",
+    "nombre": "Carnival Corporation & plc"
+  },
+  {
+    "ticker": "INTR.BA",
+    "mercado": "BCBA",
+    "nombre": "Compañía Introductora de Buenos Aires"
+  },
+  {
+    "ticker": "MOLI.BA",
+    "mercado": "BCBA",
+    "nombre": "Molinos Rio de la Plata S.A."
+  },
+  {
+    "ticker": "INVJ.BA",
+    "mercado": "BCBA",
+    "nombre": "Inversora Juramento S.A."
+  },
+  {
+    "ticker": "MOLA.BA",
+    "mercado": "BCBA",
+    "nombre": "Molinos Agro S.A."
+  },
+  {
+    "ticker": "MORI.BA",
+    "mercado": "BCBA",
+    "nombre": "Morixe Hermanos S.A.C.I."
+  },
+  {
+    "ticker": "SAMI.BA",
+    "mercado": "BCBA",
+    "nombre": "S.A. San Miguel A.G.I.C.I. y F."
+  },
+  {
+    "ticker": "SEMI.BA",
+    "mercado": "BCBA",
+    "nombre": "Molinos Juan Semino S.A."
+  },
+  {
+    "ticker": "RIGO.BA",
+    "mercado": "BCBA",
+    "nombre": "Rigolleau S.A."
+  },
+  {
+    "ticker": "PG",
+    "mercado": "NYSE",
+    "nombre": "The Procter & Gamble Company"
+  },
+  {
+    "ticker": "CL",
+    "mercado": "NYSE",
+    "nombre": "Colgate-Palmolive Company"
+  },
+  {
+    "ticker": "KMB",
+    "mercado": "NYSE",
+    "nombre": "Kimberly-Clark Corporation"
+  },
+  {
+    "ticker": "EL",
+    "mercado": "NYSE",
+    "nombre": "The Estée Lauder Companies Inc."
+  },
+  {
+    "ticker": "UL",
+    "mercado": "NYSE",
+    "nombre": "Unilever PLC"
+  },
+  {
+    "ticker": "KO",
+    "mercado": "NYSE",
+    "nombre": "The Coca-Cola Company"
+  },
+  {
+    "ticker": "PEP",
+    "mercado": "NASDAQ",
+    "nombre": "PepsiCo, Inc."
+  },
+  {
+    "ticker": "KDP",
+    "mercado": "NASDAQ",
+    "nombre": "Keurig Dr Pepper Inc."
+  },
+  {
+    "ticker": "DEO",
+    "mercado": "NYSE",
+    "nombre": "Diageo plc"
+  },
+  {
+    "ticker": "STZ",
+    "mercado": "NYSE",
+    "nombre": "Constellation Brands, Inc."
+  },
+  {
+    "ticker": "GIS",
+    "mercado": "NYSE",
+    "nombre": "General Mills, Inc."
+  },
+  {
+    "ticker": "HSY",
+    "mercado": "NYSE",
+    "nombre": "The Hershey Company"
+  },
+  {
+    "ticker": "KHC",
+    "mercado": "NASDAQ",
+    "nombre": "The Kraft Heinz Company"
+  },
+  {
+    "ticker": "MDLZ",
+    "mercado": "NASDAQ",
+    "nombre": "Mondelez International, Inc."
+  },
+  {
+    "ticker": "COST",
+    "mercado": "NASDAQ",
+    "nombre": "Costco Wholesale Corporation"
+  },
+  {
+    "ticker": "WMT",
+    "mercado": "NYSE",
+    "nombre": "Walmart Inc."
+  },
+  {
+    "ticker": "TGT",
+    "mercado": "NYSE",
+    "nombre": "Target Corporation"
+  },
+  {
+    "ticker": "ABEV",
+    "mercado": "NYSE",
+    "nombre": "Ambev S.A."
+  },
+  {
+    "ticker": "TAP",
+    "mercado": "NYSE",
+    "nombre": "Molson Coors Beverage Company"
+  },
+  {
+    "ticker": "MO",
+    "mercado": "NYSE",
+    "nombre": "Altria Group, Inc."
+  },
+  {
+    "ticker": "PM",
+    "mercado": "NYSE",
+    "nombre": "Philip Morris International Inc."
+  },
+  {
+    "ticker": "RICH.BA",
+    "mercado": "BCBA",
+    "nombre": "Laboratorios Richmond S.A.C.I.F."
+  },
+  {
+    "ticker": "ROSE.BA",
+    "mercado": "BCBA",
+    "nombre": "Instituto Rosenbusch S.A."
+  },
+  {
+    "ticker": "ABBV",
+    "mercado": "NYSE",
+    "nombre": "AbbVie Inc."
+  },
+  {
+    "ticker": "AMGN",
+    "mercado": "NASDAQ",
+    "nombre": "Amgen Inc."
+  },
+  {
+    "ticker": "AZN",
+    "mercado": "NASDAQ",
+    "nombre": "AstraZeneca PLC"
+  },
+  {
+    "ticker": "BMY",
+    "mercado": "NYSE",
+    "nombre": "Bristol-Myers Squibb Company"
+  },
+  {
+    "ticker": "GILD",
+    "mercado": "NASDAQ",
+    "nombre": "Gilead Sciences, Inc."
+  },
+  {
+    "ticker": "JNJ",
+    "mercado": "NYSE",
+    "nombre": "Johnson & Johnson"
+  },
+  {
+    "ticker": "LLY",
+    "mercado": "NYSE",
+    "nombre": "Eli Lilly and Company"
+  },
+  {
+    "ticker": "MRK",
+    "mercado": "NYSE",
+    "nombre": "Merck & Co., Inc."
+  },
+  {
+    "ticker": "NVS",
+    "mercado": "NYSE",
+    "nombre": "Novartis AG"
+  },
+  {
+    "ticker": "PFE",
+    "mercado": "NYSE",
+    "nombre": "Pfizer Inc."
+  },
+  {
+    "ticker": "MRNA",
+    "mercado": "NASDAQ",
+    "nombre": "Moderna, Inc."
+  },
+  {
+    "ticker": "REGN",
+    "mercado": "NASDAQ",
+    "nombre": "Regeneron Pharmaceuticals, Inc."
+  },
+  {
+    "ticker": "VRTX",
+    "mercado": "NASDAQ",
+    "nombre": "Vertex Pharmaceuticals Incorporated"
+  },
+  {
+    "ticker": "ABT",
+    "mercado": "NYSE",
+    "nombre": "Abbott Laboratories"
+  },
+  {
+    "ticker": "BSX",
+    "mercado": "NYSE",
+    "nombre": "Boston Scientific Corporation"
+  },
+  {
+    "ticker": "MDT",
+    "mercado": "NYSE",
+    "nombre": "Medtronic plc"
+  },
+  {
+    "ticker": "ISRG",
+    "mercado": "NASDAQ",
+    "nombre": "Intuitive Surgical, Inc."
+  },
+  {
+    "ticker": "SYK",
+    "mercado": "NYSE",
+    "nombre": "Stryker Corporation"
+  },
+  {
+    "ticker": "UNH",
+    "mercado": "NYSE",
+    "nombre": "UnitedHealth Group Incorporated"
+  },
+  {
+    "ticker": "CI",
+    "mercado": "NYSE",
+    "nombre": "Cigna Group"
+  },
+  {
+    "ticker": "CVS",
+    "mercado": "NYSE",
+    "nombre": "CVS Health Corporation"
+  },
+  {
+    "ticker": "DHR",
+    "mercado": "NYSE",
+    "nombre": "Danaher Corporation"
+  },
+  {
+    "ticker": "TMO",
+    "mercado": "NYSE",
+    "nombre": "Thermo Fisher Scientific Inc."
+  },
+  {
+    "ticker": "CTIO.BA",
+    "mercado": "BCBA",
+    "nombre": "Consultatio S.A."
+  },
+  {
+    "ticker": "GCDI.BA",
+    "mercado": "BCBA",
+    "nombre": "GCDI S.A."
+  },
+  {
+    "ticker": "IRSA.BA",
+    "mercado": "BCBA",
+    "nombre": "IRSA Inversiones y Representaciones S.A."
+  },
+  {
+    "ticker": "SPY",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SPY"
+  },
+  {
+    "ticker": "SPY.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SPY BCBA"
+  },
+  {
+    "ticker": "QQQ",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear QQQ"
+  },
+  {
+    "ticker": "QQQ.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear QQQ BCBA"
+  },
+  {
+    "ticker": "SPCX",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SPCX"
+  },
+  {
+    "ticker": "SPCX.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SPCX BCBA"
+  },
+  {
+    "ticker": "IBIT",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IBIT"
+  },
+  {
+    "ticker": "IBIT.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IBIT BCBA"
+  },
+  {
+    "ticker": "IREN",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IREN"
+  },
+  {
+    "ticker": "IREN.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IREN BCBA"
+  },
+  {
+    "ticker": "GLD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear GLD"
+  },
+  {
+    "ticker": "GLD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear GLD BCBA"
+  },
+  {
+    "ticker": "BRKB",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BRKB"
+  },
+  {
+    "ticker": "BRKB.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BRKB BCBA"
+  },
+  {
+    "ticker": "KEEL",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear KEEL"
+  },
+  {
+    "ticker": "KEEL.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear KEEL BCBA"
+  },
+  {
+    "ticker": "HUT",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear HUT"
+  },
+  {
+    "ticker": "HUT.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear HUT BCBA"
+  },
+  {
+    "ticker": "EWZ",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear EWZ"
+  },
+  {
+    "ticker": "EWZ.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear EWZ BCBA"
+  },
+  {
+    "ticker": "XLV",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLV"
+  },
+  {
+    "ticker": "XLV.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLV BCBA"
+  },
+  {
+    "ticker": "LAR",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear LAR"
+  },
+  {
+    "ticker": "LAR.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear LAR BCBA"
+  },
+  {
+    "ticker": "SMH",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SMH"
+  },
+  {
+    "ticker": "SMH.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SMH BCBA"
+  },
+  {
+    "ticker": "ADGO",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ADGO"
+  },
+  {
+    "ticker": "ADGO.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ADGO BCBA"
+  },
+  {
+    "ticker": "EEM",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear EEM"
+  },
+  {
+    "ticker": "EEM.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear EEM BCBA"
+  },
+  {
+    "ticker": "XLF",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLF"
+  },
+  {
+    "ticker": "XLF.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLF BCBA"
+  },
+  {
+    "ticker": "SLV",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SLV"
+  },
+  {
+    "ticker": "SLV.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SLV BCBA"
+  },
+  {
+    "ticker": "XLE",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLE"
+  },
+  {
+    "ticker": "XLE.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLE BCBA"
+  },
+  {
+    "ticker": "COPX",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear COPX"
+  },
+  {
+    "ticker": "COPX.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear COPX BCBA"
+  },
+  {
+    "ticker": "GPRK",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear GPRK"
+  },
+  {
+    "ticker": "GPRK.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear GPRK BCBA"
+  },
+  {
+    "ticker": "RSP",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear RSP"
+  },
+  {
+    "ticker": "RSP.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear RSP BCBA"
+  },
+  {
+    "ticker": "GLW",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear GLW"
+  },
+  {
+    "ticker": "GLW.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear GLW BCBA"
+  },
+  {
+    "ticker": "ETHA",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ETHA"
+  },
+  {
+    "ticker": "ETHA.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ETHA BCBA"
+  },
+  {
+    "ticker": "DIA",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear DIA"
+  },
+  {
+    "ticker": "DIA.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear DIA BCBA"
+  },
+  {
+    "ticker": "IVV",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IVV"
+  },
+  {
+    "ticker": "IVV.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IVV BCBA"
+  },
+  {
+    "ticker": "ACWI",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ACWI"
+  },
+  {
+    "ticker": "ACWI.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ACWI BCBA"
+  },
+  {
+    "ticker": "RIOT",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear RIOT"
+  },
+  {
+    "ticker": "RIOT.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear RIOT BCBA"
+  },
+  {
+    "ticker": "XLP",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLP"
+  },
+  {
+    "ticker": "XLP.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLP BCBA"
+  },
+  {
+    "ticker": "SPCE",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SPCE"
+  },
+  {
+    "ticker": "SPCE.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SPCE BCBA"
+  },
+  {
+    "ticker": "ALAB",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ALAB"
+  },
+  {
+    "ticker": "ALAB.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ALAB BCBA"
+  },
+  {
+    "ticker": "ANF",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ANF"
+  },
+  {
+    "ticker": "ANF.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ANF BCBA"
+  },
+  {
+    "ticker": "PETR3",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PETR3"
+  },
+  {
+    "ticker": "PETR3.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PETR3 BCBA"
+  },
+  {
+    "ticker": "B",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear B"
+  },
+  {
+    "ticker": "B.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear B BCBA"
+  },
+  {
+    "ticker": "VEA",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear VEA"
+  },
+  {
+    "ticker": "VEA.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear VEA BCBA"
+  },
+  {
+    "ticker": "EBAY",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear EBAY"
+  },
+  {
+    "ticker": "EBAY.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear EBAY BCBA"
+  },
+  {
+    "ticker": "HMY",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear HMY"
+  },
+  {
+    "ticker": "HMY.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear HMY BCBA"
+  },
+  {
+    "ticker": "TQQQ",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear TQQQ"
+  },
+  {
+    "ticker": "TQQQ.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear TQQQ BCBA"
+  },
+  {
+    "ticker": "HIMS",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear HIMS"
+  },
+  {
+    "ticker": "HIMS.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear HIMS BCBA"
+  },
+  {
+    "ticker": "XLU",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLU"
+  },
+  {
+    "ticker": "XLU.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLU BCBA"
+  },
+  {
+    "ticker": "SH",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SH"
+  },
+  {
+    "ticker": "SH.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SH BCBA"
+  },
+  {
+    "ticker": "BAK",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BAK"
+  },
+  {
+    "ticker": "BAK.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BAK BCBA"
+  },
+  {
+    "ticker": "GDX",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear GDX"
+  },
+  {
+    "ticker": "GDX.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear GDX BCBA"
+  },
+  {
+    "ticker": "UPST",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear UPST"
+  },
+  {
+    "ticker": "UPST.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear UPST BCBA"
+  },
+  {
+    "ticker": "IVE",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IVE"
+  },
+  {
+    "ticker": "IVE.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IVE BCBA"
+  },
+  {
+    "ticker": "AMX",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear AMX"
+  },
+  {
+    "ticker": "AMX.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear AMX BCBA"
+  },
+  {
+    "ticker": "FMX",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear FMX"
+  },
+  {
+    "ticker": "FMX.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear FMX BCBA"
+  },
+  {
+    "ticker": "URA",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear URA"
+  },
+  {
+    "ticker": "URA.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear URA BCBA"
+  },
+  {
+    "ticker": "BB",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BB"
+  },
+  {
+    "ticker": "BB.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BB BCBA"
+  },
+  {
+    "ticker": "ELPC",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ELPC"
+  },
+  {
+    "ticker": "ELPC.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ELPC BCBA"
+  },
+  {
+    "ticker": "FXI",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear FXI"
+  },
+  {
+    "ticker": "FXI.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear FXI BCBA"
+  },
+  {
+    "ticker": "O",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear O"
+  },
+  {
+    "ticker": "O.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear O BCBA"
+  },
+  {
+    "ticker": "CIBR",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear CIBR"
+  },
+  {
+    "ticker": "CIBR.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear CIBR BCBA"
+  },
+  {
+    "ticker": "TRIP",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear TRIP"
+  },
+  {
+    "ticker": "TRIP.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear TRIP BCBA"
+  },
+  {
+    "ticker": "UGP",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear UGP"
+  },
+  {
+    "ticker": "UGP.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear UGP BCBA"
+  },
+  {
+    "ticker": "ROKU",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ROKU"
+  },
+  {
+    "ticker": "ROKU.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ROKU BCBA"
+  },
+  {
+    "ticker": "TEN",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear TEN"
+  },
+  {
+    "ticker": "TEN.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear TEN BCBA"
+  },
+  {
+    "ticker": "IWM",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IWM"
+  },
+  {
+    "ticker": "IWM.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IWM BCBA"
+  },
+  {
+    "ticker": "TWLO",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear TWLO"
+  },
+  {
+    "ticker": "TWLO.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear TWLO BCBA"
+  },
+  {
+    "ticker": "XLK",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLK"
+  },
+  {
+    "ticker": "XLK.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLK BCBA"
+  },
+  {
+    "ticker": "EWY",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear EWY"
+  },
+  {
+    "ticker": "EWY.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear EWY BCBA"
+  },
+  {
+    "ticker": "VIG",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear VIG"
+  },
+  {
+    "ticker": "VIG.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear VIG BCBA"
+  },
+  {
+    "ticker": "ONDS",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ONDS"
+  },
+  {
+    "ticker": "ONDS.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ONDS BCBA"
+  },
+  {
+    "ticker": "BBAS3",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BBAS3"
+  },
+  {
+    "ticker": "BBAS3.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BBAS3 BCBA"
+  },
+  {
+    "ticker": "GT",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear GT"
+  },
+  {
+    "ticker": "GT.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear GT BCBA"
+  },
+  {
+    "ticker": "DISN",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear DISN"
+  },
+  {
+    "ticker": "DISN.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear DISN BCBA"
+  },
+  {
+    "ticker": "HL",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear HL"
+  },
+  {
+    "ticker": "HL.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear HL BCBA"
+  },
+  {
+    "ticker": "SPXL",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SPXL"
+  },
+  {
+    "ticker": "SPXL.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SPXL BCBA"
+  },
+  {
+    "ticker": "ILF",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ILF"
+  },
+  {
+    "ticker": "ILF.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ILF BCBA"
+  },
+  {
+    "ticker": "IBB",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IBB"
+  },
+  {
+    "ticker": "IBB.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IBB BCBA"
+  },
+  {
+    "ticker": "TXR",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear TXR"
+  },
+  {
+    "ticker": "TXR.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear TXR BCBA"
+  },
+  {
+    "ticker": "SID",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SID"
+  },
+  {
+    "ticker": "SID.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SID BCBA"
+  },
+  {
+    "ticker": "ARKK",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ARKK"
+  },
+  {
+    "ticker": "ARKK.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ARKK BCBA"
+  },
+  {
+    "ticker": "HD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear HD"
+  },
+  {
+    "ticker": "HD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear HD BCBA"
+  },
+  {
+    "ticker": "EWJ",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear EWJ"
+  },
+  {
+    "ticker": "EWJ.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear EWJ BCBA"
+  },
+  {
+    "ticker": "XLB",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLB"
+  },
+  {
+    "ticker": "XLB.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLB BCBA"
+  },
+  {
+    "ticker": "PATH",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PATH"
+  },
+  {
+    "ticker": "PATH.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PATH BCBA"
+  },
+  {
+    "ticker": "BBDC3",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BBDC3"
+  },
+  {
+    "ticker": "BBDC3.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BBDC3 BCBA"
+  },
+  {
+    "ticker": "BMNR",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BMNR"
+  },
+  {
+    "ticker": "BMNR.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BMNR BCBA"
+  },
+  {
+    "ticker": "JMIA",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear JMIA"
+  },
+  {
+    "ticker": "JMIA.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear JMIA BCBA"
+  },
+  {
+    "ticker": "IEMG",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IEMG"
+  },
+  {
+    "ticker": "IEMG.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IEMG BCBA"
+  },
+  {
+    "ticker": "PSQ",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PSQ"
+  },
+  {
+    "ticker": "PSQ.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PSQ BCBA"
+  },
+  {
+    "ticker": "ITA",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ITA"
+  },
+  {
+    "ticker": "ITA.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ITA BCBA"
+  },
+  {
+    "ticker": "CAAP",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear CAAP"
+  },
+  {
+    "ticker": "CAAP.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear CAAP BCBA"
+  },
+  {
+    "ticker": "ORLY",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ORLY"
+  },
+  {
+    "ticker": "ORLY.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ORLY BCBA"
+  },
+  {
+    "ticker": "XLC",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLC"
+  },
+  {
+    "ticker": "XLC.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLC BCBA"
+  },
+  {
+    "ticker": "IEUR",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IEUR"
+  },
+  {
+    "ticker": "IEUR.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IEUR BCBA"
+  },
+  {
+    "ticker": "WBO",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear WBO"
+  },
+  {
+    "ticker": "WBO.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear WBO BCBA"
+  },
+  {
+    "ticker": "EMBJ",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear EMBJ"
+  },
+  {
+    "ticker": "EMBJ.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear EMBJ BCBA"
+  },
+  {
+    "ticker": "CAH",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear CAH"
+  },
+  {
+    "ticker": "CAH.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear CAH BCBA"
+  },
+  {
+    "ticker": "SBSP3",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SBSP3"
+  },
+  {
+    "ticker": "SBSP3.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SBSP3 BCBA"
+  },
+  {
+    "ticker": "CAR",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear CAR"
+  },
+  {
+    "ticker": "CAR.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear CAR BCBA"
+  },
+  {
+    "ticker": "CDE",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear CDE"
+  },
+  {
+    "ticker": "CDE.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear CDE BCBA"
+  },
+  {
+    "ticker": "IVW",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IVW"
+  },
+  {
+    "ticker": "IVW.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IVW BCBA"
+  },
+  {
+    "ticker": "NVO",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear NVO"
+  },
+  {
+    "ticker": "NVO.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear NVO BCBA"
+  },
+  {
+    "ticker": "RENT3",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear RENT3"
+  },
+  {
+    "ticker": "RENT3.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear RENT3 BCBA"
+  },
+  {
+    "ticker": "SPHQ",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SPHQ"
+  },
+  {
+    "ticker": "SPHQ.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SPHQ BCBA"
+  },
+  {
+    "ticker": "MUX",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear MUX"
+  },
+  {
+    "ticker": "MUX.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear MUX BCBA"
+  },
+  {
+    "ticker": "XLRE",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLRE"
+  },
+  {
+    "ticker": "XLRE.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLRE BCBA"
+  },
+  {
+    "ticker": "BNG",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BNG"
+  },
+  {
+    "ticker": "BNG.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BNG BCBA"
+  },
+  {
+    "ticker": "XLI",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLI"
+  },
+  {
+    "ticker": "XLI.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLI BCBA"
+  },
+  {
+    "ticker": "MP",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear MP"
+  },
+  {
+    "ticker": "MP.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear MP BCBA"
+  },
+  {
+    "ticker": "VXX",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear VXX"
+  },
+  {
+    "ticker": "VXX.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear VXX BCBA"
+  },
+  {
+    "ticker": "USO",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear USO"
+  },
+  {
+    "ticker": "USO.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear USO BCBA"
+  },
+  {
+    "ticker": "EFA",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear EFA"
+  },
+  {
+    "ticker": "EFA.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear EFA BCBA"
+  },
+  {
+    "ticker": "XLY",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLY"
+  },
+  {
+    "ticker": "XLY.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLY BCBA"
+  },
+  {
+    "ticker": "MOS",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear MOS"
+  },
+  {
+    "ticker": "MOS.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear MOS BCBA"
+  },
+  {
+    "ticker": "XME",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XME"
+  },
+  {
+    "ticker": "XME.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XME BCBA"
+  },
+  {
+    "ticker": "BBV",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BBV"
+  },
+  {
+    "ticker": "BBV.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BBV BCBA"
+  },
+  {
+    "ticker": "NTES",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear NTES"
+  },
+  {
+    "ticker": "NTES.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear NTES BCBA"
+  },
+  {
+    "ticker": "TV",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear TV"
+  },
+  {
+    "ticker": "TV.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear TV BCBA"
+  },
+  {
+    "ticker": "TEM",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear TEM"
+  },
+  {
+    "ticker": "TEM.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear TEM BCBA"
+  },
+  {
+    "ticker": "BPA11",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BPA11"
+  },
+  {
+    "ticker": "BPA11.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BPA11 BCBA"
+  },
+  {
+    "ticker": "HDB",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear HDB"
+  },
+  {
+    "ticker": "HDB.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear HDB BCBA"
+  },
+  {
+    "ticker": "XPEV",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XPEV"
+  },
+  {
+    "ticker": "XPEV.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XPEV BCBA"
+  },
+  {
+    "ticker": "ABEV3",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ABEV3"
+  },
+  {
+    "ticker": "ABEV3.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ABEV3 BCBA"
+  },
+  {
+    "ticker": "FISV",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear FISV"
+  },
+  {
+    "ticker": "FISV.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear FISV BCBA"
+  },
+  {
+    "ticker": "WEGE3",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear WEGE3"
+  },
+  {
+    "ticker": "WEGE3.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear WEGE3 BCBA"
+  },
+  {
+    "ticker": "ICLN",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ICLN"
+  },
+  {
+    "ticker": "ICLN.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ICLN BCBA"
+  },
+  {
+    "ticker": "ITUB3",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ITUB3"
+  },
+  {
+    "ticker": "ITUB3.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ITUB3 BCBA"
+  },
+  {
+    "ticker": "AAP",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear AAP"
+  },
+  {
+    "ticker": "AAP.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear AAP BCBA"
+  },
+  {
+    "ticker": "LREN3",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear LREN3"
+  },
+  {
+    "ticker": "LREN3.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear LREN3 BCBA"
+  },
+  {
+    "ticker": "TIMB",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear TIMB"
+  },
+  {
+    "ticker": "TIMB.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear TIMB BCBA"
+  },
+  {
+    "ticker": "BX",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BX"
+  },
+  {
+    "ticker": "BX.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BX BCBA"
+  },
+  {
+    "ticker": "PKS",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PKS"
+  },
+  {
+    "ticker": "PKS.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PKS BCBA"
+  },
+  {
+    "ticker": "BNY",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BNY"
+  },
+  {
+    "ticker": "BNY.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BNY BCBA"
+  },
+  {
+    "ticker": "BIIB",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BIIB"
+  },
+  {
+    "ticker": "BIIB.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BIIB BCBA"
+  },
+  {
+    "ticker": "NG",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear NG"
+  },
+  {
+    "ticker": "NG.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear NG BCBA"
+  },
+  {
+    "ticker": "NOKA",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear NOKA"
+  },
+  {
+    "ticker": "NOKA.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear NOKA BCBA"
+  },
+  {
+    "ticker": "GRMN",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear GRMN"
+  },
+  {
+    "ticker": "GRMN.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear GRMN BCBA"
+  },
+  {
+    "ticker": "SNAP",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SNAP"
+  },
+  {
+    "ticker": "SNAP.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SNAP BCBA"
+  },
+  {
+    "ticker": "GFI",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear GFI"
+  },
+  {
+    "ticker": "GFI.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear GFI BCBA"
+  },
+  {
+    "ticker": "TCOM",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear TCOM"
+  },
+  {
+    "ticker": "TCOM.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear TCOM BCBA"
+  },
+  {
+    "ticker": "VALE3",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear VALE3"
+  },
+  {
+    "ticker": "VALE3.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear VALE3 BCBA"
+  },
+  {
+    "ticker": "TIMS3",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear TIMS3"
+  },
+  {
+    "ticker": "TIMS3.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear TIMS3 BCBA"
+  },
+  {
+    "ticker": "KOFM",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear KOFM"
+  },
+  {
+    "ticker": "KOFM.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear KOFM BCBA"
+  },
+  {
+    "ticker": "UNP",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear UNP"
+  },
+  {
+    "ticker": "UNP.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear UNP BCBA"
+  },
+  {
+    "ticker": "BSBR",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BSBR"
+  },
+  {
+    "ticker": "BSBR.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BSBR BCBA"
+  },
+  {
+    "ticker": "CLS",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear CLS"
+  },
+  {
+    "ticker": "CLS.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear CLS BCBA"
+  },
+  {
+    "ticker": "AXIA",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear AXIA"
+  },
+  {
+    "ticker": "AXIA.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear AXIA BCBA"
+  },
+  {
+    "ticker": "PRIO3",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PRIO3"
+  },
+  {
+    "ticker": "PRIO3.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PRIO3 BCBA"
+  },
+  {
+    "ticker": "HWM",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear HWM"
+  },
+  {
+    "ticker": "HWM.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear HWM BCBA"
+  },
+  {
+    "ticker": "XROX",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XROX"
+  },
+  {
+    "ticker": "XROX.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XROX BCBA"
+  },
+  {
+    "ticker": "IJH",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IJH"
+  },
+  {
+    "ticker": "IJH.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IJH BCBA"
+  },
+  {
+    "ticker": "SNA",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SNA"
+  },
+  {
+    "ticker": "SNA.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SNA BCBA"
+  },
+  {
+    "ticker": "ASR",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ASR"
+  },
+  {
+    "ticker": "ASR.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ASR BCBA"
+  },
+  {
+    "ticker": "SAN",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SAN"
+  },
+  {
+    "ticker": "SAN.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SAN BCBA"
+  },
+  {
+    "ticker": "DECK",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear DECK"
+  },
+  {
+    "ticker": "DECK.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear DECK BCBA"
+  },
+  {
+    "ticker": "TTE",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear TTE"
+  },
+  {
+    "ticker": "TTE.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear TTE BCBA"
+  },
+  {
+    "ticker": "GLNG",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear GLNG"
+  },
+  {
+    "ticker": "GLNG.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear GLNG BCBA"
+  },
+  {
+    "ticker": "KEP",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear KEP"
+  },
+  {
+    "ticker": "KEP.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear KEP BCBA"
+  },
+  {
+    "ticker": "JOYY",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear JOYY"
+  },
+  {
+    "ticker": "JOYY.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear JOYY BCBA"
+  },
+  {
+    "ticker": "GSK",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear GSK"
+  },
+  {
+    "ticker": "GSK.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear GSK BCBA"
+  },
+  {
+    "ticker": "EFX",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear EFX"
+  },
+  {
+    "ticker": "EFX.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear EFX BCBA"
+  },
+  {
+    "ticker": "USB",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear USB"
+  },
+  {
+    "ticker": "USB.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear USB BCBA"
+  },
+  {
+    "ticker": "PSX",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PSX"
+  },
+  {
+    "ticker": "PSX.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PSX BCBA"
+  },
+  {
+    "ticker": "KOD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear KOD"
+  },
+  {
+    "ticker": "KOD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear KOD BCBA"
+  },
+  {
+    "ticker": "SWKS",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SWKS"
+  },
+  {
+    "ticker": "SWKS.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SWKS BCBA"
+  },
+  {
+    "ticker": "SDA",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SDA"
+  },
+  {
+    "ticker": "SDA.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SDA BCBA"
+  },
+  {
+    "ticker": "MUFG",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear MUFG"
+  },
+  {
+    "ticker": "MUFG.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear MUFG BCBA"
+  },
+  {
+    "ticker": "CSNA3",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear CSNA3"
+  },
+  {
+    "ticker": "CSNA3.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear CSNA3 BCBA"
+  },
+  {
+    "ticker": "LYG",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear LYG"
+  },
+  {
+    "ticker": "LYG.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear LYG BCBA"
+  },
+  {
+    "ticker": "VOD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear VOD"
+  },
+  {
+    "ticker": "VOD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear VOD BCBA"
+  },
+  {
+    "ticker": "ETSY",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ETSY"
+  },
+  {
+    "ticker": "ETSY.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ETSY BCBA"
+  },
+  {
+    "ticker": "SPYD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SPYD"
+  },
+  {
+    "ticker": "SPYD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SPYD BCBA"
+  },
+  {
+    "ticker": "LVS",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear LVS"
+  },
+  {
+    "ticker": "LVS.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear LVS BCBA"
+  },
+  {
+    "ticker": "BCS",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BCS"
+  },
+  {
+    "ticker": "BCS.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BCS BCBA"
+  },
+  {
+    "ticker": "ROST",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ROST"
+  },
+  {
+    "ticker": "ROST.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ROST BCBA"
+  },
+  {
+    "ticker": "NXE",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear NXE"
+  },
+  {
+    "ticker": "NXE.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear NXE BCBA"
+  },
+  {
+    "ticker": "AVY",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear AVY"
+  },
+  {
+    "ticker": "AVY.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear AVY BCBA"
+  },
+  {
+    "ticker": "PINS",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PINS"
+  },
+  {
+    "ticker": "PINS.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PINS BCBA"
+  },
+  {
+    "ticker": "E",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear E"
+  },
+  {
+    "ticker": "E.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear E BCBA"
+  },
+  {
+    "ticker": "HAPV3",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear HAPV3"
+  },
+  {
+    "ticker": "HAPV3.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear HAPV3 BCBA"
+  },
+  {
+    "ticker": "EQNR",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear EQNR"
+  },
+  {
+    "ticker": "EQNR.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear EQNR BCBA"
+  },
+  {
+    "ticker": "PAC",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PAC"
+  },
+  {
+    "ticker": "PAC.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PAC BCBA"
+  },
+  {
+    "ticker": "AEG",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear AEG"
+  },
+  {
+    "ticker": "AEG.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear AEG BCBA"
+  },
+  {
+    "ticker": "SYY",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SYY"
+  },
+  {
+    "ticker": "SYY.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SYY BCBA"
+  },
+  {
+    "ticker": "ERIC",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ERIC"
+  },
+  {
+    "ticker": "ERIC.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ERIC BCBA"
+  },
+  {
+    "ticker": "HOG",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear HOG"
+  },
+  {
+    "ticker": "HOG.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear HOG BCBA"
+  },
+  {
+    "ticker": "MGLU3",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear MGLU3"
+  },
+  {
+    "ticker": "MGLU3.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear MGLU3 BCBA"
+  },
+  {
+    "ticker": "IBN",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IBN"
+  },
+  {
+    "ticker": "IBN.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IBN BCBA"
+  },
+  {
+    "ticker": "ECL",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ECL"
+  },
+  {
+    "ticker": "ECL.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ECL BCBA"
+  },
+  {
+    "ticker": "KB",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear KB"
+  },
+  {
+    "ticker": "KB.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear KB BCBA"
+  },
+  {
+    "ticker": "DD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear DD"
+  },
+  {
+    "ticker": "DD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear DD BCBA"
+  },
+  {
+    "ticker": "MUD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear MUD"
+  },
+  {
+    "ticker": "MUD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear MUD BCBA"
+  },
+  {
+    "ticker": "SUZ",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SUZ"
+  },
+  {
+    "ticker": "SUZ.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SUZ BCBA"
+  },
+  {
+    "ticker": "NMR",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear NMR"
+  },
+  {
+    "ticker": "NMR.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear NMR BCBA"
+  },
+  {
+    "ticker": "VIV",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear VIV"
+  },
+  {
+    "ticker": "VIV.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear VIV BCBA"
+  },
+  {
+    "ticker": "AKO.B",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear AKO.B"
+  },
+  {
+    "ticker": "AKO.B.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear AKO.B BCBA"
+  },
+  {
+    "ticker": "TJX",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear TJX"
+  },
+  {
+    "ticker": "TJX.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear TJX BCBA"
+  },
+  {
+    "ticker": "SBS",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SBS"
+  },
+  {
+    "ticker": "SBS.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SBS BCBA"
+  },
+  {
+    "ticker": "URBN",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear URBN"
+  },
+  {
+    "ticker": "URBN.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear URBN BCBA"
+  },
+  {
+    "ticker": "IFF",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IFF"
+  },
+  {
+    "ticker": "IFF.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IFF BCBA"
+  },
+  {
+    "ticker": "NATU3",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear NATU3"
+  },
+  {
+    "ticker": "NATU3.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear NATU3 BCBA"
+  },
+  {
+    "ticker": "YELP",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear YELP"
+  },
+  {
+    "ticker": "YELP.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear YELP BCBA"
+  },
+  {
+    "ticker": "PHG",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PHG"
+  },
+  {
+    "ticker": "PHG.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PHG BCBA"
+  },
+  {
+    "ticker": "MFG",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear MFG"
+  },
+  {
+    "ticker": "MFG.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear MFG BCBA"
+  },
+  {
+    "ticker": "PBI",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PBI"
+  },
+  {
+    "ticker": "PBI.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PBI BCBA"
+  },
+  {
+    "ticker": "ESGU",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ESGU"
+  },
+  {
+    "ticker": "ESGU.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ESGU BCBA"
+  },
+  {
+    "ticker": "ING",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ING"
+  },
+  {
+    "ticker": "ING.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ING BCBA"
+  },
+  {
+    "ticker": "LND",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear LND"
+  },
+  {
+    "ticker": "LND.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear LND BCBA"
+  },
+  {
+    "ticker": "BKR\n\nUSD:MSFTD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BKR\n\nUSD:MSFTD"
+  },
+  {
+    "ticker": "BKR\n\nUSD:MSFTD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BKR\n\nUSD:MSFTD BCBA"
+  },
+  {
+    "ticker": "MELID",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear MELID"
+  },
+  {
+    "ticker": "MELID.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear MELID BCBA"
+  },
+  {
+    "ticker": "VISTD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear VISTD"
+  },
+  {
+    "ticker": "VISTD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear VISTD BCBA"
+  },
+  {
+    "ticker": "NVDAD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear NVDAD"
+  },
+  {
+    "ticker": "NVDAD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear NVDAD BCBA"
+  },
+  {
+    "ticker": "GOOGLD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear GOOGLD"
+  },
+  {
+    "ticker": "GOOGLD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear GOOGLD BCBA"
+  },
+  {
+    "ticker": "IBITD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IBITD"
+  },
+  {
+    "ticker": "IBITD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IBITD BCBA"
+  },
+  {
+    "ticker": "AMZND",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear AMZND"
+  },
+  {
+    "ticker": "AMZND.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear AMZND BCBA"
+  },
+  {
+    "ticker": "GLOBD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear GLOBD"
+  },
+  {
+    "ticker": "GLOBD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear GLOBD BCBA"
+  },
+  {
+    "ticker": "SPCXD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SPCXD"
+  },
+  {
+    "ticker": "SPCXD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SPCXD BCBA"
+  },
+  {
+    "ticker": "QQQD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear QQQD"
+  },
+  {
+    "ticker": "QQQD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear QQQD BCBA"
+  },
+  {
+    "ticker": "EWZD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear EWZD"
+  },
+  {
+    "ticker": "EWZD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear EWZD BCBA"
+  },
+  {
+    "ticker": "SMHD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SMHD"
+  },
+  {
+    "ticker": "SMHD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SMHD BCBA"
+  },
+  {
+    "ticker": "AMDD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear AMDD"
+  },
+  {
+    "ticker": "AMDD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear AMDD BCBA"
+  },
+  {
+    "ticker": "TSLAD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear TSLAD"
+  },
+  {
+    "ticker": "TSLAD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear TSLAD BCBA"
+  },
+  {
+    "ticker": "BRKBD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BRKBD"
+  },
+  {
+    "ticker": "BRKBD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BRKBD BCBA"
+  },
+  {
+    "ticker": "MSTRD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear MSTRD"
+  },
+  {
+    "ticker": "MSTRD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear MSTRD BCBA"
+  },
+  {
+    "ticker": "MCDD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear MCDD"
+  },
+  {
+    "ticker": "MCDD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear MCDD BCBA"
+  },
+  {
+    "ticker": "UBERD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear UBERD"
+  },
+  {
+    "ticker": "UBERD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear UBERD BCBA"
+  },
+  {
+    "ticker": "ACWID",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ACWID"
+  },
+  {
+    "ticker": "ACWID.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ACWID BCBA"
+  },
+  {
+    "ticker": "DIAD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear DIAD"
+  },
+  {
+    "ticker": "DIAD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear DIAD BCBA"
+  },
+  {
+    "ticker": "ADGOD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ADGOD"
+  },
+  {
+    "ticker": "ADGOD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ADGOD BCBA"
+  },
+  {
+    "ticker": "IBMD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IBMD"
+  },
+  {
+    "ticker": "IBMD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IBMD BCBA"
+  },
+  {
+    "ticker": "NFLXD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear NFLXD"
+  },
+  {
+    "ticker": "NFLXD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear NFLXD BCBA"
+  },
+  {
+    "ticker": "AVGOD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear AVGOD"
+  },
+  {
+    "ticker": "AVGOD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear AVGOD BCBA"
+  },
+  {
+    "ticker": "PLTRD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PLTRD"
+  },
+  {
+    "ticker": "PLTRD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PLTRD BCBA"
+  },
+  {
+    "ticker": "WMTD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear WMTD"
+  },
+  {
+    "ticker": "WMTD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear WMTD BCBA"
+  },
+  {
+    "ticker": "INTCD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear INTCD"
+  },
+  {
+    "ticker": "INTCD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear INTCD BCBA"
+  },
+  {
+    "ticker": "PFED",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PFED"
+  },
+  {
+    "ticker": "PFED.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PFED BCBA"
+  },
+  {
+    "ticker": "COIND",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear COIND"
+  },
+  {
+    "ticker": "COIND.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear COIND BCBA"
+  },
+  {
+    "ticker": "EEMD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear EEMD"
+  },
+  {
+    "ticker": "EEMD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear EEMD BCBA"
+  },
+  {
+    "ticker": "XLVD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLVD"
+  },
+  {
+    "ticker": "XLVD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLVD BCBA"
+  },
+  {
+    "ticker": "XLFD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLFD"
+  },
+  {
+    "ticker": "XLFD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLFD BCBA"
+  },
+  {
+    "ticker": "SNDKD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SNDKD"
+  },
+  {
+    "ticker": "SNDKD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SNDKD BCBA"
+  },
+  {
+    "ticker": "SLVD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SLVD"
+  },
+  {
+    "ticker": "SLVD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SLVD BCBA"
+  },
+  {
+    "ticker": "JPMD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear JPMD"
+  },
+  {
+    "ticker": "JPMD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear JPMD BCBA"
+  },
+  {
+    "ticker": "VEAD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear VEAD"
+  },
+  {
+    "ticker": "VEAD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear VEAD BCBA"
+  },
+  {
+    "ticker": "ETHAD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ETHAD"
+  },
+  {
+    "ticker": "ETHAD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ETHAD BCBA"
+  },
+  {
+    "ticker": "BD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BD"
+  },
+  {
+    "ticker": "BD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BD BCBA"
+  },
+  {
+    "ticker": "BABAD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BABAD"
+  },
+  {
+    "ticker": "BABAD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BABAD BCBA"
+  },
+  {
+    "ticker": "JNJD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear JNJD"
+  },
+  {
+    "ticker": "JNJD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear JNJD BCBA"
+  },
+  {
+    "ticker": "XLUD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLUD"
+  },
+  {
+    "ticker": "XLUD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLUD BCBA"
+  },
+  {
+    "ticker": "ASMLD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ASMLD"
+  },
+  {
+    "ticker": "ASMLD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ASMLD BCBA"
+  },
+  {
+    "ticker": "XLPD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLPD"
+  },
+  {
+    "ticker": "XLPD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLPD BCBA"
+  },
+  {
+    "ticker": "CATD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear CATD"
+  },
+  {
+    "ticker": "CATD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear CATD BCBA"
+  },
+  {
+    "ticker": "CEGD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear CEGD"
+  },
+  {
+    "ticker": "CEGD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear CEGD BCBA"
+  },
+  {
+    "ticker": "CCJD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear CCJD"
+  },
+  {
+    "ticker": "CCJD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear CCJD BCBA"
+  },
+  {
+    "ticker": "XLKD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLKD"
+  },
+  {
+    "ticker": "XLKD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLKD BCBA"
+  },
+  {
+    "ticker": "VZD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear VZD"
+  },
+  {
+    "ticker": "VZD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear VZD BCBA"
+  },
+  {
+    "ticker": "PAGSD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PAGSD"
+  },
+  {
+    "ticker": "PAGSD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PAGSD BCBA"
+  },
+  {
+    "ticker": "FXID",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear FXID"
+  },
+  {
+    "ticker": "FXID.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear FXID BCBA"
+  },
+  {
+    "ticker": "PBRD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PBRD"
+  },
+  {
+    "ticker": "PBRD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PBRD BCBA"
+  },
+  {
+    "ticker": "NOWD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear NOWD"
+  },
+  {
+    "ticker": "NOWD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear NOWD BCBA"
+  },
+  {
+    "ticker": "CVXD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear CVXD"
+  },
+  {
+    "ticker": "CVXD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear CVXD BCBA"
+  },
+  {
+    "ticker": "TQQQD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear TQQQD"
+  },
+  {
+    "ticker": "TQQQD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear TQQQD BCBA"
+  },
+  {
+    "ticker": "RSPD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear RSPD"
+  },
+  {
+    "ticker": "RSPD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear RSPD BCBA"
+  },
+  {
+    "ticker": "QCOMD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear QCOMD"
+  },
+  {
+    "ticker": "QCOMD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear QCOMD BCBA"
+  },
+  {
+    "ticker": "XLED",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLED"
+  },
+  {
+    "ticker": "XLED.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLED BCBA"
+  },
+  {
+    "ticker": "PEPD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PEPD"
+  },
+  {
+    "ticker": "PEPD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PEPD BCBA"
+  },
+  {
+    "ticker": "LLYD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear LLYD"
+  },
+  {
+    "ticker": "LLYD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear LLYD BCBA"
+  },
+  {
+    "ticker": "MAD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear MAD"
+  },
+  {
+    "ticker": "MAD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear MAD BCBA"
+  },
+  {
+    "ticker": "BBDD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BBDD"
+  },
+  {
+    "ticker": "BBDD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BBDD BCBA"
+  },
+  {
+    "ticker": "GED",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear GED"
+  },
+  {
+    "ticker": "GED.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear GED BCBA"
+  },
+  {
+    "ticker": "PGD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PGD"
+  },
+  {
+    "ticker": "PGD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PGD BCBA"
+  },
+  {
+    "ticker": "ANFD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ANFD"
+  },
+  {
+    "ticker": "ANFD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ANFD BCBA"
+  },
+  {
+    "ticker": "ARKKD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ARKKD"
+  },
+  {
+    "ticker": "ARKKD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ARKKD BCBA"
+  },
+  {
+    "ticker": "COPXD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear COPXD"
+  },
+  {
+    "ticker": "COPXD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear COPXD BCBA"
+  },
+  {
+    "ticker": "URAD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear URAD"
+  },
+  {
+    "ticker": "URAD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear URAD BCBA"
+  },
+  {
+    "ticker": "GDXD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear GDXD"
+  },
+  {
+    "ticker": "GDXD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear GDXD BCBA"
+  },
+  {
+    "ticker": "ADBED",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ADBED"
+  },
+  {
+    "ticker": "ADBED.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ADBED BCBA"
+  },
+  {
+    "ticker": "NBISD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear NBISD"
+  },
+  {
+    "ticker": "NBISD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear NBISD BCBA"
+  },
+  {
+    "ticker": "AXPD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear AXPD"
+  },
+  {
+    "ticker": "AXPD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear AXPD BCBA"
+  },
+  {
+    "ticker": "SATLD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SATLD"
+  },
+  {
+    "ticker": "SATLD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SATLD BCBA"
+  },
+  {
+    "ticker": "UNHD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear UNHD"
+  },
+  {
+    "ticker": "UNHD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear UNHD BCBA"
+  },
+  {
+    "ticker": "NIOD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear NIOD"
+  },
+  {
+    "ticker": "NIOD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear NIOD BCBA"
+  },
+  {
+    "ticker": "IVVD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IVVD"
+  },
+  {
+    "ticker": "IVVD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IVVD BCBA"
+  },
+  {
+    "ticker": "LARD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear LARD"
+  },
+  {
+    "ticker": "LARD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear LARD BCBA"
+  },
+  {
+    "ticker": "VSTD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear VSTD"
+  },
+  {
+    "ticker": "VSTD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear VSTD BCBA"
+  },
+  {
+    "ticker": "STNED",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear STNED"
+  },
+  {
+    "ticker": "STNED.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear STNED BCBA"
+  },
+  {
+    "ticker": "NKED",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear NKED"
+  },
+  {
+    "ticker": "NKED.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear NKED BCBA"
+  },
+  {
+    "ticker": "MRVLD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear MRVLD"
+  },
+  {
+    "ticker": "MRVLD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear MRVLD BCBA"
+  },
+  {
+    "ticker": "IWMD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IWMD"
+  },
+  {
+    "ticker": "IWMD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IWMD BCBA"
+  },
+  {
+    "ticker": "IVED",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear IVED"
+  },
+  {
+    "ticker": "IVED.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear IVED BCBA"
+  },
+  {
+    "ticker": "AMATD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear AMATD"
+  },
+  {
+    "ticker": "AMATD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear AMATD BCBA"
+  },
+  {
+    "ticker": "SPXLD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SPXLD"
+  },
+  {
+    "ticker": "SPXLD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SPXLD BCBA"
+  },
+  {
+    "ticker": "ILFD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ILFD"
+  },
+  {
+    "ticker": "ILFD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ILFD BCBA"
+  },
+  {
+    "ticker": "ARMD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ARMD"
+  },
+  {
+    "ticker": "ARMD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ARMD BCBA"
+  },
+  {
+    "ticker": "ABTD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ABTD"
+  },
+  {
+    "ticker": "ABTD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ABTD BCBA"
+  },
+  {
+    "ticker": "OD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear OD"
+  },
+  {
+    "ticker": "OD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear OD BCBA"
+  },
+  {
+    "ticker": "VALED",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear VALED"
+  },
+  {
+    "ticker": "VALED.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear VALED BCBA"
+  },
+  {
+    "ticker": "HOODD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear HOODD"
+  },
+  {
+    "ticker": "HOODD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear HOODD BCBA"
+  },
+  {
+    "ticker": "BACD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear BACD"
+  },
+  {
+    "ticker": "BACD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear BACD BCBA"
+  },
+  {
+    "ticker": "CD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear CD"
+  },
+  {
+    "ticker": "CD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear CD BCBA"
+  },
+  {
+    "ticker": "ANETD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ANETD"
+  },
+  {
+    "ticker": "ANETD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ANETD BCBA"
+  },
+  {
+    "ticker": "XLYD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLYD"
+  },
+  {
+    "ticker": "XLYD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLYD BCBA"
+  },
+  {
+    "ticker": "XLBD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XLBD"
+  },
+  {
+    "ticker": "XLBD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XLBD BCBA"
+  },
+  {
+    "ticker": "FSLRD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear FSLRD"
+  },
+  {
+    "ticker": "FSLRD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear FSLRD BCBA"
+  },
+  {
+    "ticker": "CAAPD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear CAAPD"
+  },
+  {
+    "ticker": "CAAPD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear CAAPD BCBA"
+  },
+  {
+    "ticker": "RGTID",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear RGTID"
+  },
+  {
+    "ticker": "RGTID.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear RGTID BCBA"
+  },
+  {
+    "ticker": "AALD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear AALD"
+  },
+  {
+    "ticker": "AALD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear AALD BCBA"
+  },
+  {
+    "ticker": "LMTD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear LMTD"
+  },
+  {
+    "ticker": "LMTD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear LMTD BCBA"
+  },
+  {
+    "ticker": "CIBRD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear CIBRD"
+  },
+  {
+    "ticker": "CIBRD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear CIBRD BCBA"
+  },
+  {
+    "ticker": "RKLBD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear RKLBD"
+  },
+  {
+    "ticker": "RKLBD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear RKLBD BCBA"
+  },
+  {
+    "ticker": "JDD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear JDD"
+  },
+  {
+    "ticker": "JDD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear JDD BCBA"
+  },
+  {
+    "ticker": "DISND",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear DISND"
+  },
+  {
+    "ticker": "DISND.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear DISND BCBA"
+  },
+  {
+    "ticker": "HUTD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear HUTD"
+  },
+  {
+    "ticker": "HUTD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear HUTD BCBA"
+  },
+  {
+    "ticker": "KMBD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear KMBD"
+  },
+  {
+    "ticker": "KMBD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear KMBD BCBA"
+  },
+  {
+    "ticker": "XOMD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear XOMD"
+  },
+  {
+    "ticker": "XOMD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear XOMD BCBA"
+  },
+  {
+    "ticker": "PANWD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PANWD"
+  },
+  {
+    "ticker": "PANWD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PANWD BCBA"
+  },
+  {
+    "ticker": "SLBD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear SLBD"
+  },
+  {
+    "ticker": "SLBD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear SLBD BCBA"
+  },
+  {
+    "ticker": "CRMD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear CRMD"
+  },
+  {
+    "ticker": "CRMD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear CRMD BCBA"
+  },
+  {
+    "ticker": "EWYD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear EWYD"
+  },
+  {
+    "ticker": "EWYD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear EWYD BCBA"
+  },
+  {
+    "ticker": "CRWVD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear CRWVD"
+  },
+  {
+    "ticker": "CRWVD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear CRWVD BCBA"
+  },
+  {
+    "ticker": "ULD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear ULD"
+  },
+  {
+    "ticker": "ULD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear ULD BCBA"
+  },
+  {
+    "ticker": "UPSTD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear UPSTD"
+  },
+  {
+    "ticker": "UPSTD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear UPSTD BCBA"
+  },
+  {
+    "ticker": "HIMSD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear HIMSD"
+  },
+  {
+    "ticker": "HIMSD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear HIMSD BCBA"
+  },
+  {
+    "ticker": "LACD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear LACD"
+  },
+  {
+    "ticker": "LACD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear LACD BCBA"
+  },
+  {
+    "ticker": "PETRD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear PETRD"
+  },
+  {
+    "ticker": "PETRD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear PETRD BCBA"
+  },
+  {
+    "ticker": "HMYD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear HMYD"
+  },
+  {
+    "ticker": "HMYD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear HMYD BCBA"
+  },
+  {
+    "ticker": "TJJXOD",
+    "mercado": "NASDAQ",
+    "nombre": "Cedear TJJXOD"
+  },
+  {
+    "ticker": "TJJXOD.BA",
+    "mercado": "BCBA",
+    "nombre": "Cedear TJJXOD BCBA"
+  },
+  {
+    "ticker": "^MERV",
+    "mercado": "INDEX",
+    "nombre": "^MERV"
+  },
+  {
+    "ticker": "^GSPC",
+    "mercado": "INDEX",
+    "nombre": "^GSPC"
+  },
+  {
+    "ticker": "^IXIC",
+    "mercado": "INDEX",
+    "nombre": "^IXIC"
+  },
+  {
+    "ticker": "^DJI",
+    "mercado": "INDEX",
+    "nombre": "^DJI"
+  }
+]

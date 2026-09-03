@@ -20,6 +20,9 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+# Server-side user prefs (unstorage fs driver)
+.data/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

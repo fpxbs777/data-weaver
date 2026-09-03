@@ -22,7 +22,7 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/etr-logo.png.asset.json";
+const logo = { url: "/favicon.png" };
 import bgImage from "@/assets/finance-bg.jpg";
 import { fmtNum, fmtPct } from "@/lib/etr-data";
 import { useEtr } from "@/lib/etr-store";

@@ -1,11 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useQuery } from "@tanstack/react-query";
-import { ArrowUpRight, RefreshCw } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { AppShell } from "@/components/etr/app-shell";
 import { Panel, Stat, Delta, Bar, Pill } from "@/components/etr/primitives";
+import { IndicesArsUsdWidget } from "@/components/market/IndicesArsUsdWidget";
 import { useEtr } from "@/lib/etr-store";
 import { valuado, fmtARS, fmtPct, fmtNum } from "@/lib/etr-data";
-import { getDataframe } from "@/lib/market.functions";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,59 +24,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Resumen,
 });
-
-function DataframeVariacion({ varCarteraLocal }: { varCarteraLocal: number }) {
-  const q = useQuery({ queryKey: ["dataframe-resumen"], queryFn: () => getDataframe(), refetchInterval: 60_000, staleTime: 30_000 });
-  const rows = q.data?.rows ?? [];
-  const porGrupo = (g: string) => rows.filter((r) => r.grupo === g);
-  const MiniWidget = ({ eyebrow, title, accent, children }: { eyebrow: string; title: string; accent: string; children: React.ReactNode }) => (
-    <Panel eyebrow={eyebrow} title={title} bodyClassName="p-0" className={`border-l-2 ${accent}`}>
-      {children}
-    </Panel>
-  );
-  const Row = ({ r }: { r: (typeof rows)[number] }) => (
-    <div className="flex items-center justify-between gap-2 px-3 py-2 hover:bg-surface-2/40">
-      <div className="min-w-0">
-        <p className="num text-xs font-medium truncate">{r.label} <span className="text-[10px] text-muted-foreground">{r.symbol}</span></p>
-        <p className="text-[11px] text-muted-foreground truncate">{r.fecha ? new Date(r.fecha).toLocaleDateString("es-AR") : r.unidad}</p>
-      </div>
-      <div className="text-right shrink-0">
-        <p className="num text-xs font-semibold">{r.unidad === "bps" ? fmtNum(r.valor, 0) + " bps" : r.unidad === "US$ M" ? `US$ ${fmtNum(r.valor, 0)} M` : fmtNum(r.valor, 2)}</p>
-        <Delta value={r.varDiaria} />
-      </div>
-    </div>
-  );
-  return (
-    <div className="space-y-3">
-      <div className="grid gap-2 sm:grid-cols-2">
-        <div className="rounded-md border border-border bg-surface-2/40 px-3 py-2 flex items-center justify-between">
-          <div><p className="eyebrow">Variación diaria</p><p className="text-xs text-muted-foreground">Promedio índices + USD</p></div>
-          <div className="flex items-center gap-2">{q.isFetching && <RefreshCw className="h-3 w-3 animate-spin text-muted-foreground" />}<span className="num text-sm font-semibold">{q.data ? fmtPct(rows.filter((r) => r.grupo === "indices").reduce((a, r) => a + r.varDiaria, 0) / Math.max(1, porGrupo("indices").length)) : "—"}</span></div>
-        </div>
-        <div className="rounded-md border border-primary/30 bg-primary/10 px-3 py-2 flex items-center justify-between">
-          <div><p className="eyebrow">Var. cartera local</p><p className="text-xs text-muted-foreground">Ponderado holdings</p></div>
-          <Delta value={varCarteraLocal} />
-        </div>
-      </div>
-      {q.isLoading ? (
-        <p className="px-4 py-4 text-center text-xs text-muted-foreground">Cargando mini dataframes…</p>
-      ) : (
-        <div className="grid gap-3 lg:grid-cols-3">
-          <MiniWidget eyebrow="Índices" title="Merval · SPY · Nasdaq" accent="border-l-chart-4">
-            <div className="divide-y divide-border/50">{porGrupo("indices").length ? porGrupo("indices").map((r) => <Row key={r.symbol} r={r} />) : <p className="px-3 py-4 text-xs text-muted-foreground text-center">Sin datos</p>}</div>
-          </MiniWidget>
-          <MiniWidget eyebrow="Riesgo & Reservas" title="Riesgo país · Reservas" accent="border-l-warn">
-            <div className="divide-y divide-border/50">{porGrupo("riesgo_reservas").length ? porGrupo("riesgo_reservas").map((r) => <Row key={r.symbol} r={r} />) : <p className="px-3 py-4 text-xs text-muted-foreground text-center">Sin datos</p>}</div>
-          </MiniWidget>
-          <MiniWidget eyebrow="USD" title="BCRA Cambiarias · DolarApi" accent="border-l-gain">
-            <div className="divide-y divide-border/50">{porGrupo("usd").length ? porGrupo("usd").slice(0, 5).map((r) => <Row key={r.symbol} r={r} />) : <p className="px-3 py-4 text-xs text-muted-foreground text-center">Sin datos</p>}</div>
-          </MiniWidget>
-        </div>
-      )}
-      <p className="text-[11px] text-muted-foreground px-1">Yahoo Finance (^MERV/SPY/^IXIC) · BCRA Cambiarias v1.0 / Monetarias v4.0 · DolarApi — {q.data?.updatedAt ? new Date(q.data.updatedAt).toLocaleTimeString("es-AR") : ""}</p>
-    </div>
-  );
-}
 
 function Resumen() {
   const {
@@ -103,7 +49,9 @@ function Resumen() {
 
   return (
     <AppShell title="Resumen" subtitle="Estado consolidado del asesoramiento · cotizaciones en vivo">
-      <DataframeVariacion varCarteraLocal={varDiaCartera} />
+      <div className="mt-4">
+        <IndicesArsUsdWidget />
+      </div>
       {hasData ? (
         <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           <Stat

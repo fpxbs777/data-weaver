@@ -12,7 +12,7 @@ import {
 export type IolSessionInfo = { user: string } | null;
 
 export const iolLogin = createServerFn({ method: "POST" })
-  .inputValidator((input: { username: string; password: string }) => ({
+  .validator((input: { username: string; password: string }) => ({
     username: String(input?.username ?? "").trim(),
     password: String(input?.password ?? ""),
   }))
@@ -43,13 +43,13 @@ export const iolPerfil = createServerFn({ method: "GET" }).handler(async (): Pro
 );
 
 export const iolEstadoCuenta = createServerFn({ method: "POST" })
-  .inputValidator((input: { id: number }) => ({ id: Number(input?.id) }))
+  .validator((input: { id: number }) => ({ id: Number(input?.id) }))
   .handler(async ({ data }): Promise<Json> =>
     iolFetch<Json>(`/api/v2/Asesores/EstadoDeCuenta/${data.id}`),
   );
 
 export const iolPortafolio = createServerFn({ method: "POST" })
-  .inputValidator((input: { id: number; pais?: string }) => ({
+  .validator((input: { id: number; pais?: string }) => ({
     id: Number(input?.id),
     pais: input?.pais === "Estados_Unidos" ? "Estados_Unidos" : "Argentina",
   }))
@@ -58,7 +58,7 @@ export const iolPortafolio = createServerFn({ method: "POST" })
   );
 
 export const iolOperaciones = createServerFn({ method: "POST" })
-  .inputValidator((input: { id: number; estado?: string; pais?: string; desde?: string; hasta?: string }) => ({
+  .validator((input: { id: number; estado?: string; pais?: string; desde?: string; hasta?: string }) => ({
     id: Number(input?.id),
     estado: input?.estado ?? "Todas",
     pais: input?.pais ?? "Argentina",
@@ -79,7 +79,7 @@ export const iolOperaciones = createServerFn({ method: "POST" })
   });
 
 export const iolDetalleOperacion = createServerFn({ method: "POST" })
-  .inputValidator((input: { id: number; numero: number }) => ({
+  .validator((input: { id: number; numero: number }) => ({
     id: Number(input?.id),
     numero: Number(input?.numero),
   }))
@@ -88,7 +88,7 @@ export const iolDetalleOperacion = createServerFn({ method: "POST" })
   );
 
 export const iolMovimientos = createServerFn({ method: "POST" })
-  .inputValidator((input: { id: number; desde?: string; hasta?: string }) => ({
+  .validator((input: { id: number; desde?: string; hasta?: string }) => ({
     id: Number(input?.id),
     desde: input?.desde,
     hasta: input?.hasta,
@@ -162,7 +162,7 @@ export const iolClientesResumen = createServerFn({ method: "GET" }).handler(
 );
 
 export const iolClienteDetalle = createServerFn({ method: "POST" })
-  .inputValidator((input: { id: number; nombre?: string }) => ({
+  .validator((input: { id: number; nombre?: string }) => ({
     id: Number(input?.id),
     nombre: String(input?.nombre ?? ""),
   }))

@@ -4,6 +4,8 @@
  * No mock or randomly generated values are produced here.
  */
 
+import { getYahooSession, invalidateYahooSession } from "./yahoo-http";
+
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
 
@@ -23,7 +25,11 @@ export type Quote = {
 async function getJson<T>(url: string, headers?: Record<string, string>): Promise<T | null> {
   try {
     const res = await fetch(url, {
-      headers: { "User-Agent": UA, Accept: "application/json", ...headers },
+      headers: {
+        "User-Agent": UA,
+        Accept: "application/json",
+        ...headers,
+      },
     });
     if (!res.ok) return null;
     return (await res.json()) as T;
@@ -49,6 +55,65 @@ type YahooChart = {
   };
 };
 
+/** Caché de quotes con stale-serving: ante 429/error se devuelve el último valor conocido. */
+const quoteCache = new Map<string, { quote: Quote; exp: number }>();
+const QUOTE_TTL = 300_000;
+
+/** Último estado HTTP visto en Yahoo (para mostrar la causa en UI, no solo en logs). */
+export let lastYahooStatus: number | null = null;
+export let lastYahooAt: number | null = null;
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+// Throttle global Yahoo: serializa las llamadas chart con un gap mínimo
+// para no disparar el 429 con ráfagas paralelas (Promise.all de 3-6 symbols).
+let yahooQueue: Promise<void> = Promise.resolve();
+let lastYahooReqAt = 0;
+const YAHOO_MIN_GAP = 700;
+
+function throttleYahoo(): Promise<void> {
+  const run = yahooQueue.then(async () => {
+    const wait = YAHOO_MIN_GAP - (Date.now() - lastYahooReqAt);
+    if (wait > 0) await sleep(wait);
+    lastYahooReqAt = Date.now();
+  });
+  // Encadenar sin romper la cola ante errores.
+  yahooQueue = run.catch(() => {});
+  return run;
+}
+
+async function fetchChart(
+  symbol: string,
+  session?: { cookie: string; crumb: string } | null,
+): Promise<YahooChart | null> {
+  const range = "range=2y&interval=1d";
+  const hosts = ["https://query1.finance.yahoo.com", "https://query2.finance.yahoo.com"];
+  const crumbParam = session?.crumb ? `&crumb=${encodeURIComponent(session.crumb)}` : "";
+  const cookie = session?.cookie;
+  // Pasada 1: inmediata en ambos hosts. Pasada 2 (solo si 429): con espera, esquiva el throttle por segundo.
+  for (let pass = 0; pass < 2; pass++) {
+    for (const host of hosts) {
+      try {
+        await throttleYahoo();
+        const res = await fetch(`${host}/v8/finance/chart/${encodeURIComponent(symbol)}?${range}${crumbParam}`, {
+          headers: { "User-Agent": UA, Accept: "application/json", ...(cookie ? { Cookie: cookie } : {}) },
+        });
+        lastYahooStatus = res.status;
+        lastYahooAt = Date.now();
+        if (res.status === 429) continue;
+        if (!res.ok) continue;
+        const data = (await res.json()) as YahooChart;
+        if (data?.chart?.result?.[0]) return data;
+      } catch {
+        continue;
+      }
+    }
+    if (lastYahooStatus === 429 && pass === 0) await sleep(2500);
+    else break;
+  }
+  return null;
+}
+
 export async function fetchQuote(symbol: string): Promise<Quote> {
   const empty: Quote = {
     symbol,
@@ -60,13 +125,32 @@ export async function fetchQuote(symbol: string): Promise<Quote> {
     monthly: [],
     ok: false,
   };
-  const data = await getJson<YahooChart>(
-    `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=2y&interval=1d`,
-  );
+  const cached = quoteCache.get(symbol);
+  if (cached && Date.now() < cached.exp) return cached.quote;
+  // Sesión Yahoo (cookie+crumb); si falla (429 con negative-cache), se intenta sin sesión
+  let session: { cookie: string; crumb: string } | null = null;
+  try {
+    session = await getYahooSession();
+  } catch {}
+  const data = await fetchChart(symbol, session);
   const r = data?.chart?.result?.[0];
   const ts = r?.timestamp ?? [];
   const closes = r?.indicators?.quote?.[0]?.close ?? [];
-  if (!r || ts.length === 0) return empty;
+  if (!r || ts.length === 0) {
+    // Servir último valor conocido antes de devolver vacío (rate-limit 429).
+    // Log degradado a warn con status para no inundar consola en dev.
+    if (cached) return cached.quote;
+    if (session) {
+      // Reintentar una vez con sesión fresca y luego último conocido
+      invalidateYahooSession();
+    }
+    if (lastYahooStatus === 429) {
+      console.warn(`[fetchQuote] throttled 429 for ${symbol}, serving stale/empty`);
+    } else {
+      console.warn(`[fetchQuote] empty response for ${symbol} (status=${lastYahooStatus})`);
+    }
+    return empty;
+  }
 
   const points: Array<{ ts: number; close: number }> = [];
   for (let i = 0; i < ts.length; i++) {
@@ -98,7 +182,7 @@ export async function fetchQuote(symbol: string): Promise<Quote> {
     .slice(-13)
     .map((p) => ({ fecha: monthLabel(p.ts), close: p.close }));
 
-  return {
+  const out: Quote = {
     symbol,
     price,
     prevClose,
@@ -108,10 +192,17 @@ export async function fetchQuote(symbol: string): Promise<Quote> {
     monthly,
     ok: true,
   };
+  quoteCache.set(symbol, { quote: out, exp: Date.now() + QUOTE_TTL });
+  return out;
 }
 
 export async function fetchQuotes(symbols: string[]): Promise<Quote[]> {
-  return Promise.all(symbols.map((s) => fetchQuote(s)));
+  // Secuencial (no Promise.all): con throttle global evita ráfagas que disparan 429.
+  const out: Quote[] = [];
+  for (const s of symbols) {
+    out.push(await fetchQuote(s));
+  }
+  return out;
 }
 
 // ---------- Dólares ----------

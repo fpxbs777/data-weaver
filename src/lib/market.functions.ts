@@ -30,7 +30,7 @@ export type MercadoSnapshot = {
 };
 
 export const getQuotes = createServerFn({ method: "POST" })
-  .inputValidator((input: { symbols: string[] }) => ({
+  .validator((input: { symbols: string[] }) => ({
     symbols: (input?.symbols ?? []).filter((s) => typeof s === "string" && s.length > 0).slice(0, 40),
   }))
   .handler(async ({ data }): Promise<Quote[]> => fetchQuotes(data.symbols));
@@ -99,7 +99,7 @@ export type { Quote, MacroItem, MonthlyPoint, AssetProfile, DataframeRow };
 export const getDataframe = createServerFn({ method: "GET" }).handler(async (): Promise<{ rows: DataframeRow[]; updatedAt: string }> => fetchDataframe());
 
 export const getProfiles = createServerFn({ method: "POST" })
-  .inputValidator((input: { symbols: string[] }) => ({
+  .validator((input: { symbols: string[] }) => ({
     symbols: (input?.symbols ?? []).filter((s) => typeof s === "string" && s.length > 0).slice(0, 40),
   }))
   .handler(async ({ data }): Promise<AssetProfile[]> => fetchProfiles(data.symbols));

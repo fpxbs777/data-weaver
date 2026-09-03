@@ -1,0 +1,806 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-16",
+  "nota": "Archivo unificado de tickers, sectores, industrias, ETFs y factores del proyecto Clarity Dashboard",
+
+  "sectores": {
+    "Servicios Financieros": {
+      "industrias": {
+        "Bancos - Regionales": [
+          { "ticker": "BBAR.BA", "mercado": "BCBA", "nombre": "Banco BBVA Argentina S.A.", "pais": "Argentina" },
+          { "ticker": "BHIP.BA", "mercado": "BCBA", "nombre": "Banco Hipotecario S.A.", "pais": "Argentina" },
+          { "ticker": "BMA.BA", "mercado": "BCBA", "nombre": "Banco Macro S.A.", "pais": "Argentina" },
+          { "ticker": "BPAT.BA", "mercado": "BCBA", "nombre": "Banco Patagonia S.A.", "pais": "Argentina" },
+          { "ticker": "GGAL.BA", "mercado": "BCBA", "nombre": "Grupo Financiero Galicia S.A.", "pais": "Argentina" },
+          { "ticker": "SUPV.BA", "mercado": "BCBA", "nombre": "Grupo Supervielle S.A.", "pais": "Argentina" },
+          { "ticker": "BBD", "mercado": "NYSE", "nombre": "Banco Bradesco S.A.", "pais": "Brasil" },
+          { "ticker": "ITUB", "mercado": "NYSE", "nombre": "Ita\u00fa Unibanco Holding S.A.", "pais": "Brasil" },
+          { "ticker": "NU", "mercado": "NYSE", "nombre": "Nu Holdings Ltd.", "pais": "Brasil" }
+        ],
+        "Bancos - Diversificados": [
+          { "ticker": "VALO.BA", "mercado": "BCBA", "nombre": "Banco de Valores S.A.", "pais": "Argentina" },
+          { "ticker": "C", "mercado": "NYSE", "nombre": "Citigroup Inc.", "pais": "EE.UU." },
+          { "ticker": "HSBC", "mercado": "NYSE", "nombre": "HSBC Holdings plc", "pais": "Reino Unido" },
+          { "ticker": "JPM", "mercado": "NYSE", "nombre": "JPMorgan Chase & Co.", "pais": "EE.UU." },
+          { "ticker": "WFC", "mercado": "NYSE", "nombre": "Wells Fargo & Company", "pais": "EE.UU." }
+        ],
+        "Mercados de capitales": [
+          { "ticker": "BYMA.BA", "mercado": "BCBA", "nombre": "Bolsas y Mercados Argentinos S.A.", "pais": "Argentina" },
+          { "ticker": "GS", "mercado": "NYSE", "nombre": "The Goldman Sachs Group, Inc.", "pais": "EE.UU." },
+          { "ticker": "HOOD", "mercado": "NASDAQ", "nombre": "Robinhood Markets, Inc.", "pais": "EE.UU." },
+          { "ticker": "XP", "mercado": "NASDAQ", "nombre": "XP Inc.", "pais": "Brasil" }
+        ],
+        "Datos financieros y bolsas de valores": [
+          { "ticker": "A3.BA", "mercado": "BCBA", "nombre": "A3 Mercados S.A.", "pais": "Argentina" },
+          { "ticker": "COIN", "mercado": "NASDAQ", "nombre": "Coinbase Global, Inc.", "pais": "EE.UU." },
+          { "ticker": "ICE", "mercado": "NYSE", "nombre": "Intercontinental Exchange, Inc.", "pais": "EE.UU." },
+          { "ticker": "MCO", "mercado": "NYSE", "nombre": "Moody's Corporation", "pais": "EE.UU." },
+          { "ticker": "MSCI", "mercado": "NYSE", "nombre": "MSCI Inc.", "pais": "EE.UU." },
+          { "ticker": "SPGI", "mercado": "NYSE", "nombre": "S&P Global Inc.", "pais": "EE.UU." }
+        ],
+        "Servicios de cr\u00e9dito": [
+          { "ticker": "AXP", "mercado": "NYSE", "nombre": "American Express Company", "pais": "EE.UU." },
+          { "ticker": "MA", "mercado": "NYSE", "nombre": "Mastercard Incorporated", "pais": "EE.UU." },
+          { "ticker": "PYPL", "mercado": "NASDAQ", "nombre": "PayPal Holdings, Inc.", "pais": "EE.UU." },
+          { "ticker": "V", "mercado": "NYSE", "nombre": "Visa Inc.", "pais": "EE.UU." }
+        ],
+        "Seguros - Diversificados": [
+          { "ticker": "AFL", "mercado": "NYSE", "nombre": "Aflac Incorporated", "pais": "EE.UU." },
+          { "ticker": "AIG", "mercado": "NYSE", "nombre": "American International Group, Inc.", "pais": "EE.UU." },
+          { "ticker": "MET", "mercado": "NYSE", "nombre": "MetLife, Inc.", "pais": "EE.UU." },
+          { "ticker": "PRU", "mercado": "NYSE", "nombre": "Prudential Financial, Inc.", "pais": "EE.UU." }
+        ],
+        "Corredores de seguros": [
+          { "ticker": "AJG", "mercado": "NYSE", "nombre": "Arthur J. Gallagher & Co.", "pais": "EE.UU." },
+          { "ticker": "AON", "mercado": "NYSE", "nombre": "Aon plc", "pais": "EE.UU." },
+          { "ticker": "MRSH", "mercado": "NASDAQ", "nombre": "Marsh & McLennan Companies, Inc.", "pais": "EE.UU." },
+          { "ticker": "WTW", "mercado": "NASDAQ", "nombre": "Willis Towers Watson PLC", "pais": "EE.UU." }
+        ]
+      }
+    },
+    "Acciones Industriales": {
+      "industrias": {
+        "Maquinaria agr\u00edcola y de construcci\u00f3n pesada": [
+          { "ticker": "AGRO.BA", "mercado": "BCBA", "nombre": "Agrometal S.A.I.", "pais": "Argentina" },
+          { "ticker": "CAT", "mercado": "NYSE", "nombre": "Caterpillar Inc.", "pais": "EE.UU." },
+          { "ticker": "DE", "mercado": "NYSE", "nombre": "Deere & Company", "pais": "EE.UU." },
+          { "ticker": "PCAR", "mercado": "NASDAQ", "nombre": "PACCAR Inc", "pais": "EE.UU." }
+        ],
+        "Operaciones de infraestructura": [
+          { "ticker": "AUSO.BA", "mercado": "BCBA", "nombre": "Autopistas Del Sol SA", "pais": "Argentina" },
+          { "ticker": "OEST.BA", "mercado": "BCBA", "nombre": "Grupo Concesionario del Oeste S.A.", "pais": "Argentina" }
+        ],
+        "Conglomerados": [
+          { "ticker": "CADO.BA", "mercado": "BCBA", "nombre": "Carlos Casado S.A.", "pais": "Argentina" },
+          { "ticker": "COME.BA", "mercado": "BCBA", "nombre": "Sociedad Comercial del Plata S.A.", "pais": "Argentina" },
+          { "ticker": "CRES.BA", "mercado": "BCBA", "nombre": "Cresud S.A.", "pais": "Argentina" },
+          { "ticker": "LEDE.BA", "mercado": "BCBA", "nombre": "Ledesma S.A. Agr\u00edcola Industrial", "pais": "Argentina" },
+          { "ticker": "PAMP.BA", "mercado": "BCBA", "nombre": "Pampa Energ\u00eda S.A.", "pais": "Argentina" },
+          { "ticker": "HON", "mercado": "NASDAQ", "nombre": "Honeywell International Inc.", "pais": "EE.UU." },
+          { "ticker": "MMM", "mercado": "NYSE", "nombre": "3M Company", "pais": "EE.UU." }
+        ],
+        "Aeroespacial y Defensa": [
+          { "ticker": "BA", "mercado": "NYSE", "nombre": "The Boeing Company", "pais": "EE.UU." },
+          { "ticker": "GD", "mercado": "NYSE", "nombre": "General Dynamics Corporation", "pais": "EE.UU." },
+          { "ticker": "GE", "mercado": "NYSE", "nombre": "GE Aerospace", "pais": "EE.UU." },
+          { "ticker": "LMT", "mercado": "NYSE", "nombre": "Lockheed Martin Corporation", "pais": "EE.UU." },
+          { "ticker": "NOC", "mercado": "NYSE", "nombre": "Northrop Grumman Corporation", "pais": "EE.UU." },
+          { "ticker": "RKLB", "mercado": "NASDAQ", "nombre": "Rocket Lab Corporation", "pais": "EE.UU." },
+          { "ticker": "RTX", "mercado": "NYSE", "nombre": "RTX Corporation", "pais": "EE.UU." },
+          { "ticker": "SATL", "mercado": "NASDAQ", "nombre": "Satellogic Inc.", "pais": "Argentina" },
+          { "ticker": "TDG", "mercado": "NYSE", "nombre": "TransDigm Group Incorporated", "pais": "EE.UU." }
+        ],
+        "Aerol\u00edneas": [
+          { "ticker": "AAL", "mercado": "NASDAQ", "nombre": "American Airlines Group Inc.", "pais": "EE.UU." },
+          { "ticker": "DAL", "mercado": "NYSE", "nombre": "Delta Air Lines, Inc.", "pais": "EE.UU." },
+          { "ticker": "LUV", "mercado": "NYSE", "nombre": "Southwest Airlines Co.", "pais": "EE.UU." },
+          { "ticker": "UAL", "mercado": "NASDAQ", "nombre": "United Airlines Holdings, Inc.", "pais": "EE.UU." }
+        ],
+        "Transporte y log\u00edstica integrados": [
+          { "ticker": "FDX", "mercado": "NYSE", "nombre": "FedEx Corporation", "pais": "EE.UU." },
+          { "ticker": "UPS", "mercado": "NYSE", "nombre": "United Parcel Service, Inc.", "pais": "EE.UU." },
+          { "ticker": "XPO", "mercado": "NYSE", "nombre": "XPO, Inc.", "pais": "EE.UU." }
+        ],
+        "Ingenier\u00eda y Construcci\u00f3n": [
+          { "ticker": "POLL.BA", "mercado": "BCBA", "nombre": "Polledo S.A.", "pais": "Argentina" }
+        ],
+        "Productos y equipos de construcci\u00f3n": [
+          { "ticker": "FERR.BA", "mercado": "BCBA", "nombre": "Ferrum S.A.", "pais": "Argentina" }
+        ]
+      }
+    },
+    "Materiales B\u00e1sicos": {
+      "industrias": {
+        "Aluminio": [
+          { "ticker": "ALUA.BA", "mercado": "BCBA", "nombre": "Aluar Aluminio Argentino S.A.I.C.", "pais": "Argentina" }
+        ],
+        "Acero": [
+          { "ticker": "TXAR.BA", "mercado": "BCBA", "nombre": "Ternium Argentina S.A.", "pais": "Argentina" },
+          { "ticker": "NUE", "mercado": "NYSE", "nombre": "Nucor Corporation", "pais": "EE.UU." },
+          { "ticker": "STLD", "mercado": "NASDAQ", "nombre": "Steel Dynamics, Inc.", "pais": "EE.UU." },
+          { "ticker": "X", "mercado": "NYSE", "nombre": "United States Steel Corporation", "pais": "EE.UU." },
+          { "ticker": "GGB", "mercado": "NYSE", "nombre": "Gerdau S.A.", "pais": "Brasil" }
+        ],
+        "Qu\u00edmicos": [
+          { "ticker": "CARC.BA", "mercado": "BCBA", "nombre": "Carboclor S.A.", "pais": "Argentina" },
+          { "ticker": "DOW", "mercado": "NYSE", "nombre": "Dow Inc.", "pais": "EE.UU." },
+          { "ticker": "SHW", "mercado": "NYSE", "nombre": "The Sherwin-Williams Company", "pais": "EE.UU." },
+          { "ticker": "LYB", "mercado": "NYSE", "nombre": "LyondellBasell Industries N.V.", "pais": "EE.UU." }
+        ],
+        "Materiales de construcci\u00f3n": [
+          { "ticker": "HARG.BA", "mercado": "BCBA", "nombre": "Holcim (Argentina) S.A.", "pais": "Argentina" },
+          { "ticker": "LOMA.BA", "mercado": "BCBA", "nombre": "Loma Negra C.I.A.S.A.", "pais": "Argentina" },
+          { "ticker": "CRH", "mercado": "NYSE", "nombre": "CRH plc", "pais": "Irlanda" },
+          { "ticker": "CX", "mercado": "NYSE", "nombre": "CEMEX S.A.B. de C.V.", "pais": "M\u00e9xico" },
+          { "ticker": "VMC", "mercado": "NYSE", "nombre": "Vulcan Materials Company", "pais": "EE.UU." }
+        ],
+        "Insumos agr\u00edcolas": [
+          { "ticker": "INAG.BA", "mercado": "BCBA", "nombre": "Insumos Agroqu\u00edmicos S.A.", "pais": "Argentina" },
+          { "ticker": "BIOX", "mercado": "NASDAQ", "nombre": "Bioceres Crop Solutions Corp.", "pais": "Argentina" },
+          { "ticker": "CTVA", "mercado": "NYSE", "nombre": "Corteva, Inc.", "pais": "EE.UU." },
+          { "ticker": "NTR", "mercado": "NYSE", "nombre": "Nutrien Ltd.", "pais": "Canad\u00e1" }
+        ],
+        "Papel y productos de papel": [
+          { "ticker": "CELU.BA", "mercado": "BCBA", "nombre": "Celulosa Argentina S.A.", "pais": "Argentina" }
+        ],
+        "Oro": [
+          { "ticker": "AEM", "mercado": "NYSE", "nombre": "Agnico Eagle Mines Limited", "pais": "Canad\u00e1" },
+          { "ticker": "KGC", "mercado": "NYSE", "nombre": "Kinross Gold Corporation", "pais": "Canad\u00e1" },
+          { "ticker": "NEM", "mercado": "NYSE", "nombre": "Newmont Corporation", "pais": "EE.UU." },
+          { "ticker": "PAAS", "mercado": "NASDAQ", "nombre": "Pan American Silver Corp.", "pais": "Canad\u00e1" }
+        ],
+        "Cobre": [
+          { "ticker": "FCX", "mercado": "NYSE", "nombre": "Freeport-McMoRan Inc.", "pais": "EE.UU." },
+          { "ticker": "SCCO", "mercado": "NYSE", "nombre": "Southern Copper Corporation", "pais": "Per\u00fa" }
+        ],
+        "Otros metales industriales y miner\u00eda": [
+          { "ticker": "BHP", "mercado": "NYSE", "nombre": "BHP Group Limited", "pais": "Australia" },
+          { "ticker": "RIO", "mercado": "NYSE", "nombre": "Rio Tinto Group", "pais": "Reino Unido" },
+          { "ticker": "VALE", "mercado": "NYSE", "nombre": "Vale S.A.", "pais": "Brasil" },
+          { "ticker": "LAC", "mercado": "NYSE", "nombre": "Lithium Americas Corp.", "pais": "Canad\u00e1" }
+        ]
+      }
+    },
+    "Tecnolog\u00eda": {
+    "industrias": {
+      "Servicios de tecnolog\u00eda de la informaci\u00f3n": [
+        { "ticker": "BOLT.BA", "mercado": "BCBA", "nombre": "Boldt S.A.", "pais": "Argentina" },
+        { "ticker": "GAMI.BA", "mercado": "BCBA", "nombre": "B-Gaming S.A.", "pais": "Argentina" },
+        { "ticker": "ACN", "mercado": "NYSE", "nombre": "Accenture plc", "pais": "Irlanda" },
+        { "ticker": "GLOB", "mercado": "NYSE", "nombre": "Globant S.A.", "pais": "Argentina" },
+        { "ticker": "IBM", "mercado": "NYSE", "nombre": "IBM Corporation", "pais": "EE.UU." },
+        { "ticker": "INFY", "mercado": "NYSE", "nombre": "Infosys Limited", "pais": "India" }
+      ],
+      "Software - Aplicaci\u00f3n": [
+        { "ticker": "ADBE", "mercado": "NASDAQ", "nombre": "Adobe Inc.", "pais": "EE.UU." },
+        { "ticker": "ADP", "mercado": "NASDAQ", "nombre": "Automatic Data Processing, Inc.", "pais": "EE.UU." },
+        { "ticker": "CRM", "mercado": "NYSE", "nombre": "Salesforce, Inc.", "pais": "EE.UU." },
+        { "ticker": "DOCU", "mercado": "NASDAQ", "nombre": "DocuSign, Inc.", "pais": "EE.UU." },
+        { "ticker": "MSTR", "mercado": "NASDAQ", "nombre": "Strategy Inc", "pais": "EE.UU." },
+        { "ticker": "NOW", "mercado": "NYSE", "nombre": "ServiceNow", "pais": "EE.UU." },
+        { "ticker": "SAP", "mercado": "NYSE", "nombre": "SAP SE", "pais": "Alemania" },
+        { "ticker": "SHOP", "mercado": "NYSE", "nombre": "Shopify Inc.", "pais": "Canad\u00e1" },
+        { "ticker": "SNOW", "mercado": "NYSE", "nombre": "Snowflake Inc.", "pais": "EE.UU." },
+        { "ticker": "TEAM", "mercado": "NASDAQ", "nombre": "Atlassian Corporation", "pais": "Australia" },
+        { "ticker": "UBER", "mercado": "NYSE", "nombre": "Uber Technologies, Inc.", "pais": "EE.UU." },
+        { "ticker": "ZM", "mercado": "NASDAQ", "nombre": "Zoom Communications, Inc.", "pais": "EE.UU." }
+      ],
+      "Software - Infraestructura": [
+        { "ticker": "MSFT", "mercado": "NASDAQ", "nombre": "Microsoft Corporation", "pais": "EE.UU." },
+        { "ticker": "ORCL", "mercado": "NYSE", "nombre": "Oracle Corporation", "pais": "EE.UU." },
+        { "ticker": "PANW", "mercado": "NASDAQ", "nombre": "Palo Alto Networks, Inc.", "pais": "EE.UU." },
+        { "ticker": "PLTR", "mercado": "NYSE", "nombre": "Palantir Technologies Inc.", "pais": "EE.UU." },
+        { "ticker": "CRWD", "mercado": "NASDAQ", "nombre": "CrowdStrike Holdings, Inc.", "pais": "EE.UU." },
+        { "ticker": "AI", "mercado": "NYSE", "nombre": "C3.ai, Inc.", "pais": "EE.UU." },
+        { "ticker": "CRWV", "mercado": "NASDAQ", "nombre": "CoreWeave, Inc.", "pais": "EE.UU." },
+        { "ticker": "PAGS", "mercado": "NYSE", "nombre": "PagSeguro Digital Ltd.", "pais": "Brasil" },
+        { "ticker": "STNE", "mercado": "NASDAQ", "nombre": "StoneCo Ltd.", "pais": "Brasil" },
+        { "ticker": "XYZ", "mercado": "NYSE", "nombre": "Block, Inc.", "pais": "EE.UU." }
+      ],
+      "Semiconductores": [
+        { "ticker": "ADI", "mercado": "NASDAQ", "nombre": "Analog Devices, Inc.", "pais": "EE.UU." },
+        { "ticker": "AMD", "mercado": "NASDAQ", "nombre": "Advanced Micro Devices, Inc.", "pais": "EE.UU." },
+        { "ticker": "ARM", "mercado": "NASDAQ", "nombre": "Arm Holdings plc", "pais": "Reino Unido" },
+        { "ticker": "AVGO", "mercado": "NASDAQ", "nombre": "Broadcom Inc.", "pais": "EE.UU." },
+        { "ticker": "INTC", "mercado": "NASDAQ", "nombre": "Intel Corporation", "pais": "EE.UU." },
+        { "ticker": "MRVL", "mercado": "NASDAQ", "nombre": "Marvell Technology, Inc.", "pais": "EE.UU." },
+        { "ticker": "MU", "mercado": "NASDAQ", "nombre": "Micron Technology, Inc.", "pais": "EE.UU." },
+        { "ticker": "NVDA", "mercado": "NASDAQ", "nombre": "NVIDIA Corporation", "pais": "EE.UU." },
+        { "ticker": "QCOM", "mercado": "NASDAQ", "nombre": "QUALCOMM Incorporated", "pais": "EE.UU." },
+        { "ticker": "TSM", "mercado": "NYSE", "nombre": "TSMC - Taiwan Semiconductor", "pais": "Taiw\u00e1n" },
+        { "ticker": "TXN", "mercado": "NASDAQ", "nombre": "Texas Instruments Incorporated", "pais": "EE.UU." }
+      ],
+      "Equipos y materiales semiconductores": [
+        { "ticker": "AMAT", "mercado": "NASDAQ", "nombre": "Applied Materials, Inc.", "pais": "EE.UU." },
+        { "ticker": "ASML", "mercado": "NASDAQ", "nombre": "ASML Holding N.V.", "pais": "Pa\u00edses Bajos" },
+        { "ticker": "KLAC", "mercado": "NASDAQ", "nombre": "KLA Corporation", "pais": "EE.UU." },
+        { "ticker": "LRCX", "mercado": "NASDAQ", "nombre": "Lam Research Corporation", "pais": "EE.UU." }
+      ],
+      "Hardware de computadora": [
+        { "ticker": "DELL", "mercado": "NYSE", "nombre": "Dell Technologies Inc.", "pais": "EE.UU." },
+        { "ticker": "HPQ", "mercado": "NYSE", "nombre": "HP Inc.", "pais": "EE.UU." },
+        { "ticker": "SMCI", "mercado": "NASDAQ", "nombre": "Super Micro Computer, Inc.", "pais": "EE.UU." },
+        { "ticker": "SNDK", "mercado": "NASDAQ", "nombre": "SanDisk Corporation", "pais": "EE.UU." },
+        { "ticker": "STX", "mercado": "NASDAQ", "nombre": "Seagate Technology Holdings plc", "pais": "Irlanda" },
+        { "ticker": "ANET", "mercado": "NYSE", "nombre": "Arista Networks, Inc.", "pais": "EE.UU." },
+        { "ticker": "RGTI", "mercado": "NASDAQ", "nombre": "Rigetti Computing, Inc.", "pais": "EE.UU." }
+      ],
+      "Equipo de comunicaci\u00f3n": [
+        { "ticker": "ASTS", "mercado": "NASDAQ", "nombre": "AST SpaceMobile, Inc.", "pais": "EE.UU." },
+        { "ticker": "CSCO", "mercado": "NASDAQ", "nombre": "Cisco Systems, Inc.", "pais": "EE.UU." },
+        { "ticker": "MSI", "mercado": "NYSE", "nombre": "Motorola Solutions, Inc.", "pais": "EE.UU." }
+      ],
+      "Electr\u00f3nica de Consumo": [
+        { "ticker": "MIRG.BA", "mercado": "BCBA", "nombre": "Mirgor S.A.", "pais": "Argentina" },
+        { "ticker": "AAPL", "mercado": "NASDAQ", "nombre": "Apple Inc.", "pais": "EE.UU." },
+        { "ticker": "SONY", "mercado": "NYSE", "nombre": "Sony Group Corporation", "pais": "Jap\u00f3n" }
+      ],
+      "Solar": [
+        { "ticker": "ENPH", "mercado": "NASDAQ", "nombre": "Enphase Energy, Inc.", "pais": "EE.UU." },
+        { "ticker": "FSLR", "mercado": "NASDAQ", "nombre": "First Solar, Inc.", "pais": "EE.UU." }
+      ]
+    }
+  },
+  "Servicios de Comunicaci\u00f3n": {
+    "industrias": {
+      "Servicios de telecomunicaciones": [
+        { "ticker": "CVH.BA", "mercado": "BCBA", "nombre": "Cablevisi\u00f3n Holding S.A.", "pais": "Argentina" },
+        { "ticker": "TECO2.BA", "mercado": "BCBA", "nombre": "Telecom Argentina S.A.", "pais": "Argentina" },
+        { "ticker": "T", "mercado": "NYSE", "nombre": "AT&T Inc.", "pais": "EE.UU." },
+        { "ticker": "TMUS", "mercado": "NASDAQ", "nombre": "T-Mobile US, Inc.", "pais": "EE.UU." },
+        { "ticker": "VZ", "mercado": "NYSE", "nombre": "Verizon Communications Inc.", "pais": "EE.UU." },
+        { "ticker": "CMCSA", "mercado": "NASDAQ", "nombre": "Comcast Corporation", "pais": "EE.UU." }
+      ],
+      "Contenido e informaci\u00f3n de Internet": [
+        { "ticker": "GOOGL", "mercado": "NASDAQ", "nombre": "Alphabet Inc.", "pais": "EE.UU." },
+        { "ticker": "META", "mercado": "NASDAQ", "nombre": "Meta Platforms, Inc.", "pais": "EE.UU." },
+        { "ticker": "BIDU", "mercado": "NASDAQ", "nombre": "Baidu, Inc.", "pais": "China" },
+        { "ticker": "SPOT", "mercado": "NYSE", "nombre": "Spotify Technology S.A.", "pais": "Suecia" },
+        { "ticker": "NBIS", "mercado": "NYSE", "nombre": "Nubank", "pais": "Brasil" }
+      ],
+      "Entretenimiento": [
+        { "ticker": "GCLA.BA", "mercado": "BCBA", "nombre": "Grupo Clar\u00edn S.A.", "pais": "Argentina" },
+        { "ticker": "DIS", "mercado": "NYSE", "nombre": "The Walt Disney Company", "pais": "EE.UU." },
+        { "ticker": "NFLX", "mercado": "NASDAQ", "nombre": "Netflix, Inc.", "pais": "EE.UU." },
+        { "ticker": "WBD", "mercado": "NASDAQ", "nombre": "Warner Bros. Discovery, Inc.", "pais": "EE.UU." }
+      ],
+      "Juegos electr\u00f3nicos y multimedia": [
+        { "ticker": "EA", "mercado": "NASDAQ", "nombre": "Electronic Arts Inc.", "pais": "EE.UU." },
+        { "ticker": "RBLX", "mercado": "NYSE", "nombre": "Roblox Corporation", "pais": "EE.UU." }
+      ]
+    }
+  },
+  "Energ\u00eda": {
+    "industrias": {
+      "Exploraci\u00f3n y producci\u00f3n de petr\u00f3leo y gas": [
+        { "ticker": "CAPX.BA", "mercado": "BCBA", "nombre": "Capex S.A.", "pais": "Argentina" },
+        { "ticker": "COP", "mercado": "NYSE", "nombre": "ConocoPhillips", "pais": "EE.UU." },
+        { "ticker": "EOG", "mercado": "NYSE", "nombre": "EOG Resources, Inc.", "pais": "EE.UU." },
+        { "ticker": "OXY", "mercado": "NYSE", "nombre": "Occidental Petroleum Corporation", "pais": "EE.UU." },
+        { "ticker": "VIST", "mercado": "NYSE", "nombre": "Vista Energy S.A.B. de C.V.", "pais": "Argentina" }
+      ],
+      "Petr\u00f3leo y Gas Integrados": [
+        { "ticker": "YPFD.BA", "mercado": "BCBA", "nombre": "YPF S.A.", "pais": "Argentina" },
+        { "ticker": "BP", "mercado": "NYSE", "nombre": "BP p.l.c.", "pais": "Reino Unido" },
+        { "ticker": "CVX", "mercado": "NYSE", "nombre": "Chevron Corporation", "pais": "EE.UU." },
+        { "ticker": "PBR", "mercado": "NYSE", "nombre": "Petrobras", "pais": "Brasil" },
+        { "ticker": "SHEL", "mercado": "NYSE", "nombre": "Shell plc", "pais": "Reino Unido" },
+        { "ticker": "XOM", "mercado": "NYSE", "nombre": "Exxon Mobil Corporation", "pais": "EE.UU." }
+      ],
+      "Midstream de petr\u00f3leo y gas": [
+        { "ticker": "TGNO4.BA", "mercado": "BCBA", "nombre": "Transportadora de Gas del Norte S.A.", "pais": "Argentina" },
+        { "ticker": "TGSU2.BA", "mercado": "BCBA", "nombre": "Transportadora de Gas del Sur S.A.", "pais": "Argentina" },
+        { "ticker": "KMI", "mercado": "NYSE", "nombre": "Kinder Morgan, Inc.", "pais": "EE.UU." }
+      ],
+      "Equipos y servicios de petr\u00f3leo y gas": [
+        { "ticker": "BKR", "mercado": "NASDAQ", "nombre": "Baker Hughes Company", "pais": "EE.UU." },
+        { "ticker": "HAL", "mercado": "NYSE", "nombre": "Halliburton Company", "pais": "EE.UU." },
+        { "ticker": "SLB", "mercado": "NYSE", "nombre": "SLB N.V.", "pais": "EE.UU." }
+      ],
+      "Uranio": [
+        { "ticker": "CCJ", "mercado": "NYSE", "nombre": "Cameco Corporation", "pais": "Canad\u00e1" },
+        { "ticker": "UEC", "mercado": "NYSE", "nombre": "Uranium Energy Corp.", "pais": "EE.UU." }
+      ]
+    }
+  },
+  "Utilidades": {
+    "industrias": {
+      "Servicios p\u00fablicos: electricidad regulada": [
+        { "ticker": "CECO2.BA", "mercado": "BCBA", "nombre": "Central Costanera S.A.", "pais": "Argentina" },
+        { "ticker": "CEPU.BA", "mercado": "BCBA", "nombre": "Central Puerto S.A.", "pais": "Argentina" },
+        { "ticker": "EDN.BA", "mercado": "BCBA", "nombre": "Edenor S.A.", "pais": "Argentina" },
+        { "ticker": "TRAN.BA", "mercado": "BCBA", "nombre": "Transener S.A.", "pais": "Argentina" },
+        { "ticker": "NEE", "mercado": "NYSE", "nombre": "NextEra Energy, Inc.", "pais": "EE.UU." },
+        { "ticker": "D", "mercado": "NYSE", "nombre": "Dominion Energy, Inc.", "pais": "EE.UU." }
+      ],
+      "Servicios P\u00fablicos - Gas Regulado": [
+        { "ticker": "CGPA2.BA", "mercado": "BCBA", "nombre": "Camuzzi Gas Pampeana S.A.", "pais": "Argentina" },
+        { "ticker": "DGCU2.BA", "mercado": "BCBA", "nombre": "Distribuidora de Gas Cuyana S.A.", "pais": "Argentina" },
+        { "ticker": "GBAN.BA", "mercado": "BCBA", "nombre": "Naturgy BAN S.A.", "pais": "Argentina" },
+        { "ticker": "METR.BA", "mercado": "BCBA", "nombre": "MetroGAS S.A.", "pais": "Argentina" }
+      ],
+      "Servicios p\u00fablicos: productores de energ\u00eda independientes": [
+        { "ticker": "CEG", "mercado": "NASDAQ", "nombre": "Constellation Energy Corporation", "pais": "EE.UU." },
+        { "ticker": "DUK", "mercado": "NYSE", "nombre": "Duke Energy Corporation", "pais": "EE.UU." },
+        { "ticker": "SO", "mercado": "NYSE", "nombre": "The Southern Company", "pais": "EE.UU." },
+        { "ticker": "VST", "mercado": "NYSE", "nombre": "Vistra Corp.", "pais": "EE.UU." },
+        { "ticker": "OKLO", "mercado": "NYSE", "nombre": "Oklo Inc.", "pais": "EE.UU." }
+      ]
+    }
+  },
+  "Consumo C\u00edclico": {
+    "industrias": {
+      "Mobiliario, accesorios y electrodom\u00e9sticos": [
+        { "ticker": "DOME.BA", "mercado": "BCBA", "nombre": "DOMEC Compa\u00f1\u00eda de Artefactos Dom\u00e9sticos", "pais": "Argentina" },
+        { "ticker": "FIPL.BA", "mercado": "BCBA", "nombre": "Fiplasto S.A.", "pais": "Argentina" },
+        { "ticker": "LONG.BA", "mercado": "BCBA", "nombre": "Longvie S.A.", "pais": "Argentina" }
+      ],
+      "Calzado y accesorios": [
+        { "ticker": "GRIM.BA", "mercado": "BCBA", "nombre": "Grimoldi S.A.", "pais": "Argentina" },
+        { "ticker": "NKE", "mercado": "NYSE", "nombre": "NIKE, Inc.", "pais": "EE.UU." }
+      ],
+      "Restaurantes": [
+        { "ticker": "HAVA.BA", "mercado": "BCBA", "nombre": "Havanna Holding S.A.", "pais": "Argentina" },
+        { "ticker": "ARCO", "mercado": "NYSE", "nombre": "Arcos Dorados Holdings Inc.", "pais": "Argentina" },
+        { "ticker": "MCD", "mercado": "NYSE", "nombre": "McDonald's Corporation", "pais": "EE.UU." },
+        { "ticker": "SBUX", "mercado": "NASDAQ", "nombre": "Starbucks Corporation", "pais": "EE.UU." },
+        { "ticker": "CMG", "mercado": "NYSE", "nombre": "Chipotle Mexican Grill, Inc.", "pais": "EE.UU." },
+        { "ticker": "DPZ", "mercado": "NYSE", "nombre": "Domino's Pizza, Inc.", "pais": "EE.UU." }
+      ],
+      "Venta minorista por Internet": [
+        { "ticker": "AMZN", "mercado": "NASDAQ", "nombre": "Amazon.com, Inc.", "pais": "EE.UU." },
+        { "ticker": "BABA", "mercado": "NYSE", "nombre": "Alibaba Group Holding Limited", "pais": "China" },
+        { "ticker": "MELI", "mercado": "NASDAQ", "nombre": "MercadoLibre, Inc.", "pais": "Argentina" },
+        { "ticker": "JD", "mercado": "NASDAQ", "nombre": "JD.com, Inc.", "pais": "China" },
+        { "ticker": "PDD", "mercado": "NASDAQ", "nombre": "PDD Holdings Inc.", "pais": "China" },
+        { "ticker": "SE", "mercado": "NYSE", "nombre": "Sea Limited", "pais": "Singapur" }
+      ],
+      "Fabricantes de autom\u00f3viles": [
+        { "ticker": "F", "mercado": "NYSE", "nombre": "Ford Motor Company", "pais": "EE.UU." },
+        { "ticker": "GM", "mercado": "NYSE", "nombre": "General Motors Company", "pais": "EE.UU." },
+        { "ticker": "HMC", "mercado": "NYSE", "nombre": "Honda Motor Co., Ltd.", "pais": "Jap\u00f3n" },
+        { "ticker": "NIO", "mercado": "NYSE", "nombre": "NIO Inc.", "pais": "China" },
+        { "ticker": "RACE", "mercado": "NYSE", "nombre": "Ferrari N.V.", "pais": "Italia" },
+        { "ticker": "STLA", "mercado": "NYSE", "nombre": "Stellantis N.V.", "pais": "Pa\u00edses Bajos" },
+        { "ticker": "TM", "mercado": "NYSE", "nombre": "Toyota Motor Corporation", "pais": "Jap\u00f3n" },
+        { "ticker": "TSLA", "mercado": "NASDAQ", "nombre": "Tesla, Inc.", "pais": "EE.UU." }
+      ],
+      "Grandes almacenes": [
+        { "ticker": "PATA.BA", "mercado": "BCBA", "nombre": "S.A. Importadora y Exportadora de la Patagonia", "pais": "Argentina" }
+      ],
+      "Servicios de viaje": [
+        { "ticker": "ABNB", "mercado": "NASDAQ", "nombre": "Airbnb, Inc.", "pais": "EE.UU." },
+        { "ticker": "BKNG", "mercado": "NASDAQ", "nombre": "Booking Holdings Inc.", "pais": "EE.UU." },
+        { "ticker": "CCL", "mercado": "NYSE", "nombre": "Carnival Corporation & plc", "pais": "EE.UU." }
+      ]
+    }
+  },
+  "Defensiva del Consumidor": {
+    "industrias": {
+      "Alimentos envasados": [
+        { "ticker": "INTR.BA", "mercado": "BCBA", "nombre": "Compa\u00f1\u00eda Introductora de Buenos Aires", "pais": "Argentina" },
+        { "ticker": "MOLI.BA", "mercado": "BCBA", "nombre": "Molinos Rio de la Plata S.A.", "pais": "Argentina" }
+      ],
+      "Productos agr\u00edcolas": [
+        { "ticker": "INVJ.BA", "mercado": "BCBA", "nombre": "Inversora Juramento S.A.", "pais": "Argentina" },
+        { "ticker": "MOLA.BA", "mercado": "BCBA", "nombre": "Molinos Agro S.A.", "pais": "Argentina" },
+        { "ticker": "MORI.BA", "mercado": "BCBA", "nombre": "Morixe Hermanos S.A.C.I.", "pais": "Argentina" },
+        { "ticker": "SAMI.BA", "mercado": "BCBA", "nombre": "S.A. San Miguel A.G.I.C.I. y F.", "pais": "Argentina" },
+        { "ticker": "SEMI.BA", "mercado": "BCBA", "nombre": "Molinos Juan Semino S.A.", "pais": "Argentina" }
+      ],
+      "Productos personales y para el hogar": [
+        { "ticker": "RIGO.BA", "mercado": "BCBA", "nombre": "Rigolleau S.A.", "pais": "Argentina" },
+        { "ticker": "PG", "mercado": "NYSE", "nombre": "The Procter & Gamble Company", "pais": "EE.UU." },
+        { "ticker": "CL", "mercado": "NYSE", "nombre": "Colgate-Palmolive Company", "pais": "EE.UU." },
+        { "ticker": "KMB", "mercado": "NYSE", "nombre": "Kimberly-Clark Corporation", "pais": "EE.UU." },
+        { "ticker": "EL", "mercado": "NYSE", "nombre": "The Est\u00e9e Lauder Companies Inc.", "pais": "EE.UU." },
+        { "ticker": "UL", "mercado": "NYSE", "nombre": "Unilever PLC", "pais": "Reino Unido" }
+      ],
+      "Bebidas - No Alcoh\u00f3licas": [
+        { "ticker": "KO", "mercado": "NYSE", "nombre": "The Coca-Cola Company", "pais": "EE.UU." },
+        { "ticker": "PEP", "mercado": "NASDAQ", "nombre": "PepsiCo, Inc.", "pais": "EE.UU." },
+        { "ticker": "KDP", "mercado": "NASDAQ", "nombre": "Keurig Dr Pepper Inc.", "pais": "EE.UU." }
+      ],
+      "Bebidas - Bodegas y Destiler\u00edas": [
+        { "ticker": "DEO", "mercado": "NYSE", "nombre": "Diageo plc", "pais": "Reino Unido" },
+        { "ticker": "STZ", "mercado": "NYSE", "nombre": "Constellation Brands, Inc.", "pais": "EE.UU." }
+      ],
+      "Pasteleros / Alimentos empaquetados": [
+        { "ticker": "GIS", "mercado": "NYSE", "nombre": "General Mills, Inc.", "pais": "EE.UU." },
+        { "ticker": "HSY", "mercado": "NYSE", "nombre": "The Hershey Company", "pais": "EE.UU." },
+        { "ticker": "KHC", "mercado": "NASDAQ", "nombre": "The Kraft Heinz Company", "pais": "EE.UU." },
+        { "ticker": "MDLZ", "mercado": "NASDAQ", "nombre": "Mondelez International, Inc.", "pais": "EE.UU." }
+      ],
+      "Tiendas de descuento": [
+        { "ticker": "COST", "mercado": "NASDAQ", "nombre": "Costco Wholesale Corporation", "pais": "EE.UU." },
+        { "ticker": "WMT", "mercado": "NYSE", "nombre": "Walmart Inc.", "pais": "EE.UU." },
+        { "ticker": "TGT", "mercado": "NYSE", "nombre": "Target Corporation", "pais": "EE.UU." }
+      ],
+      "Bebidas - Cerveceros": [
+        { "ticker": "ABEV", "mercado": "NYSE", "nombre": "Ambev S.A.", "pais": "Brasil" },
+        { "ticker": "TAP", "mercado": "NYSE", "nombre": "Molson Coors Beverage Company", "pais": "EE.UU." }
+      ],
+      "Tabaco": [
+        { "ticker": "MO", "mercado": "NYSE", "nombre": "Altria Group, Inc.", "pais": "EE.UU." },
+        { "ticker": "PM", "mercado": "NYSE", "nombre": "Philip Morris International Inc.", "pais": "EE.UU." }
+      ]
+    }
+  },
+  "Cuidado de la Salud": {
+    "industrias": {
+      "Fabricantes de medicamentos": [
+        { "ticker": "RICH.BA", "mercado": "BCBA", "nombre": "Laboratorios Richmond S.A.C.I.F.", "pais": "Argentina" },
+        { "ticker": "ROSE.BA", "mercado": "BCBA", "nombre": "Instituto Rosenbusch S.A.", "pais": "Argentina" },
+        { "ticker": "ABBV", "mercado": "NYSE", "nombre": "AbbVie Inc.", "pais": "EE.UU." },
+        { "ticker": "AMGN", "mercado": "NASDAQ", "nombre": "Amgen Inc.", "pais": "EE.UU." },
+        { "ticker": "AZN", "mercado": "NASDAQ", "nombre": "AstraZeneca PLC", "pais": "Reino Unido" },
+        { "ticker": "BMY", "mercado": "NYSE", "nombre": "Bristol-Myers Squibb Company", "pais": "EE.UU." },
+        { "ticker": "GILD", "mercado": "NASDAQ", "nombre": "Gilead Sciences, Inc.", "pais": "EE.UU." },
+        { "ticker": "JNJ", "mercado": "NYSE", "nombre": "Johnson & Johnson", "pais": "EE.UU." },
+        { "ticker": "LLY", "mercado": "NYSE", "nombre": "Eli Lilly and Company", "pais": "EE.UU." },
+        { "ticker": "MRK", "mercado": "NYSE", "nombre": "Merck & Co., Inc.", "pais": "EE.UU." },
+        { "ticker": "NVS", "mercado": "NYSE", "nombre": "Novartis AG", "pais": "Suiza" },
+        { "ticker": "PFE", "mercado": "NYSE", "nombre": "Pfizer Inc.", "pais": "EE.UU." }
+      ],
+      "Biotecnolog\u00eda": [
+        { "ticker": "MRNA", "mercado": "NASDAQ", "nombre": "Moderna, Inc.", "pais": "EE.UU." },
+        { "ticker": "REGN", "mercado": "NASDAQ", "nombre": "Regeneron Pharmaceuticals, Inc.", "pais": "EE.UU." },
+        { "ticker": "VRTX", "mercado": "NASDAQ", "nombre": "Vertex Pharmaceuticals Incorporated", "pais": "EE.UU." }
+      ],
+      "Dispositivos m\u00e9dicos": [
+        { "ticker": "ABT", "mercado": "NYSE", "nombre": "Abbott Laboratories", "pais": "EE.UU." },
+        { "ticker": "BSX", "mercado": "NYSE", "nombre": "Boston Scientific Corporation", "pais": "EE.UU." },
+        { "ticker": "MDT", "mercado": "NYSE", "nombre": "Medtronic plc", "pais": "Irlanda" },
+        { "ticker": "ISRG", "mercado": "NASDAQ", "nombre": "Intuitive Surgical, Inc.", "pais": "EE.UU." },
+        { "ticker": "SYK", "mercado": "NYSE", "nombre": "Stryker Corporation", "pais": "EE.UU." }
+      ],
+      "Planes de salud": [
+        { "ticker": "UNH", "mercado": "NYSE", "nombre": "UnitedHealth Group Incorporated", "pais": "EE.UU." },
+        { "ticker": "CI", "mercado": "NYSE", "nombre": "Cigna Group", "pais": "EE.UU." },
+        { "ticker": "CVS", "mercado": "NYSE", "nombre": "CVS Health Corporation", "pais": "EE.UU." }
+      ],
+      "Diagn\u00f3stico e investigaci\u00f3n": [
+        { "ticker": "DHR", "mercado": "NYSE", "nombre": "Danaher Corporation", "pais": "EE.UU." },
+        { "ticker": "TMO", "mercado": "NYSE", "nombre": "Thermo Fisher Scientific Inc.", "pais": "EE.UU." }
+      ]
+    }
+  },
+  "Bienes Ra\u00edces": {
+    "industrias": {
+      "Bienes Ra\u00edces - Desarrollo": [
+        { "ticker": "CTIO.BA", "mercado": "BCBA", "nombre": "Consultatio S.A.", "pais": "Argentina" }
+      ],
+      "Servicios inmobiliarios": [
+        { "ticker": "GCDI.BA", "mercado": "BCBA", "nombre": "GCDI S.A.", "pais": "Argentina" },
+        { "ticker": "IRSA.BA", "mercado": "BCBA", "nombre": "IRSA Inversiones y Representaciones S.A.", "pais": "Argentina" }
+      ]
+    }
+  }
+  },
+  "etfs": {
+    "nota": "ETFs organizados por categor\u00eda de inversi\u00f3n",
+    "porCategoria": {
+      "Mercado Amplio US": [
+        { "ticker": "SPY", "nombre": "SPDR S&P 500 ETF Trust", "subcategoria": "Large Cap" },
+        { "ticker": "IVV", "nombre": "iShares Core S&P 500 ETF", "subcategoria": "Large Cap" },
+        { "ticker": "RSP", "nombre": "Invesco S&P 500 Equal Weight ETF", "subcategoria": "Large Cap" },
+        { "ticker": "DIA", "nombre": "SPDR Dow Jones Industrial Average ETF", "subcategoria": "Large Cap" },
+        { "ticker": "QQQ", "nombre": "Invesco QQQ Trust (Nasdaq-100)", "subcategoria": "Large Cap Growth" },
+        { "ticker": "IWM", "nombre": "iShares Russell 2000 ETF", "subcategoria": "Small Cap" },
+        { "ticker": "IJH", "nombre": "iShares Core S&P Mid-Cap 400 ETF", "subcategoria": "Mid Cap" }
+      ],
+      "Sectores US (SPDR Select Sector)": [
+        { "ticker": "XLK", "nombre": "Technology Select Sector SPDR", "subcategoria": "Tecnolog\u00eda" },
+        { "ticker": "XLF", "nombre": "Financial Select Sector SPDR", "subcategoria": "Finanzas" },
+        { "ticker": "XLV", "nombre": "Health Care Select Sector SPDR", "subcategoria": "Salud" },
+        { "ticker": "XLE", "nombre": "Energy Select Sector SPDR", "subcategoria": "Energ\u00eda" },
+        { "ticker": "XLC", "nombre": "Communication Services Select Sector SPDR", "subcategoria": "Comunicaci\u00f3n" },
+        { "ticker": "XLY", "nombre": "Consumer Discretionary Select Sector SPDR", "subcategoria": "Consumo Discrecional" },
+        { "ticker": "XLP", "nombre": "Consumer Staples Select Sector SPDR", "subcategoria": "Consumo B\u00e1sico" },
+        { "ticker": "XLI", "nombre": "Industrial Select Sector SPDR", "subcategoria": "Industrial" },
+        { "ticker": "XLB", "nombre": "Materials Select Sector SPDR", "subcategoria": "Materiales" },
+        { "ticker": "XLRE", "nombre": "Real Estate Select Sector SPDR", "subcategoria": "Inmobiliario" },
+        { "ticker": "XLU", "nombre": "Utilities Select Sector SPDR", "subcategoria": "Utilities" }
+      ],
+      "Sectores Especializados US": [
+        { "ticker": "SMH", "nombre": "VanEck Semiconductor ETF", "subcategoria": "Semiconductores" },
+        { "ticker": "CIBR", "nombre": "First Trust NASDAQ Cybersecurity ETF", "subcategoria": "Ciberseguridad" },
+        { "ticker": "IBB", "nombre": "iShares Biotechnology ETF", "subcategoria": "Biotecnolog\u00eda" },
+        { "ticker": "GDX", "nombre": "VanEck Gold Miners ETF", "subcategoria": "Miner\u00eda Oro" },
+        { "ticker": "XME", "nombre": "SPDR S&P Metals & Mining ETF", "subcategoria": "Metales y Miner\u00eda" },
+        { "ticker": "ITA", "nombre": "iShares US Aerospace & Defense ETF", "subcategoria": "Aeroespacial" },
+        { "ticker": "XAR", "nombre": "SPDR S&P Aerospace & Defense ETF", "subcategoria": "Aeroespacial" },
+        { "ticker": "ICLN", "nombre": "iShares Global Clean Energy ETF", "subcategoria": "Energ\u00eda Limpia" },
+        { "ticker": "URA", "nombre": "Global X Uranium ETF", "subcategoria": "Uranio" },
+        { "ticker": "ARKK", "nombre": "ARK Innovation ETF", "subcategoria": "Innovaci\u00f3n" }
+      ],
+      "Smart Beta / Factores": [
+        { "ticker": "MTUM", "nombre": "iShares MSCI USA Momentum Factor ETF", "subcategoria": "Momentum" },
+        { "ticker": "QUAL", "nombre": "iShares MSCI USA Quality Factor ETF", "subcategoria": "Calidad" },
+        { "ticker": "SIZE", "nombre": "iShares MSCI USA Size Factor ETF", "subcategoria": "Small Caps" },
+        { "ticker": "USMV", "nombre": "iShares MSCI USA Min Vol Factor ETF", "subcategoria": "M\u00ednima Volatilidad" },
+        { "ticker": "IVE", "nombre": "iShares S&P 500 Value ETF", "subcategoria": "Value" },
+        { "ticker": "IVW", "nombre": "iShares S&P 500 Growth ETF", "subcategoria": "Growth" },
+        { "ticker": "SPHQ", "nombre": "Invesco S&P 500 Quality ETF", "subcategoria": "Calidad" },
+        { "ticker": "VIG", "nombre": "Vanguard Dividend Appreciation ETF", "subcategoria": "Dividendos" },
+        { "ticker": "ESGU", "nombre": "iShares ESG Aware MSCI USA ETF", "subcategoria": "ESG" }
+      ],
+      "Renta Fija": [
+        { "ticker": "SHY", "nombre": "iShares 1-3 Year Treasury Bond ETF", "subcategoria": "Corto Plazo" },
+        { "ticker": "IEF", "nombre": "iShares 7-10 Year Treasury Bond ETF", "subcategoria": "Mediano Plazo" },
+        { "ticker": "TLT", "nombre": "iShares 20+ Year Treasury Bond ETF", "subcategoria": "Largo Plazo" },
+        { "ticker": "HYG", "nombre": "iShares iBoxx High Yield Corporate Bond ETF", "subcategoria": "High Yield" },
+        { "ticker": "LQD", "nombre": "iShares iBoxx Investment Grade Corporate Bond ETF", "subcategoria": "Investment Grade" },
+        { "ticker": "BNDX", "nombre": "Vanguard Total International Bond ETF", "subcategoria": "Global" },
+        { "ticker": "TIP", "nombre": "iShares TIPS Bond ETF", "subcategoria": "Inflaci\u00f3n" }
+      ],
+      "Commodities / Materias Primas": [
+        { "ticker": "GLD", "nombre": "SPDR Gold Shares", "subcategoria": "Oro" },
+        { "ticker": "SLV", "nombre": "iShares Silver Trust", "subcategoria": "Plata" },
+        { "ticker": "USO", "nombre": "United States Oil Fund", "subcategoria": "Petr\u00f3leo" },
+        { "ticker": "UNG", "nombre": "United States Natural Gas Fund", "subcategoria": "Gas Natural" },
+        { "ticker": "COPX", "nombre": "Global X Copper Miners ETF", "subcategoria": "Cobre" },
+        { "ticker": "DBA", "nombre": "Invesco DB Agriculture ETF", "subcategoria": "Agricultura" },
+        { "ticker": "SOYB", "nombre": "Teucrium Soybean Fund", "subcategoria": "Soja" },
+        { "ticker": "CORN", "nombre": "Teucrium Corn Fund", "subcategoria": "Ma\u00edz" },
+        { "ticker": "LIT", "nombre": "Global X Lithium & Battery Tech ETF", "subcategoria": "Litio" }
+      ],
+      "Pa\u00edses y Regiones": [
+        { "ticker": "ARGT", "nombre": "Global X MSCI Argentina ETF", "subcategoria": "Argentina" },
+        { "ticker": "EWZ", "nombre": "iShares MSCI Brazil ETF", "subcategoria": "Brasil" },
+        { "ticker": "EWW", "nombre": "iShares MSCI Mexico ETF", "subcategoria": "M\u00e9xico" },
+        { "ticker": "ECH", "nombre": "iShares MSCI Chile ETF", "subcategoria": "Chile" },
+        { "ticker": "EEM", "nombre": "iShares MSCI Emerging Markets ETF", "subcategoria": "Emergentes" },
+        { "ticker": "VWO", "nombre": "Vanguard FTSE Emerging Markets ETF", "subcategoria": "Emergentes" },
+        { "ticker": "FXI", "nombre": "iShares China Large-Cap ETF", "subcategoria": "China" },
+        { "ticker": "INDA", "nombre": "iShares MSCI India ETF", "subcategoria": "India" },
+        { "ticker": "EWJ", "nombre": "iShares MSCI Japan ETF", "subcategoria": "Jap\u00f3n" },
+        { "ticker": "EWY", "nombre": "iShares MSCI South Korea ETF", "subcategoria": "Corea" },
+        { "ticker": "EFA", "nombre": "iShares MSCI EAFE ETF", "subcategoria": "Desarrollados ex-US" },
+        { "ticker": "VEA", "nombre": "Vanguard FTSE Developed Markets ETF", "subcategoria": "Desarrollados" },
+        { "ticker": "ACWI", "nombre": "iShares MSCI ACWI ETF", "subcategoria": "Global" },
+        { "ticker": "IEMG", "nombre": "iShares Core MSCI Emerging Markets ETF", "subcategoria": "Emergentes" },
+        { "ticker": "IEUR", "nombre": "iShares Core MSCI Europe ETF", "subcategoria": "Europa" },
+        { "ticker": "ILF", "nombre": "iShares Latin America ETF", "subcategoria": "Latam" },
+        { "ticker": "EWG", "nombre": "iShares MSCI Germany ETF", "subcategoria": "Alemania" }
+      ],
+      "Activos Digitales": [
+        { "ticker": "IBIT", "nombre": "iShares Bitcoin Trust ETF", "subcategoria": "Bitcoin" },
+        { "ticker": "ETHA", "nombre": "iShares Ethereum Trust ETF", "subcategoria": "Ethereum" }
+      ],
+      "Bienes Ra\u00edces (REIT)": [
+        { "ticker": "REET", "nombre": "iShares Global REIT ETF", "subcategoria": "Global" },
+        { "ticker": "ICF", "nombre": "iShares Cohen & Steers REIT ETF", "subcategoria": "US" },
+        { "ticker": "O", "nombre": "Realty Income Corporation", "subcategoria": "REIT Retail" }
+      ],
+      "Tem\u00e1ticos": [
+        { "ticker": "ROKT", "nombre": "SPDR S&P Robotics & AI ETF", "subcategoria": "Rob\u00f3tica e IA" },
+        { "ticker": "BOTZ", "nombre": "Global X Robotics & AI ETF", "subcategoria": "Rob\u00f3tica" },
+        { "ticker": "AIQ", "nombre": "Global X AI & Technology ETF", "subcategoria": "IA" },
+        { "ticker": "DRIV", "nombre": "Global X Autonomous & Electric Vehicles ETF", "subcategoria": "Veh\u00edculos Aut\u00f3nomos" },
+        { "ticker": "CLOU", "nombre": "Global X Cloud Computing ETF", "subcategoria": "Cloud" },
+        { "ticker": "SKYY", "nombre": "First Trust Cloud Computing ETF", "subcategoria": "Cloud" },
+        { "ticker": "FINX", "nombre": "Global X FinTech ETF", "subcategoria": "Fintech" },
+        { "ticker": "ARKF", "nombre": "ARK Fintech Innovation ETF", "subcategoria": "Fintech" },
+        { "ticker": "ARKG", "nombre": "ARK Genomic Revolution ETF", "subcategoria": "Gen\u00f3mica" },
+        { "ticker": "XBI", "nombre": "SPDR S&P Biotech ETF", "subcategoria": "Biotecnolog\u00eda" },
+        { "ticker": "PICK", "nombre": "iShares MSCI Global Metals & Mining ETF", "subcategoria": "Miner\u00eda Global" },
+        { "ticker": "WOOD", "nombre": "iShares Global Timber & Forestry ETF", "subcategoria": "Forestal" },
+        { "ticker": "CUT", "nombre": "Invesco MSCI Global Timber ETF", "subcategoria": "Maderas" }
+      ],
+      "Apalancados / Inversos": [
+        { "ticker": "TQQQ", "nombre": "ProShares UltraPro QQQ (3x Nasdaq)", "subcategoria": "Apalancado" },
+        { "ticker": "SPXL", "nombre": "Direxion Daily S&P 500 Bull 3X Shares", "subcategoria": "Apalancado" },
+        { "ticker": "PSQ", "nombre": "ProShares Short QQQ", "subcategoria": "Inverso" },
+        { "ticker": "SH", "nombre": "ProShares Short S&P 500", "subcategoria": "Inverso" },
+        { "ticker": "VXX", "nombre": "iPath S&P 500 VIX Short-Term Futures ETN", "subcategoria": "Volatilidad" }
+      ],
+      "Renta Fija Argentina": [
+        { "ticker": "GD30D.BA", "nombre": "Bonos Argentina USD (GD30)", "subcategoria": "Soberano" },
+        { "ticker": "AL30D.BA", "nombre": "Bonos Argentina USD (AL30)", "subcategoria": "Soberano" }
+      ]
+    }
+  },
+  "factores": {
+    "nota": "Lista completa de factores de mercado/benchmarks para an\u00e1lisis de correlaci\u00f3n, beta, clustering y hedge. Cada factor incluye ticker, nombre, categor\u00eda y subcategor\u00eda.",
+    "porCategoria": {
+      "Macro": [
+        { "ticker": "DX-Y.NYB", "nombre": "D\u00f3lar Index (DXY)", "sub": "Currency" },
+        { "ticker": "EURUSD=X", "nombre": "Euro/D\u00f3lar", "sub": "Currency" },
+        { "ticker": "^TNX", "nombre": "Yield 10Y Tesoro", "sub": "Rates" },
+        { "ticker": "^VIX", "nombre": "\u00cdndice de Volatilidad (Miedo)", "sub": "Risk" },
+        { "ticker": "TIP", "nombre": "TIPS (Inflaci\u00f3n)", "sub": "Inflation" }
+      ],
+      "Bonds": [
+        { "ticker": "SHY", "nombre": "Bonos 1-3Y (Corto)", "sub": "Yield" },
+        { "ticker": "IEF", "nombre": "Bonos 7-10Y (Medio)", "sub": "Yield" },
+        { "ticker": "TLT", "nombre": "Bonos 20+Y (Largo)", "sub": "Yield" },
+        { "ticker": "HYG", "nombre": "High Yield (Corporativo)", "sub": "Risk" },
+        { "ticker": "LQD", "nombre": "Corp. Investment Grade", "sub": "Risk" },
+        { "ticker": "BNDX", "nombre": "Bonos Int. Total", "sub": "Global" }
+      ],
+      "Commodities": [
+        { "ticker": "USO", "nombre": "Petr\u00f3leo WTI", "sub": "Energy" },
+        { "ticker": "UNG", "nombre": "Gas Natural", "sub": "Energy" },
+        { "ticker": "GLD", "nombre": "Oro", "sub": "Precious" },
+        { "ticker": "SLV", "nombre": "Plata", "sub": "Precious" },
+        { "ticker": "COPX", "nombre": "Cobre", "sub": "Industrial" },
+        { "ticker": "DBA", "nombre": "Agricultura", "sub": "Agri" },
+        { "ticker": "SOYB", "nombre": "Soja", "sub": "Agri" },
+        { "ticker": "CORN", "nombre": "Ma\u00edz", "sub": "Agri" },
+        { "ticker": "LIT", "nombre": "Litio", "sub": "Strategic" }
+      ],
+      "Sectors US": [
+        { "ticker": "XLK", "nombre": "Tecnolog\u00eda", "sub": "US" },
+        { "ticker": "XLF", "nombre": "Finanzas", "sub": "US" },
+        { "ticker": "XLV", "nombre": "Salud", "sub": "US" },
+        { "ticker": "XLE", "nombre": "Energ\u00eda", "sub": "US" },
+        { "ticker": "XLC", "nombre": "Comunicaci\u00f3n", "sub": "US" },
+        { "ticker": "XLY", "nombre": "Consumo Discrecional", "sub": "US" },
+        { "ticker": "XLP", "nombre": "Consumo B\u00e1sico", "sub": "US" },
+        { "ticker": "XLI", "nombre": "Industrial", "sub": "US" },
+        { "ticker": "XLB", "nombre": "Materiales", "sub": "US" },
+        { "ticker": "XLRE", "nombre": "Inmobiliario", "sub": "US" },
+        { "ticker": "XLU", "nombre": "Utilities", "sub": "US" },
+        { "ticker": "XAR", "nombre": "Aeroespacial y Defensa", "sub": "US" },
+        { "ticker": "ITA", "nombre": "Aeroespacial y Defensa (IT)", "sub": "US" },
+        { "ticker": "SMH", "nombre": "Semiconductores", "sub": "US" },
+        { "ticker": "IBB", "nombre": "Biotecnolog\u00eda", "sub": "US" },
+        { "ticker": "GDX", "nombre": "Mineras de Oro", "sub": "US" },
+        { "ticker": "XME", "nombre": "Metales y Miner\u00eda", "sub": "US" },
+        { "ticker": "CIBR", "nombre": "Ciberseguridad", "sub": "US" },
+        { "ticker": "ARKK", "nombre": "Innovaci\u00f3n Disruptiva", "sub": "US" },
+        { "ticker": "URA", "nombre": "Uranio", "sub": "US" },
+        { "ticker": "ICLN", "nombre": "Energ\u00eda Limpia", "sub": "US" }
+      ],
+      "Factors / Smart Beta": [
+        { "ticker": "MTUM", "nombre": "Momentum", "sub": "Alpha" },
+        { "ticker": "QUAL", "nombre": "Calidad", "sub": "Alpha" },
+        { "ticker": "SIZE", "nombre": "Small Caps", "sub": "Style" },
+        { "ticker": "USMV", "nombre": "Min. Volatilidad", "sub": "Risk" },
+        { "ticker": "IVE", "nombre": "Value", "sub": "Style" },
+        { "ticker": "IVW", "nombre": "Growth", "sub": "Style" },
+        { "ticker": "IWM", "nombre": "Russell 2000", "sub": "Market" },
+        { "ticker": "SPY", "nombre": "SPDR S&P 500 ETF", "sub": "Market" },
+        { "ticker": "QQQ", "nombre": "Invesco QQQ Trust", "sub": "Market" },
+        { "ticker": "RSP", "nombre": "S&P 500 Equal Weight", "sub": "Market" },
+        { "ticker": "SPHQ", "nombre": "S&P 500 Calidad", "sub": "Alpha" },
+        { "ticker": "VIG", "nombre": "Dividend Growth", "sub": "Style" },
+        { "ticker": "ESGU", "nombre": "ESG EE.UU.", "sub": "Alpha" },
+        { "ticker": "IJH", "nombre": "S&P Mid-Cap 400", "sub": "Market" },
+        { "ticker": "DIA", "nombre": "Dow Jones Industrial", "sub": "Market" },
+        { "ticker": "ACWI", "nombre": "ACWI Global", "sub": "Market" },
+        { "ticker": "IEMG", "nombre": "Emergentes Integral", "sub": "Market" },
+        { "ticker": "VEA", "nombre": "Desarrollados FTSE", "sub": "Market" },
+        { "ticker": "IEUR", "nombre": "Europa", "sub": "Market" },
+        { "ticker": "EWY", "nombre": "MSCI Corea", "sub": "Asia" },
+        { "ticker": "ILF", "nombre": "Latam", "sub": "Latam" },
+        { "ticker": "PSQ", "nombre": "Short QQQ", "sub": "Hedge" },
+        { "ticker": "SH", "nombre": "Short S&P 500", "sub": "Hedge" },
+        { "ticker": "SPXL", "nombre": "S&P 500 3x Long", "sub": "Leveraged" },
+        { "ticker": "TQQQ", "nombre": "Nasdaq 3x Long", "sub": "Leveraged" },
+        { "ticker": "VXX", "nombre": "VIX Short-Term", "sub": "Risk" }
+      ],
+      "Countries": [
+        { "ticker": "ARGT", "nombre": "MSCI Argentina", "sub": "Latam" },
+        { "ticker": "EWZ", "nombre": "MSCI Brasil", "sub": "Latam" },
+        { "ticker": "EWW", "nombre": "MSCI M\u00e9xico", "sub": "Latam" },
+        { "ticker": "ECH", "nombre": "MSCI Chile", "sub": "Latam" },
+        { "ticker": "EEM", "nombre": "Emerging Markets", "sub": "Global" },
+        { "ticker": "VWO", "nombre": "Emerging Vanguard", "sub": "Global" },
+        { "ticker": "FXI", "nombre": "China Large Caps", "sub": "Asia" },
+        { "ticker": "INDA", "nombre": "MSCI India", "sub": "Asia" },
+        { "ticker": "EFA", "nombre": "Desarrollados ex-US", "sub": "Global" },
+        { "ticker": "EWG", "nombre": "MSCI Alemania", "sub": "Europe" },
+        { "ticker": "EWJ", "nombre": "MSCI Jap\u00f3n", "sub": "Asia" }
+      ],
+      "Market Indices": [
+        { "ticker": "^SPX", "nombre": "S&P 500", "sub": "US" },
+        { "ticker": "^GSPC", "nombre": "S&P 500 (alt)", "sub": "US" },
+        { "ticker": "^IXIC", "nombre": "NASDAQ", "sub": "US" },
+        { "ticker": "^DJI", "nombre": "Dow Jones", "sub": "US" },
+        { "ticker": "^RUT", "nombre": "Russell 2000", "sub": "US" },
+        { "ticker": "^MERV", "nombre": "MERVAL", "sub": "Argentina" },
+        { "ticker": "^FTSE", "nombre": "FTSE 100", "sub": "Europe" },
+        { "ticker": "^HSI", "nombre": "Hang Seng", "sub": "Asia" },
+        { "ticker": "^MXX", "nombre": "IPC M\u00e9xico", "sub": "Latam" },
+        { "ticker": "^STOXX", "nombre": "STOXX Europa 600", "sub": "Europe" },
+        { "ticker": "^FCHI", "nombre": "CAC 40", "sub": "Europe" },
+        { "ticker": "^GDAXI", "nombre": "DAX Alemania", "sub": "Europe" },
+        { "ticker": "^N225", "nombre": "Nikkei 225", "sub": "Asia" }
+      ],
+      "Thematic": [
+        { "ticker": "ROKT", "nombre": "Rob\u00f3tica e IA", "sub": "Innovation" },
+        { "ticker": "BOTZ", "nombre": "Rob\u00f3tica Global", "sub": "Innovation" },
+        { "ticker": "AIQ", "nombre": "IA Global", "sub": "Innovation" },
+        { "ticker": "DRIV", "nombre": "Veh\u00edculos Aut\u00f3nomos", "sub": "Innovation" },
+        { "ticker": "CLOU", "nombre": "Cloud Computing", "sub": "Tech" },
+        { "ticker": "SKYY", "nombre": "Cloud 5G", "sub": "Tech" },
+        { "ticker": "FINX", "nombre": "Fintech", "sub": "Finance" },
+        { "ticker": "ARKF", "nombre": "Fintech Disruptiva", "sub": "Finance" },
+        { "ticker": "ARKG", "nombre": "Gen\u00f3mica", "sub": "Healthcare" },
+        { "ticker": "XBI", "nombre": "Biotecnolog\u00eda SPDR", "sub": "Healthcare" },
+        { "ticker": "PICK", "nombre": "Miner\u00eda Global", "sub": "Materials" },
+        { "ticker": "WOOD", "nombre": "Forestal", "sub": "Materials" },
+        { "ticker": "CUT", "nombre": "Maderas", "sub": "Materials" }
+      ],
+      "Crypto": [
+        { "ticker": "BTC-USD", "nombre": "Bitcoin USD", "sub": "Crypto" },
+        { "ticker": "ETHA", "nombre": "Ethereum Trust", "sub": "Crypto" }
+      ],
+      "RealEstate": [
+        { "ticker": "REET", "nombre": "Real Estate Total", "sub": "Global" },
+        { "ticker": "ICF", "nombre": "Real Estate US", "sub": "US" }
+      ],
+      "Argentina (Renta Fija)": [
+        { "ticker": "GD30D.BA", "nombre": "Bonos Argentina USD", "sub": "Sovereign" },
+        { "ticker": "AL30D.BA", "nombre": "Bonos Argentina USD (AL)", "sub": "Sovereign" }
+      ]
+    },
+    "totalFactores": 103
+  },
+  "cedears": {
+    "nota": "Ratios de conversi\u00f3n CEDEAR BYMA y lista completa de CEDEARs (ARS y USD)",
+    "ratios": {
+      "AAPL": 20, "MSFT": 20, "NVDA": 20, "AMZN": 20, "GOOGL": 20, "META": 24,
+      "TSLA": 15, "JPM": 10, "V": 10, "MA": 10, "DIS": 10, "KO": 10,
+      "PEP": 10, "WMT": 10, "COST": 10, "NKE": 10, "MCD": 10, "SBUX": 10,
+      "BA": 10, "CAT": 10, "GE": 10, "JNJ": 10, "PFE": 10, "MRK": 10,
+      "ABBV": 10, "UNH": 10, "PG": 10, "XOM": 10, "CVX": 10, "NFLX": 10,
+      "SPY": 10, "QQQ": 10
+    },
+    "listaARS": [
+      "MU.BA","SPY.BA","VIST.BA","MSFT.BA","MSTR.BA","KO.BA","NVDA.BA","QQQ.BA",
+      "MELI.BA","ORCL.BA","NU.BA","META.BA","AMD.BA","SNDK.BA","V.BA","RKLB.BA",
+      "IBIT.BA","GOOGL.BA","AMZN.BA","TSLA.BA","GLD.BA","INTC.BA","NOW.BA",
+      "AAPL.BA","IBM.BA","PLTR.BA","MCD.BA","GLOB.BA","NFLX.BA","AVGO.BA",
+      "PBR.BA","MA.BA","COIN.BA","TSM.BA","BABA.BA","CRM.BA","WFC.BA","JPM.BA",
+      "WMT.BA","QCOM.BA","XLF.BA","XP.BA","SLV.BA","ADBE.BA","XLE.BA","JNJ.BA",
+      "ARCO.BA","UBER.BA","UNH.BA","RACE.BA","PFE.BA","LLY.BA","NKE.BA","XLP.BA",
+      "AXP.BA","MRVL.BA","PEP.BA","ANF.BA","CVX.BA","EBAY.BA","CAT.BA","BBD.BA",
+      "HMY.BA","PG.BA","MRNA.BA","HIMS.BA","XLU.BA","SH.BA","PANW.BA","GDX.BA",
+      "C.BA","VZ.BA","NIO.BA","MO.BA","OKLO.BA","ACN.BA","ABT.BA","UL.BA","BA.BA",
+      "PAAS.BA","LMT.BA","GE.BA","ROKU.BA","FSLR.BA","LRCX.BA","CSCO.BA","TM.BA",
+      "BIDU.BA","T.BA","SPOT.BA","AAL.BA","JD.BA","VALE.BA","RTX.BA","ARM.BA",
+      "ISRG.BA","XOM.BA","ARKK.BA","RIO.BA","HD.BA","HSBC.BA","PYPL.BA",
+      "FDX.BA","ADP.BA","CRWD.BA","CAAP.BA","ORLY.BA","AIG.BA","GS.BA","AI.BA",
+      "CCL.BA","BIOX.BA","STLA.BA","FCX.BA","BP.BA","SNOW.BA","SPGI.BA","MMM.BA",
+      "SE.BA","HMC.BA","ABBV.BA","SHOP.BA","TXN.BA","TGT.BA","XLY.BA","ZM.BA",
+      "SHEL.BA","COST.BA","DOW.BA","CVS.BA","BHP.BA","PCAR.BA","NVS.BA","HSY.BA",
+      "OXY.BA","GILD.BA","MRK.BA","XYZ.BA","SONY.BA","CL.BA","F.BA","AMGN.BA",
+      "NEM.BA","ABNB.BA","TMUS.BA","MDT.BA","PDD.BA","ITUB.BA","AZN.BA","HAL.BA",
+      "HPQ.BA","SBUX.BA","GM.BA","INFY.BA","SNAP.BA","TCOM.BA","PM.BA","DAL.BA",
+      "BMY.BA","MDLZ.BA","HWM.BA","TMO.BA","VRTX.BA","SCCO.BA","NUE.BA","DOCU.BA",
+      "MSI.BA","DECK.BA","BKNG.BA","GSK.BA","HON.BA","DEO.BA","DHR.BA","LVS.BA",
+      "ROST.BA","COP.BA","KGC.BA","UAL.BA","TJX.BA","URBN.BA","YELP.BA"
+    ],
+    "listaUSD": [
+      "MSFTD","MELID","VISTD","NVDAD","GOOGLD","IBITD","AMZND","GLOBD","QQQD",
+      "EWZD","SMHD","AMDD","TSLAD","MSTRD","MCDD","UBERD","IBMD","NFLXD","AVGOD",
+      "PLTRD","WMTD","INTCD","PFED","COIND","EEMD","XLVD","XLFD","SNDKD","SLVD",
+      "JPMD","ETHAD","BABAD","JNJD","XLUD","ASMLD","XLPD","CATD","CEGD","CCJD",
+      "VZD","PAGSD","FXID","PBRD","NOWD","CVXD","TQQQD","RSPD","QCOMD","XLED",
+      "PEPD","LLYD","MAD","BBDD","GED","PGD","ANFD","ARKKD","COPXD","URAD",
+      "GDXD","ADBED","NBISD","AXPD","SATLD","UNHD","NIOD","LARD","VSTD","STNED",
+      "NKED","MRVLD","IWMD","IVED","AMATD","SPXLD","ILFD","ARMD","ABTD","VALED",
+      "HOODD","BACD","ANETD","XLYD","XLBD","FSLRD","CAAPD","RGTID","AALD","LMTD",
+      "JDD","HUTD","KMBD","XOMD","PANWD","SLBD","CRMD","EWYD","CRWVD","ULD",
+      "UPSTD","HIMSD","LACD","HMYD","MSFTC","NVDAC","MELIC","IBITC","AMZNC",
+      "VISTC","SPYCD","SPYD"
+    ]
+  },
+  "byma": {
+    "nota": "Acciones locales BYMA (ARS) de alta liquidez para cobertura",
+    "tickers": [
+      "GGAL.BA", "YPFD.BA", "PAMP.BA", "BMA.BA", "TECO2.BA",
+      "EDN.BA", "TXAR.BA", "ALUA.BA", "CRES.BA", "CEPU.BA",
+      "TRAN.BA", "COME.BA", "CTIO.BA", "LOMA.BA", "MIRG.BA",
+      "METR.BA", "SUPV.BA", "VALO.BA", "HARG.BA", "CGPA2.BA",
+      "INVJ.BA", "LEDE.BA", "LONG.BA", "OEST.BA",
+      "PATA.BA", "RIGO.BA", "SAMI.BA", "SEMI.BA", "BHIP.BA",
+      "BOLT.BA", "BPAT.BA", "BYMA.BA", "CECO2.BA", "DGCU2.BA",
+      "FERR.BA", "GCLA.BA", "GRIM.BA", "HAVA.BA", "IRSA.BA",
+      "MOLA.BA", "MORI.BA", "POLL.BA", "ROSE.BA"
+    ]
+  }
+}
